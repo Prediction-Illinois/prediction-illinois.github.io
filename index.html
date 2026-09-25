@@ -166,14 +166,6 @@ section.band{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--li
 .viz .b1{fill:var(--brand)} .viz .b2{fill:var(--line-2)}
 .viz .t{font-family:var(--mono);font-size:8px;fill:var(--muted)}
 
-.not{margin-top:36px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;position:relative;overflow:hidden}
-.not::before{content:"";position:absolute;inset-block:0;left:0;width:3px;background:var(--no)}
-.not .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--no);margin-bottom:12px;display:block}
-.not ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-@media (max-width:860px){.not ul{grid-template-columns:1fr}}
-.not li{font-size:14px;color:var(--ink-2);line-height:1.55}
-.not li b{display:block;color:var(--ink);font-weight:600;margin-bottom:5px;font-size:15px}
-
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:40px;position:relative}
 @media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
@@ -267,7 +259,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
       <span class="eyebrow brand">University of Illinois Urbana–Champaign</span>
       <h1>Forecasting<br>is a skill.<br>We <em>measure</em> it.</h1>
       <p class="lede">A student research group at UIUC built around one claim: the interesting thing about a prediction market isn't the bet, it's the <strong>number</strong>. How a crowd prices an uncertain event, whether that price is calibrated, and what market design makes it better or worse.</p>
-      <p class="lede">Scored forecasting tournaments, microstructure research on public market data, and mechanism design. <strong>We don't trade and we don't take positions.</strong></p>
+      <p class="lede">Weekly scored forecasting, microstructure research on public market data, and mechanism design — with a written result at the end of every semester.</p>
       <div class="cta-row">
         <a class="btn btn-1 btn-lg" href="#join">Apply for Fall 2026</a>
         <a class="btn btn-2 btn-lg" href="#work">What we work on</a>
@@ -303,7 +295,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
         <div class="row" data-side="yes"><div class="q">Do resolution disputes cluster in markets with thin order books?<span>Mechanism design</span></div><div class="pct num" data-count="71">71%</div><div class="track"><i style="transform:scaleX(.71)"></i></div></div>
         <div class="row" data-side="no"><div class="q">Can this cohort beat the market's Brier score over one semester?<span>Forecasting practice</span></div><div class="pct num" data-count="38">38%</div><div class="track"><i style="transform:scaleX(.38)"></i></div></div>
       </div>
-      <div class="board-foot">Figures are illustrative. No money is involved — the score is the only thing at stake.</div>
+      <div class="board-foot">Figures are illustrative. Scored by Brier and log score; every question resolves against a public source.</div>
     </div>
   </section>
 
@@ -368,13 +360,6 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
         </div>
       </div>
 
-      <div class="not">
-        <span class="k">What this group is not</span>
-        <ul>
-          <li><b>Not a trading club.</b> We take no positions, pool no capital, and place no orders. The Illinois Gaming Board's position is that prediction markets are gambling activity under state law; a student group here has no business near that line. Our subject is the data these venues publish, which is public.</li>
-          <li><b>Not a second Quant@Illinois.</b> They do quantitative finance and trading recruitment, and do it well. Our object is the forecast itself — calibration, aggregation, mechanism. Closer to statistics and market design than to trading. Be in both.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -449,8 +434,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
           <span class="eyebrow">Questions we get</span>
           <div class="faq" style="margin-top:14px">
             <details open><summary>Do I need to know anything about prediction markets?</summary><p>No. The weekly forecasting round teaches calibration from scratch. If you can read a probability and argue about it, that's the bar.</p></details>
-            <details><summary>Is this a trading club?</summary><p>No. We place no orders and hold no positions. We work with the public data these venues publish, which is a different activity with a different legal footing.</p></details>
-            <details><summary>How is this different from Quant@Illinois?</summary><p>Quant is quantitative finance and trading recruitment. We're about the forecast as an object of study: how it's formed, whether it's calibrated, how the mechanism shapes it. Being in both is reasonable.</p></details>
+            <details><summary>What do members actually work with?</summary><p>Public data — order books, price histories, and resolution records that prediction-market venues publish over open APIs — plus our own weekly forecasts and scores.</p></details>
             <details><summary>What's the time commitment?</summary><p>About three hours a week: one meeting, one forecasting round, and whatever your project needs that week.</p></details>
             <details><summary>Is there a deadline?</summary><p>Rolling. Applications are reviewed weekly, and you can join mid-semester — you start forecasting from the next round.</p></details>
             <details><summary>Can graduate students join?</summary><p>Yes. Every track is open to graduate students.</p></details>
