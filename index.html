@@ -1,0 +1,473 @@
+<meta name="description" content="A forecasting and prediction-market research group forming at the University of Illinois Urbana-Champaign. We measure calibration. We do not trade.">
+<meta property="og:title" content="Prediction@Illinois">
+<meta property="og:description" content="Forecasting is a skill. We're going to measure it. A student research group forming at UIUC.">
+<meta property="og:image" content="https://prediction-illinois.github.io/brand/og-image-1200x630.png">
+<meta property="og:url" content="https://prediction-illinois.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="brand/favicon-64.png">
+<title>Prediction@Illinois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F3; --surface:#FFFFFF; --surface-2:#EAEEEB;
+  --ink:#15191A; --ink-2:#39413F; --muted:#657070; --line:#D8DEDA;
+  --yes:#0D7357; --no:#B2452C; --accent:#0D7357; --accent-soft:#D9E8E2;
+  --focus:#0D7357;
+  --serif:"Newsreader",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:74rem; --prose:36rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1211; --surface:#161B19; --surface-2:#1C2320;
+    --ink:#E9EDEA; --ink-2:#BCC5C1; --muted:#8B9691; --line:#252D2A;
+    --yes:#41C1A0; --no:#DB7357; --accent:#41C1A0; --accent-soft:#17302A;
+    --focus:#41C1A0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1211; --surface:#161B19; --surface-2:#1C2320;
+  --ink:#E9EDEA; --ink-2:#BCC5C1; --muted:#8B9691; --line:#252D2A;
+  --yes:#41C1A0; --no:#DB7357; --accent:#41C1A0; --accent-soft:#17302A;
+  --focus:#41C1A0;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:20px}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance; margin:0}
+p{margin:0}
+:where(a,button,input,select,textarea,summary):focus-visible{
+  outline:2px solid var(--focus); outline-offset:2px; border-radius:2px;
+}
+.eyebrow{
+  font-family:var(--mono); font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar{display:flex; align-items:center; gap:18px; min-height:56px; flex-wrap:wrap}
+.mark{font-family:var(--serif); font-size:19px; font-weight:600; letter-spacing:-.01em; text-decoration:none; margin-right:auto}
+.mark .at{color:var(--accent)}
+nav.site{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+nav.site a{font-size:13.5px; color:var(--ink-2); text-decoration:none}
+nav.site a:hover{color:var(--accent)}
+.status{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:3px 9px; white-space:nowrap;
+}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(46px,7vw,84px) 34px; border-bottom:1px solid var(--line)}
+.hero h1{
+  font-family:var(--serif); font-weight:500; letter-spacing:-.022em; line-height:1.04;
+  font-size:clamp(38px,6.6vw,68px); max-width:16ch; margin-block:14px 0;
+}
+.hero h1 em{font-style:italic; color:var(--accent)}
+.lede{max-width:var(--prose); margin-top:20px; font-size:17.5px; color:var(--ink-2)}
+.lede + .lede{margin-top:12px}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px}
+.btn{
+  font-family:var(--sans); font-size:14.5px; font-weight:500;
+  padding:11px 18px; border-radius:3px; text-decoration:none; border:1px solid transparent; cursor:pointer;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-1{background:var(--accent); color:var(--bg); border-color:var(--accent)}
+.btn-1:hover{filter:brightness(1.08)}
+.btn-2{background:transparent; color:var(--ink); border-color:var(--line)}
+.btn-2:hover{border-color:var(--accent); color:var(--accent)}
+
+/* ---------- board ---------- */
+.board{padding-block:40px; border-bottom:1px solid var(--line)}
+.board-head{display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap; margin-bottom:18px}
+.board-note{font-size:12.5px; color:var(--muted); max-width:44ch}
+.rows{display:flex; flex-direction:column; border-top:1px solid var(--line)}
+.row{
+  display:grid; grid-template-columns:1fr 64px 150px; gap:16px; align-items:center;
+  padding-block:14px; border-bottom:1px solid var(--line);
+}
+.q{font-size:14.5px; color:var(--ink); line-height:1.45}
+.q span{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:4px}
+.pct{font-family:var(--mono); font-size:16px; font-weight:500; font-variant-numeric:tabular-nums; text-align:right}
+.track{position:relative; height:6px; background:var(--surface-2); border-radius:999px; overflow:hidden}
+.fill{position:absolute; inset-block:0; left:0; border-radius:999px; background:var(--yes)}
+.row[data-side="no"] .fill{background:var(--no)}
+.row[data-side="no"] .pct{color:var(--no)}
+.row[data-side="yes"] .pct{color:var(--yes)}
+@media (max-width:640px){
+  .row{grid-template-columns:1fr 58px; }
+  .track{grid-column:1 / -1; }
+}
+
+/* ---------- generic section ---------- */
+section.band{padding-block:52px; border-bottom:1px solid var(--line)}
+.h2{font-family:var(--serif); font-weight:500; font-size:clamp(25px,3.4vw,34px); letter-spacing:-.018em; margin-top:10px}
+.sub{max-width:var(--prose); margin-top:12px; color:var(--ink-2); font-size:16px}
+
+.pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:30px}
+.pillar{background:var(--bg); padding:22px 20px}
+.pillar h3{font-family:var(--sans); font-size:15px; font-weight:600; margin-bottom:8px}
+.pillar p{font-size:14px; color:var(--ink-2)}
+.pillar .tag{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:10px}
+
+/* ---------- not ---------- */
+.not{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--no); padding:24px; margin-top:28px; max-width:56rem}
+.not h3{font-family:var(--sans); font-size:15px; font-weight:600; margin-bottom:12px}
+.not ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:8px}
+.not li{font-size:14.5px; color:var(--ink-2)}
+.not li b{color:var(--ink); font-weight:600}
+
+/* ---------- plan ---------- */
+.steps{display:flex; flex-direction:column; margin-top:30px; border-top:1px solid var(--line)}
+.step{display:grid; grid-template-columns:52px 1fr; gap:18px; padding-block:20px; border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--mono); font-size:12px; font-weight:500; color:var(--accent); padding-top:3px; letter-spacing:.06em}
+.step h3{font-family:var(--sans); font-size:15.5px; font-weight:600}
+.step p{font-size:14.5px; color:var(--ink-2); margin-top:6px; max-width:52ch}
+.step .when{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.06em; margin-top:8px; display:block}
+
+/* ---------- roles ---------- */
+.roles{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:28px}
+.role{background:var(--surface); border:1px solid var(--line); padding:18px}
+.role h3{font-family:var(--sans); font-size:14.5px; font-weight:600}
+.role p{font-size:13.5px; color:var(--ink-2); margin-top:6px}
+.role .open{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:2px 7px; border-radius:2px; display:inline-block; margin-bottom:10px}
+
+/* ---------- join ---------- */
+.join-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:44px; margin-top:30px; align-items:start}
+@media (max-width:760px){.join-grid{grid-template-columns:1fr; gap:30px}}
+form{display:flex; flex-direction:column; gap:14px}
+.field{display:flex; flex-direction:column; gap:6px}
+label{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+input,select,textarea{
+  font-family:var(--sans); font-size:14.5px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:2px; padding:10px 12px; width:100%;
+}
+textarea{resize:vertical; min-height:84px; line-height:1.5}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:460px){.two{grid-template-columns:1fr}}
+.out{margin-top:6px; border:1px solid var(--accent); background:var(--accent-soft); padding:16px; border-radius:2px}
+.out p{font-size:13.5px; color:var(--ink-2)}
+.out pre{
+  font-family:var(--mono); font-size:12.5px; line-height:1.55; white-space:pre-wrap; word-break:break-word;
+  background:var(--surface); border:1px solid var(--line); padding:12px; margin-top:10px; overflow-x:auto;
+}
+.mailrow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px}
+.mailrow code{font-family:var(--mono); font-size:14px; background:var(--surface); border:1px solid var(--line); padding:7px 10px}
+.copy{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; background:transparent; border:1px solid var(--line); color:var(--ink-2); padding:7px 11px; border-radius:2px; cursor:pointer}
+.copy:hover{border-color:var(--accent); color:var(--accent)}
+.faq{display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line); padding-block:14px}
+summary{cursor:pointer; font-size:14.5px; font-weight:500; list-style:none; display:flex; justify-content:space-between; gap:14px; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; font-family:var(--mono); color:var(--accent); font-size:15px}
+details[open] summary::after{content:"–"}
+details p{font-size:14px; color:var(--ink-2); margin-top:10px; max-width:52ch}
+
+/* ---------- footer ---------- */
+footer{padding-block:38px 46px; color:var(--muted); font-size:12.5px}
+.disclaim{border:1px solid var(--line); padding:16px; max-width:62rem; line-height:1.6}
+.foot-row{display:flex; gap:18px; flex-wrap:wrap; margin-top:20px; align-items:center}
+.foot-row a{color:var(--ink-2); text-decoration:none}
+.foot-row a:hover{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="mark" href="#top">Prediction<span class="at">@</span>Illinois</a>
+    <nav class="site">
+      <a href="#work">What we do</a>
+      <a href="#plan">First semester</a>
+      <a href="#roles">Roles</a>
+      <a href="#join">Join</a>
+    </nav>
+    <span class="status">Forming · Fall 2026</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <span class="eyebrow">University of Illinois Urbana–Champaign</span>
+    <h1>Forecasting is a skill. We're going to <em>measure</em> it.</h1>
+    <p class="lede">Prediction@Illinois is a student group forming at UIUC around a narrow claim: the interesting thing about prediction markets is not the bet, it's the <strong>number</strong>. How a crowd prices an uncertain event, whether that price is calibrated, and what market design makes it better or worse.</p>
+    <p class="lede">We run forecasting tournaments, study live market microstructure with public data, and write the results up. We do not trade and we do not take positions.</p>
+    <div class="cta-row">
+      <a class="btn btn-1" href="#join">Join the founding list</a>
+      <a class="btn btn-2" href="#work">What we actually do</a>
+    </div>
+  </section>
+
+  <section class="board wrap" aria-labelledby="board-h">
+    <div class="board-head">
+      <div>
+        <span class="eyebrow">Sample question set</span>
+        <h2 id="board-h" class="h2" style="font-size:22px; margin-top:6px">The kind of question we take apart</h2>
+      </div>
+      <p class="board-note">Illustrative figures, not live prices. Each one is a research object: where did the number come from, and was it right?</p>
+    </div>
+    <div class="rows">
+      <div class="row" data-side="yes">
+        <div class="q">Do market prices beat the polling average 30 days out from a US House race?<span>Calibration · resolution</span></div>
+        <div class="pct">64%</div>
+        <div class="track"><div class="fill" style="width:64%"></div></div>
+      </div>
+      <div class="row" data-side="no">
+        <div class="q">Does the longshot bias in sub-5¢ contracts survive fee-adjusted returns?<span>Microstructure · pricing</span></div>
+        <div class="pct">23%</div>
+        <div class="track"><div class="fill" style="width:23%"></div></div>
+      </div>
+      <div class="row" data-side="yes">
+        <div class="q">Do resolution-source disputes cluster in markets with thin order books?<span>Mechanism design · oracle risk</span></div>
+        <div class="pct">71%</div>
+        <div class="track"><div class="fill" style="width:71%"></div></div>
+      </div>
+      <div class="row" data-side="no">
+        <div class="q">Can an undergraduate cohort beat the market's Brier score over one semester?<span>Forecasting practice</span></div>
+        <div class="pct">38%</div>
+        <div class="track"><div class="fill" style="width:38%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band wrap" id="work">
+    <span class="eyebrow">01 — Scope</span>
+    <h2 class="h2">Four things, and nothing else</h2>
+    <p class="sub">A first-year club that tries to do everything does nothing. These four share one method: take a published probability, check it against what happened, explain the gap.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="tag">Practice</span>
+        <h3>Calibrated forecasting</h3>
+        <p>A semester-long internal tournament scored by Brier and log score. Members forecast, the score is public, and we track whether training moves it. The skill transfers to research, trading and policy alike.</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Empirics</span>
+        <h3>Market microstructure</h3>
+        <p>Polymarket and Kalshi publish order books and trade histories over open APIs. We build the pipelines, measure spreads, depth and price impact, and treat fee changes and resolution events as natural experiments.</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Theory</span>
+        <h3>Mechanism &amp; market design</h3>
+        <p>LMSR and automated market makers, scoring rules, subsidy design, and the failure mode nobody prices: ambiguous resolution. Where does the oracle break, and what does that cost the price?</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Evidence</span>
+        <h3>Forecasts and public policy</h3>
+        <p>Markets versus polls versus expert panels, on the questions where being wrong is expensive. This is where the club's output is most legible to people outside finance — and where faculty collaboration is easiest.</p>
+      </div>
+    </div>
+
+    <div class="not">
+      <h3>What this group is not</h3>
+      <ul>
+        <li><b>Not a trading club.</b> We take no positions, pool no capital, and place no orders. The Illinois Gaming Board's position is that prediction markets are gambling activity under state law; a student group in Illinois that facilitated real-money trading would be on the wrong side of that. Our subject is the data these venues publish, which is public.</li>
+        <li><b>Not a second Quant@Illinois.</b> They do quantitative finance and HFT recruiting, and they do it well. Our object is the forecast itself — calibration, aggregation, mechanism — which is closer to statistics and market design than to trading.</li>
+        <li><b>Not a Registered Student Organization yet.</b> We're assembling a founding team first. RSO registration goes through Student Engagement, and we intend to file in Spring 2027.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band wrap" id="plan">
+    <span class="eyebrow">02 — Sequence</span>
+    <h2 class="h2">The first semester, in order</h2>
+    <p class="sub">Each step produces something the next one needs. No step is a social event with a slide deck.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <div>
+          <h3>Assemble five officers</h3>
+          <p>UIUC requires five currently enrolled students in five distinct officer roles before an organization can register. That's the binding constraint, so it comes first.</p>
+          <span class="when">Now → December 2026</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div>
+          <h3>Run the forecasting tournament</h3>
+          <p>Twenty questions, public leaderboard, weekly scoring. It needs no funding, no room booking and no registration — which is exactly why it's the proof of concept.</p>
+          <span class="when">Weeks 1–14</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div>
+          <h3>Ship one data study</h3>
+          <p>A single, finishable empirical question on public Polymarket or Kalshi data, written up properly with the code in the open. One real artifact beats five half-projects.</p>
+          <span class="when">Weeks 4–12</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <div>
+          <h3>Find a faculty sponsor</h3>
+          <p>Economics, Statistics or Gies. A named academic advisor changes how the mission reads to the registration reviewer, and opens the door to lab affiliation later.</p>
+          <span class="when">Semester 1</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">05</div>
+        <div>
+          <h3>Register as an RSO</h3>
+          <p>Orientation, a constitution, a review meeting with Student Engagement staff, then registration. The deadlines are hard: orientation by 31 March, staff meeting by 15 May, registration by 31 May.</p>
+          <span class="when">Spring 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band wrap" id="roles">
+    <span class="eyebrow">03 — Founding team</span>
+    <h2 class="h2">Five seats, all open</h2>
+    <p class="sub">No experience in finance required, and no experience in prediction markets required. Bring one of: statistics, code, writing, or the ability to make other people show up.</p>
+    <div class="roles">
+      <div class="role"><span class="open">Open</span><h3>President</h3><p>Runs the registration process and owns the relationship with Student Engagement and the faculty sponsor.</p></div>
+      <div class="role"><span class="open">Open</span><h3>Vice President</h3><p>Owns the tournament: question writing, scoring, leaderboard, weekly cadence.</p></div>
+      <div class="role"><span class="open">Open</span><h3>Research Lead</h3><p>Owns the data pipeline and the semester study. Python and a tolerance for messy APIs.</p></div>
+      <div class="role"><span class="open">Open</span><h3>Treasurer</h3><p>Handles the organization's funds through the Student Org Finance Center once registered. Meticulous, not financial.</p></div>
+      <div class="role"><span class="open">Open</span><h3>Membership &amp; Comms</h3><p>Recruiting, the write-ups, and the fact that anyone outside the room knows this exists.</p></div>
+    </div>
+  </section>
+
+  <section class="band wrap" id="join">
+    <span class="eyebrow">04 — Join</span>
+    <h2 class="h2">Tell us what you'd want to work on</h2>
+    <div class="join-grid">
+      <div>
+        <form id="signup" novalidate>
+          <div class="two">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="netid@illinois.edu"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="f-year">Year</label>
+              <select id="f-year" name="year">
+                <option>Freshman</option><option>Sophomore</option><option>Junior</option>
+                <option>Senior</option><option>Graduate</option><option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-major">Major</label><input id="f-major" name="major" type="text" placeholder="Stat, CS, Econ, …"></div>
+          </div>
+          <div class="field"><label for="f-role">Most interested in</label>
+            <select id="f-role" name="role">
+              <option>Forecasting tournament</option>
+              <option>Data / market microstructure</option>
+              <option>Mechanism &amp; market design</option>
+              <option>Policy &amp; writing</option>
+              <option>An officer seat</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-note">One thing you'd want to find out</label><textarea id="f-note" name="note" placeholder="A question you'd actually want answered."></textarea></div>
+          <button class="btn btn-1" type="submit" style="align-self:flex-start">Send it</button>
+        </form>
+        <div class="out" id="out" hidden>
+          <p id="out-msg"></p>
+          <pre id="out-pre"></pre>
+          <button class="copy" type="button" id="out-copy" style="margin-top:10px">Copy message</button>
+        </div>
+        <div class="mailrow">
+          <span class="eyebrow">Or email</span>
+          <code id="mail">ethanyang85@outlook.com</code>
+          <button class="copy" type="button" id="mail-copy">Copy</button>
+        </div>
+      </div>
+
+      <div>
+        <span class="eyebrow">Questions we get</span>
+        <div class="faq" style="margin-top:14px">
+          <details open><summary>Do I need to know anything about prediction markets?</summary><p>No. Half the point of the first semester is the tournament, which teaches calibration from scratch. If you can read a probability and argue about it, that's the entry bar.</p></details>
+          <details><summary>Is this a trading club?</summary><p>No. We place no orders and hold no positions. We work with the public data these venues publish, which is a different activity with a different legal footing.</p></details>
+          <details><summary>How is this different from Quant@Illinois?</summary><p>Quant is quantitative finance and trading recruitment. We're about the forecast as an object of study: how it's formed, whether it's calibrated, and how the mechanism shapes it. Being in both is reasonable.</p></details>
+          <details><summary>Are you a registered student organization?</summary><p>Not yet. We're building the founding team first and plan to register through Student Engagement in Spring 2027. Registration requires five officers, a constitution, and a review meeting.</p></details>
+          <details><summary>Can graduate students join?</summary><p>Yes. Officer roles are limited to currently enrolled students by university rule, which includes graduate students.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="disclaim">
+      <strong style="color:var(--ink-2)">Prediction@Illinois</strong> is a student-founded group in formation at the University of Illinois Urbana–Champaign. It is not a Registered Student Organization, and it is not affiliated with, endorsed by, or authorized to speak on behalf of the University of Illinois. Nothing on this site is an offer, solicitation, or facilitation of wagering, and nothing here is investment advice.
+    </div>
+    <div class="foot-row">
+      <span>© 2026 Prediction@Illinois</span>
+      <a href="#work">What we do</a>
+      <a href="#plan">First semester</a>
+      <a href="#join">Join</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+// Set this to a Formspree / Getform endpoint to receive submissions by email.
+// Leave null and the form composes a message the visitor copies instead.
+const FORM_ENDPOINT = null;
+const CONTACT = "ethanyang85@outlook.com";
+
+function flash(btn, word){
+  const old = btn.textContent; btn.textContent = word;
+  setTimeout(() => { btn.textContent = old; }, 1600);
+}
+async function copyText(text, btn){
+  try { await navigator.clipboard.writeText(text); flash(btn, "Copied"); }
+  catch { flash(btn, "Select it"); }
+}
+
+document.getElementById("mail-copy").addEventListener("click", e => copyText(CONTACT, e.currentTarget));
+
+const form = document.getElementById("signup");
+const out = document.getElementById("out");
+const outMsg = document.getElementById("out-msg");
+const outPre = document.getElementById("out-pre");
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form).entries());
+  if (!d.name || !d.email) {
+    outMsg.textContent = "Add a name and an email first.";
+    outPre.hidden = true; out.hidden = false; return;
+  }
+  const body =
+    "Prediction@Illinois — founding list\n" +
+    "Name:      " + d.name + "\n" +
+    "Email:     " + d.email + "\n" +
+    "Year:      " + d.year + "\n" +
+    "Major:     " + (d.major || "—") + "\n" +
+    "Interest:  " + d.role + "\n" +
+    "Question:  " + (d.note || "—");
+
+  if (FORM_ENDPOINT) {
+    try {
+      const r = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(d)
+      });
+      if (r.ok) {
+        outPre.hidden = true;
+        outMsg.textContent = "Got it — we'll be in touch from " + CONTACT + ".";
+        out.hidden = false; form.reset(); return;
+      }
+    } catch (_) { /* fall through to copy */ }
+  }
+  outMsg.textContent = "Copy this and send it to " + CONTACT + " — we read every one.";
+  outPre.textContent = body; outPre.hidden = false; out.hidden = false;
+});
+
+document.getElementById("out-copy").addEventListener("click", e => copyText(outPre.textContent, e.currentTarget));
+</script>

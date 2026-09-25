@@ -1,0 +1,24 @@
+# Prediction@Illinois
+
+Website for Prediction@Illinois — a student forecasting and prediction-market research
+group forming at the University of Illinois Urbana-Champaign.
+
+We run scored forecasting tournaments, study publicly available prediction-market data,
+and work through the mechanism design behind how those prices get made. We are an
+educational and research group: we place no orders, hold no positions, and pool no funds.
+
+**Founding team forming now.** Five officer seats are open. No finance background required.
+
+- Site: https://prediction-illinois.github.io
+- Contact: see the Join section on the site
+
+## Development
+
+Static single file, no build step. Open `index.html` in a browser.
+
+Deployed with GitHub Pages from the `main` branch.
+
+---
+
+Prediction@Illinois is not a Registered Student Organization and is not affiliated with,
+endorsed by, or authorized to speak on behalf of the University of Illinois.

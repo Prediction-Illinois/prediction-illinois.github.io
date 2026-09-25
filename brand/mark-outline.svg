@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Prediction at Illinois">
+  <rect x="8" y="8" width="496" height="496" rx="100" fill="none" stroke="#0D7357" stroke-width="16"/>
+  <g stroke="#0D7357" stroke-linecap="round" fill="none">
+    <path d="M118 394 L394 118" stroke-width="14" opacity="0.40"/>
+    <path d="M118 118 L118 394 L394 394" stroke-width="16" opacity="0.25"/>
+  </g>
+  <g fill="#0D7357">
+    <circle cx="176" cy="352" r="25"/>
+    <circle cx="252" cy="262" r="25"/>
+    <circle cx="336" cy="174" r="25"/>
+  </g>
+</svg>
