@@ -149,14 +149,20 @@ section.band{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--li
 .sub{max-width:var(--prose);color:var(--ink-2);font-size:16px;line-height:1.6}
 
 
-.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:40px;position:relative}
-@media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-height:190px}
-.step .n{font-family:var(--mono);font-size:11px;color:var(--brand);letter-spacing:.1em;display:flex;justify-content:space-between}
-.step .n span{color:var(--muted)}
-.step h3{font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.01em;margin-top:4px}
-.step p{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:1000px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.team{grid-template-columns:1fr}}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.person .ava{width:56px;height:56px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;color:var(--brand);overflow:hidden}
+.person .ava img{width:100%;height:100%;object-fit:cover;display:block}
+.person .ava svg{width:26px;height:26px}
+.person h3{font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.01em;margin-top:4px}
+.person .r{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.person p{font-size:13px;color:var(--ink-2);line-height:1.5}
+.person a{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-decoration:none;margin-top:auto;padding-top:8px}
+.person a:hover{color:var(--brand)}
 
 .roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
 @media (max-width:1000px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -229,7 +235,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
       <span class="wordmark">Prediction<span class="at">@</span>Illinois</span>
     </a>
     <nav class="site">
-      <a href="#plan">Program</a>
+      <a href="#team">Team</a>
       <a href="#roles">Tracks</a>
     </nav>
     <span class="chip"><i class="dot"></i><span class="t">Fall 2026 ·</span> Applications open</span>
@@ -244,10 +250,9 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
       <span class="eyebrow brand">University of Illinois Urbana–Champaign</span>
       <h1>We study<br><em>prediction</em><br>markets.</h1>
       <p class="lede">A student research group at UIUC that takes prediction markets as its whole subject: <strong>how prices form</strong> and who moves them, <strong>how well the crowd forecasts</strong> and when it doesn't, <strong>how contracts are designed</strong> and resolved, and <strong>what the markets are actually good for</strong> — across elections, sports, crypto, economics, tech, and weather.</p>
-      <p class="lede">Weekly scored forecasting, empirical research on public market data, and a written result at the end of every semester.</p>
       <div class="cta-row">
         <a class="btn btn-1 btn-lg" href="#join">Apply for Fall 2026</a>
-        <a class="btn btn-2 btn-lg" href="#plan">See the program</a>
+        <a class="btn btn-2 btn-lg" href="#roles">See the tracks</a>
         <span class="cta-note">Rolling · all majors · no experience required</span>
       </div>
     </div>
@@ -298,18 +303,21 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
   </div>
 
 
-  <section class="band" id="plan">
+
+  <section class="band" id="team" hidden>
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="eyebrow">01 — Program</span><h2 class="h2">What a semester looks like</h2></div>
-        <p class="sub">Every member forecasts every week and works on one project. Everything is scored, and everything ends in something written.</p>
+        <div><span class="eyebrow">01 — Team</span><h2 class="h2">Who runs it</h2></div>
+        <p class="sub"></p>
       </div>
-      <div class="steps">
-        <div class="step"><div class="n">01 <span>Weekly</span></div><h3>Forecasting round</h3><p>Twenty questions a semester. Submit probabilities, get a Brier and log score back, and watch your calibration curve move on a public leaderboard.</p></div>
-        <div class="step"><div class="n">02 <span>Per question</span></div><h3>Resolution review</h3><p>When a question resolves, we take the crowd's miss apart: who was right, why, and what the market price said at the same moment.</p></div>
-        <div class="step"><div class="n">03 <span>Weekly</span></div><h3>Reading group</h3><p>One paper a week on market and mechanism design — scoring rules, LMSR, automated market makers, resolution. One member presents, everyone argues.</p></div>
-        <div class="step"><div class="n">04 <span>Semester</span></div><h3>Research project</h3><p>Join a team on one empirical question on public market data. Real pipeline, real analysis, code in the open.</p></div>
-        <div class="step"><div class="n">05 <span>End of term</span></div><h3>Write-up</h3><p>Every project ends in a written report with contributors named. It's the artifact you take with you.</p></div>
+      <div class="team">
+        <!-- one .person per lead; unhide the section once names are in
+        <div class="person">
+          <div class="ava"><svg><use href="#mark"/></svg></div>
+          <span class="r">President</span><h3>Name</h3><p>Major · Year</p>
+          <a href="https://linkedin.com/in/…" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+        -->
       </div>
     </div>
   </section>
@@ -386,7 +394,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
     <div class="foot-row">
       <a class="brandlink" href="#top" aria-label="Back to top"><svg style="color:var(--brand)"><use href="#mark"/></svg></a>
       <span>© 2026 Prediction@Illinois</span>
-      <a href="#plan">Program</a><a href="#roles">Tracks</a><a href="#join">Apply</a>
+      <a href="#team">Team</a><a href="#roles">Tracks</a><a href="#join">Apply</a>
       <a href="https://github.com/Prediction-Illinois" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
