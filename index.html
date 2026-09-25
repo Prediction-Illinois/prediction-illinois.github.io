@@ -175,13 +175,16 @@ section.band{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--li
 .step h3{font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.01em;margin-top:4px}
 .step p{font-size:13.5px;color:var(--ink-2);line-height:1.5}
 
-.roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
 @media (max-width:1000px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.roles{grid-template-columns:1fr}}
-.role{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
-.role .st{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--yes);background:var(--yes-soft);padding:3px 8px;border-radius:999px;align-self:flex-start}
-.role h3{font-family:var(--sans);font-weight:600;font-size:15px}
-.role p{font-size:13px;color:var(--ink-2);line-height:1.5}
+.role{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:9px;transition:border-color .2s ease,transform .2s ease}
+.role:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.role .st{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);padding:3px 8px;border-radius:999px;align-self:flex-start}
+.role h3{font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:-.01em}
+.role p{font-size:13.5px;color:var(--ink-2);line-height:1.55;flex:1}
+.role .src{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.role .src b{color:var(--ink-2);font-weight:500}
 
 /* join */
 .join{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:36px;align-items:start}
@@ -301,14 +304,14 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
 
   <div class="ticker" aria-hidden="true">
     <div class="tk-track" id="tk">
-      <span class="tk" data-side="yes"><span class="cat">Fed</span>Cut of 25bp at the next FOMC<span class="num">58%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Box office</span>Opening weekend above $80M<span class="num">31%</span></span>
-      <span class="tk" data-side="yes"><span class="cat">Campus</span>Illini finish above .500 in conference<span class="num">67%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Macro</span>CPI print above consensus<span class="num">44%</span></span>
+      <span class="tk" data-side="yes"><span class="cat">Economics</span>Cut of 25bp at the next FOMC<span class="num">58%</span></span>
+      <span class="tk" data-side="no"><span class="cat">Culture</span>Opening weekend above $80M<span class="num">31%</span></span>
+      <span class="tk" data-side="yes"><span class="cat">Sports</span>Illini finish above .500 in conference<span class="num">67%</span></span>
+      <span class="tk" data-side="no"><span class="cat">Economics</span>CPI print above consensus<span class="num">44%</span></span>
       <span class="tk" data-side="yes"><span class="cat">Tech</span>Model released before quarter end<span class="num">72%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Weather</span>Champaign first snow before Nov 20<span class="num">39%</span></span>
-      <span class="tk" data-side="yes"><span class="cat">Policy</span>Bill clears committee this session<span class="num">55%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Markets</span>VIX closes above 20 this month<span class="num">28%</span></span>
+      <span class="tk" data-side="no"><span class="cat">Crypto</span>BTC above $100k at month end<span class="num">39%</span></span>
+      <span class="tk" data-side="yes"><span class="cat">Elections</span>House margin under 10 seats<span class="num">55%</span></span>
+      <span class="tk" data-side="no"><span class="cat">Finance</span>VIX closes above 20 this month<span class="num">28%</span></span>
     </div>
   </div>
 
@@ -382,14 +385,16 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
   <section class="band" id="roles">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="eyebrow">03 — Tracks</span><h2 class="h2">Pick a track</h2></div>
-        <p class="sub">Everyone forecasts. Beyond that, you choose where your project time goes. No finance background required for any of them.</p>
+        <div><span class="eyebrow">03 — Tracks</span><h2 class="h2">Pick a market</h2></div>
+        <p class="sub">The four instruments above are the method. Tracks are what you point them at. Everyone forecasts across all of them; your project lives in one. Pick the one whose data you already read for fun.</p>
       </div>
       <div class="roles">
-        <div class="role"><span class="st">Stats</span><h3>Forecasting</h3><p>Question writing, scoring, aggregation methods, and the leaderboard itself. If you like being graded by reality, this is the track.</p></div>
-        <div class="role"><span class="st">Python</span><h3>Data &amp; microstructure</h3><p>Pipelines on Polymarket and Kalshi public APIs. Spreads, depth, price impact, and fee or resolution events as natural experiments.</p></div>
-        <div class="role"><span class="st">Theory</span><h3>Mechanism design</h3><p>LMSR, automated market makers, proper scoring rules, subsidy design, and what breaks when the resolution source is ambiguous.</p></div>
-        <div class="role"><span class="st">Writing</span><h3>Policy &amp; evidence</h3><p>Markets against polls and expert panels on questions where being wrong is expensive. The track most legible outside finance.</p></div>
+        <div class="role"><span class="st">Elections</span><h3>Elections &amp; Politics</h3><p>Polls against prices through the 2026 midterms: margins, turnout, and who calls it first. The oldest prediction-market question, and this semester it's live.</p><div class="src">Resolves from <b>certified results, AP calls</b></div></div>
+        <div class="role"><span class="st">Sports</span><h3>Sports</h3><p>The deepest markets and the cleanest ground truth. Win probabilities, spreads, and in-game price moves measured against the box score.</p><div class="src">Resolves from <b>final scores</b></div></div>
+        <div class="role"><span class="st">Crypto</span><h3>Crypto</h3><p>Price-threshold and protocol-event markets where the order book and the chain are both public. The easiest place to do microstructure research end to end.</p><div class="src">Resolves from <b>exchange prices, on-chain state</b></div></div>
+        <div class="role"><span class="st">Economics</span><h3>Economics &amp; Finance</h3><p>Fed decisions, CPI prints, jobs reports, earnings. Scheduled releases make natural experiments: the price minutes before against the number.</p><div class="src">Resolves from <b>BLS, Fed, filings</b></div></div>
+        <div class="role"><span class="st">Tech</span><h3>Tech &amp; Science</h3><p>Model releases, product launches, approvals, launches that slip. Fast-resolving questions with strong priors and thin liquidity — good for finding where markets are wrong.</p><div class="src">Resolves from <b>official announcements</b></div></div>
+        <div class="role"><span class="st">Culture</span><h3>Culture</h3><p>Box office, awards, charts, streaming. Small markets where everyone has an opinion — the fastest way to learn what overconfidence feels like on a scorecard.</p><div class="src">Resolves from <b>published numbers, official results</b></div></div>
       </div>
     </div>
   </section>
@@ -414,7 +419,7 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
               <div class="field"><label for="f-major">Major</label><input id="f-major" name="major" type="text" placeholder="Stat, CS, Econ, …"></div>
             </div>
             <div class="field"><label for="f-role">Track</label>
-              <select id="f-role" name="role"><option>Forecasting</option><option>Data &amp; microstructure</option><option>Mechanism design</option><option>Policy &amp; evidence</option><option>Not sure yet</option></select>
+              <select id="f-role" name="role"><option>Elections &amp; Politics</option><option>Sports</option><option>Crypto</option><option>Economics &amp; Finance</option><option>Tech &amp; Science</option><option>Culture</option><option>Not sure yet</option></select>
             </div>
             <div class="field"><label for="f-note">One thing you'd want to find out</label><textarea id="f-note" name="note" placeholder="A question you'd actually want answered."></textarea></div>
             <button class="btn btn-1 btn-lg" type="submit" style="align-self:flex-start">Submit application</button>
