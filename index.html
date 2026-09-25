@@ -1,6 +1,6 @@
-<meta name="description" content="A student research group at the University of Illinois Urbana-Champaign that studies prediction markets end to end — pricing, forecasting, mechanism, application — across elections, sports, crypto, economics, tech, and weather. Fall 2026 applications open.">
+<meta name="description" content="Prediction@Illinois is a student research organization at the University of Illinois Urbana-Champaign focused on prediction markets: how they price events, how well they forecast, how contracts are designed and resolved, and what they are good for. Fall 2026 applications open.">
 <meta property="og:title" content="Prediction@Illinois">
-<meta property="og:description" content="We study prediction markets — pricing, forecasting, mechanism, application. A student research group at UIUC. Fall 2026 applications open.">
+<meta property="og:description" content="Prediction market research at Illinois. A student research organization at UIUC — Fall 2026 applications open.">
 <meta property="og:image" content="https://prediction-illinois.github.io/brand/og-image-1200x630.png">
 <meta property="og:url" content="https://prediction-illinois.github.io/">
 <meta property="og:type" content="website">
@@ -10,7 +10,7 @@
 <script>(function(){var r=document.documentElement;try{if(!r.dataset.theme){r.dataset.theme=localStorage.getItem("pi-theme")==="light"?"light":"dark"}}catch(e){r.dataset.theme="dark"}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
   color-scheme:dark;
@@ -19,7 +19,7 @@
   --brand:#FF6B2C; --brand-ink:#0B0D10; --brand-soft:rgba(255,107,44,.12); --brand-line:rgba(255,107,44,.35);
   --yes:#34D399; --yes-soft:rgba(52,211,153,.13); --no:#F87171; --no-soft:rgba(248,113,113,.13);
   --glass:rgba(11,13,16,.78);
-  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --wrap:76rem; --prose:34rem;
@@ -59,7 +59,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgrou
 .bar{display:flex;align-items:center;gap:20px;min-height:62px}
 .brandlink{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
 .brandlink svg{width:26px;height:26px}
-.wordmark{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.025em;font-variation-settings:"opsz" 24}
+.wordmark{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em}
 .wordmark .at{color:var(--brand)}
 nav.site{display:flex;gap:22px;align-items:center}
 nav.site a{font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
@@ -81,8 +81,9 @@ nav.site a:hover{color:var(--ink)}
 /* hero */
 .hero{padding-block:clamp(48px,8vw,104px) clamp(40px,6vw,72px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 @media (max-width:940px){.hero{grid-template-columns:1fr}}
-.hero h1{font-family:var(--display);font-weight:700;font-variation-settings:"opsz" 96;font-size:clamp(44px,7.2vw,86px);line-height:.98;letter-spacing:-.035em;margin-top:18px;max-width:11ch}
-.hero h1 em{font-style:normal;color:var(--brand)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.2vw,64px);line-height:1.04;letter-spacing:-.03em;margin-top:18px;max-width:14ch}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo>div:first-child{max-width:46rem}
 .lede{max-width:var(--prose);margin-top:22px;font-size:17px;color:var(--ink-2);line-height:1.6}
 .lede strong{color:var(--ink);font-weight:600}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;align-items:center}
@@ -95,26 +96,7 @@ nav.site a:hover{color:var(--ink)}
 .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .live i{width:6px;height:6px;border-radius:50%;background:var(--brand);display:inline-block;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.feat{padding:18px 16px 14px}
-.feat .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center}
-.feat .tag b{color:var(--brand);font-weight:500}
-.feat h3{font-family:var(--sans);font-weight:600;font-size:17px;line-height:1.35;margin-top:8px;letter-spacing:-.01em}
-.sides{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.side{border-radius:10px;padding:11px 12px;display:flex;justify-content:space-between;align-items:center;border:1px solid transparent}
-.side.yes{background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 30%,transparent)}
-.side.no{background:var(--no-soft);border-color:color-mix(in srgb,var(--no) 30%,transparent)}
-.side .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.side.yes .lbl,.side.yes .pct{color:var(--yes)} .side.no .lbl,.side.no .pct{color:var(--no)}
-.side .pct{font-family:var(--mono);font-weight:600;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.spark{margin-top:14px;height:74px;position:relative}
-.spark svg{width:100%;height:100%}
-.spark .grid line{stroke:var(--line);stroke-width:1}
-.spark .path{fill:none;stroke:var(--yes);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.spark .area{fill:url(#sparkfill)}
-.spark .end{fill:var(--yes)}
-.spark .lab{font-family:var(--mono);font-size:9px;fill:var(--muted)}
-.meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em}
-.meta b{color:var(--ink-2);font-weight:500}
+
 .rows{border-top:1px solid var(--line)}
 .row{display:grid;grid-template-columns:1fr auto 92px;gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
 .row:last-child{border-bottom:0}
@@ -145,7 +127,7 @@ nav.site a:hover{color:var(--ink)}
 section.band{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--line)}
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end}
 @media (max-width:760px){.sec-head{grid-template-columns:1fr}}
-.h2{font-family:var(--display);font-weight:700;font-variation-settings:"opsz" 72;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.03em;line-height:1.02;margin-top:12px}
+.h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em;line-height:1.05;margin-top:12px}
 .sub{max-width:var(--prose);color:var(--ink-2);font-size:16px;line-height:1.6}
 
 
@@ -221,10 +203,6 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
         <path d="M62 37 L62 66 Q62 82.5 55.73 82.5 A33 33 0 1 1 82.5 55.73 L91.5 63.5"/>
       </g>
     </symbol>
-    <linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#34D399" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
-    </linearGradient>
   </defs>
 </svg>
 
@@ -245,11 +223,11 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
 </header>
 
 <main id="top">
-  <section class="wrap hero">
+  <section class="wrap hero" id="hero">
     <div>
       <span class="eyebrow brand">University of Illinois Urbana–Champaign</span>
-      <h1>We study<br><em>prediction</em><br>markets.</h1>
-      <p class="lede">A student research group at UIUC that takes prediction markets as its whole subject: <strong>how prices form</strong> and who moves them, <strong>how well the crowd forecasts</strong> and when it doesn't, <strong>how contracts are designed</strong> and resolved, and <strong>what the markets are actually good for</strong> — across elections, sports, crypto, economics, tech, and weather.</p>
+      <h1>Prediction market research at Illinois.</h1>
+      <p class="lede">Prediction@Illinois is a student research organization at UIUC. We research how prediction markets price events, how well they forecast, how their contracts are designed and resolved, and what they are good for — across elections, sports, crypto, economics, tech, and weather.</p>
       <div class="cta-row">
         <a class="btn btn-1 btn-lg" href="#join">Apply for Fall 2026</a>
         <a class="btn btn-2 btn-lg" href="#roles">See the tracks</a>
@@ -257,52 +235,19 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
       </div>
     </div>
 
-    <div class="board" aria-label="Sample research board">
+    <div class="board" id="board" hidden aria-label="Live prediction markets">
       <div class="board-head">
-        <span class="eyebrow">Research board · illustrative</span>
-        <span class="live"><i></i>Fall 2026</span>
+        <span class="eyebrow">Polymarket · most traded, 24h</span>
+        <span class="live"><i></i>Live</span>
       </div>
-      <div class="feat">
-        <div class="tag"><b>Elections</b> · resolves Nov 3</div>
-        <h3>Do market prices beat the polling average 30 days out from a US House race?</h3>
-        <div class="sides">
-          <div class="side yes"><span class="lbl">Yes</span><span class="pct num" data-count="64">64%</span></div>
-          <div class="side no"><span class="lbl">No</span><span class="pct num" data-count="36">36%</span></div>
-        </div>
-        <div class="spark">
-          <svg viewBox="0 0 320 74" preserveAspectRatio="none" aria-hidden="true">
-            <g class="grid"><line x1="0" y1="18" x2="320" y2="18"/><line x1="0" y1="37" x2="320" y2="37"/><line x1="0" y1="56" x2="320" y2="56"/></g>
-            <path class="area" d="M0 44 L14 46 L28 41 L42 43 L56 39 L70 40 L84 35 L98 37 L112 33 L126 34 L140 30 L154 32 L168 28 L182 25 L196 27 L210 23 L224 24 L238 21 L252 22 L266 19 L280 20 L294 17 L308 18 L320 16 L320 74 L0 74 Z"/>
-            <path class="path" id="sparkpath" d="M0 44 L14 46 L28 41 L42 43 L56 39 L70 40 L84 35 L98 37 L112 33 L126 34 L140 30 L154 32 L168 28 L182 25 L196 27 L210 23 L224 24 L238 21 L252 22 L266 19 L280 20 L294 17 L308 18 L320 16"/>
-            <circle class="end" cx="320" cy="16" r="3"/>
-            <text class="lab" x="4" y="14">70</text><text class="lab" x="4" y="52">50</text>
-          </svg>
-        </div>
-        <div class="meta"><span><b>42</b> forecasters</span><span><b>0.191</b> Brier</span><span>Question <b>#07</b> / 20</span></div>
-      </div>
-      <div class="rows">
-        <div class="row" data-side="yes"><div class="q">Does the pre-game favorite win as often as its price implies?<span>Sports</span></div><div class="pct num" data-count="71">71%</div><div class="track"><i style="transform:scaleX(.71)"></i></div></div>
-        <div class="row" data-side="no"><div class="q">Does longshot bias in sub-5¢ contracts survive fee-adjusted returns?<span>Crypto</span></div><div class="pct num" data-count="23">23%</div><div class="track"><i style="transform:scaleX(.23)"></i></div></div>
-        <div class="row" data-side="yes"><div class="q">Does the daily-high market beat the NWS forecast at 24 hours?<span>Weather</span></div><div class="pct num" data-count="58">58%</div><div class="track"><i style="transform:scaleX(.58)"></i></div></div>
-      </div>
-      <div class="board-foot">Figures are illustrative. Scored by Brier and log score; every question resolves against a public source.</div>
+      <div class="rows" id="board-rows"></div>
+      <div class="board-foot">Prices from Polymarket's public API at page load. Shown as research material.</div>
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="tk-track" id="tk">
-      <span class="tk" data-side="yes"><span class="cat">Economics</span>Cut of 25bp at the next FOMC<span class="num">58%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Weather</span>Champaign high above 60°F on Friday<span class="num">31%</span></span>
-      <span class="tk" data-side="yes"><span class="cat">Sports</span>Illini finish above .500 in conference<span class="num">67%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Economics</span>CPI print above consensus<span class="num">44%</span></span>
-      <span class="tk" data-side="yes"><span class="cat">Tech</span>Model released before quarter end<span class="num">72%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Crypto</span>BTC above $100k at month end<span class="num">39%</span></span>
-      <span class="tk" data-side="yes"><span class="cat">Elections</span>House margin under 10 seats<span class="num">55%</span></span>
-      <span class="tk" data-side="no"><span class="cat">Finance</span>VIX closes above 20 this month<span class="num">28%</span></span>
-    </div>
+  <div class="ticker" id="ticker" hidden aria-hidden="true">
+    <div class="tk-track" id="tk"></div>
   </div>
-
-
 
   <section class="band" id="team" hidden>
     <div class="wrap">
@@ -414,30 +359,57 @@ document.getElementById("theme").addEventListener("click", () => {
   try { localStorage.setItem("pi-theme", next); } catch (_) {}
 });
 
-// ticker: duplicate once so the -50% loop is seamless
-const tk = document.getElementById("tk");
-tk.innerHTML += tk.innerHTML;
-
-// count-up on the board
-function countUp(el){
-  const target = +el.dataset.count, t0 = performance.now(), dur = 900;
-  const step = now => {
-    const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-    el.textContent = Math.round(target * e) + "%";
-    if (k < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
+// live board + ticker from Polymarket's public Gamma API (CORS-open). Falls back to a single-column hero.
+const TAGMAP = [
+  [/election/i, "Elections"], [/politic|geopolit|congress|senate|white house|trump|iran|israel|ukraine|world/i, "Politics"],
+  [/sport|esport|games?|nfl|nba|mlb|nhl|soccer|tennis|cfb|ufc|f1|golf|epl|ucl|football|baseball|basketball|hockey/i, "Sports"],
+  [/crypto|bitcoin|ethereum|solana|btc|eth/i, "Crypto"],
+  [/econom|fed|fomc|inflation|finance|business|stock|earnings|rates|oil|commodit|treasur/i, "Economics"],
+  [/tech|ai|science|space|openai|apple|google|nvidia|tesla/i, "Tech"],
+  [/weather|climate|temperature|hurricane|snow/i, "Weather"]
+];
+const mapTag = tags => { const L = (tags || []).map(t => t.label || ""); for (const [re, n] of TAGMAP) if (L.some(l => re.test(l))) return n; return L[0] || "Markets"; };
+const fmtVol = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? "$" + Math.round(v / 1e3) + "K" : "$" + Math.round(v);
+const esc = x => String(x).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// Mutually-exclusive events (negRisk: nominee, champion, Fed decision) → the leading sub-market.
+// Everything else (a game, a price ladder) → the most-traded sub-market, i.e. the main line, not a prop.
+function lead(e) {
+  const ms = (e.markets || []).filter(m => m.active && !m.closed); let best = null;
+  const byProb = !!e.negRisk;
+  for (const m of ms) {
+    let o, p; try { o = JSON.parse(m.outcomes); p = JSON.parse(m.outcomePrices).map(Number); } catch (_) { continue; }
+    if (!o || p.length < 2) continue;
+    const binary = o[0] === "Yes" && o[1] === "No", i = binary ? 0 : p.indexOf(Math.max(...p));
+    const label = binary ? (ms.length > 1 ? (m.groupItemTitle || "Yes") : "Yes") : o[i];
+    const key = byProb ? p[i] : (+m.volume24hr || 0);
+    if (!best || key > best.key) best = { prob: p[i], label, key };
+  }
+  return best;
 }
-// sparkline draw-in
-const sp = document.getElementById("sparkpath");
-if (!reduced) {
-  document.querySelectorAll("[data-count]").forEach(countUp);
-  const L = sp.getTotalLength();
-  sp.style.strokeDasharray = L; sp.style.strokeDashoffset = L;
-  sp.getBoundingClientRect();
-  sp.style.transition = "stroke-dashoffset 1.3s cubic-bezier(.2,.7,.2,1)";
-  requestAnimationFrame(() => { sp.style.strokeDashoffset = 0; });
+async function loadMarkets() {
+  const hero = document.getElementById("hero"), board = document.getElementById("board"),
+        rowsEl = document.getElementById("board-rows"), ticker = document.getElementById("ticker"), tk = document.getElementById("tk");
+  try {
+    const r = await fetch("https://gamma-api.polymarket.com/events?closed=false&active=true&limit=40&order=volume24hr&ascending=false");
+    if (!r.ok) throw 0;
+    const all = [];
+    for (const e of await r.json()) {
+      const b = lead(e); if (!b || b.prob < 0.03 || b.prob > 0.97) continue;
+      all.push({ title: e.title, tag: mapTag(e.tags), prob: b.prob, label: b.label, vol: +e.volume24hr || 0 });
+    }
+    if (all.length < 4) throw 0;
+    const per = {}, top = [], rest = [];
+    for (const x of all) { if (top.length < 6 && (per[x.tag] || 0) < 2) { per[x.tag] = (per[x.tag] || 0) + 1; top.push(x); } else rest.push(x); }
+    rowsEl.innerHTML = top.map(x => `<div class="row" data-side="${x.prob >= .5 ? "yes" : "no"}"><div class="q">${esc(x.title)}<span>${esc(x.tag)} · ${esc(x.label)} · ${fmtVol(x.vol)} 24h</span></div><div class="pct num">${Math.round(x.prob * 100)}%</div><div class="track"><i style="transform:scaleX(${x.prob.toFixed(3)})"></i></div></div>`).join("");
+    board.hidden = false;
+    const items = rest.slice(0, 14);
+    if (items.length >= 6) {
+      tk.innerHTML = items.map(x => `<span class="tk" data-side="${x.prob >= .5 ? "yes" : "no"}"><span class="cat">${esc(x.tag)}</span>${esc(x.title)}<span class="num">${Math.round(x.prob * 100)}%</span></span>`).join("");
+      tk.innerHTML += tk.innerHTML; ticker.hidden = false;
+    }
+  } catch (_) { hero.classList.add("solo"); }
 }
+loadMarkets();
 
 function flash(btn, word){ const old = btn.textContent; btn.textContent = word; setTimeout(() => { btn.textContent = old; }, 1600); }
 async function copyText(text, btn){
