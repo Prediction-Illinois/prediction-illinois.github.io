@@ -1,10 +1,10 @@
 # Prediction@Illinois
 
-Website for Prediction@Illinois — a student forecasting and prediction-market research
-group at the University of Illinois Urbana-Champaign.
+Website for Prediction@Illinois — the student research group for prediction markets at
+the University of Illinois Urbana-Champaign.
 
-We run scored forecasting tournaments, study publicly available prediction-market data,
-and work through the mechanism design behind how those prices get made.
+We study prediction markets end to end — pricing, forecasting, mechanism, application —
+across elections, sports, crypto, economics, tech, and weather.
 
 **Fall 2026 applications are open.** Rolling, all majors, no finance background required.
 
