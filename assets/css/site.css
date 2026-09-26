@@ -159,8 +159,6 @@ details[open] summary::after{content:"–"}
 details p{font-size:14px;color:var(--ink-2);margin-top:10px;max-width:52ch;line-height:1.55}
 
 footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
-.disclaim{border:1px solid var(--line);border-radius:12px;padding:16px 18px;max-width:64rem;line-height:1.6;background:var(--surface)}
-.disclaim strong{color:var(--ink-2)}
 .foot-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;align-items:center}
 .foot-row a{color:var(--ink-2);text-decoration:none}
 .foot-row a:hover{color:var(--brand)}

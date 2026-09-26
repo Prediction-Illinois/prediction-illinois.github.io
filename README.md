@@ -20,7 +20,3 @@ Built with GitHub Pages' native Jekyll — no local tooling. Push to `main` and 
 
 Live market data comes from Polymarket's public Gamma API at page load.
 
----
-
-Prediction@Illinois is not a Registered Student Organization and is not affiliated with,
-endorsed by, or authorized to speak on behalf of the University of Illinois.
