@@ -9,7 +9,7 @@
   role: President
   tracks: [economics, sports]
   linkedin: https://www.linkedin.com/in/ethan85/
-  photo:
+  photo: /assets/team/yicheng-yang.jpg
   major: Computer Science & Economics
   year: Class of 2027
 
@@ -17,6 +17,6 @@
   role: Lead
   tracks: [weather]
   linkedin: https://www.linkedin.com/in/fitz-song/
-  photo:
+  photo: /assets/team/yuxuan-song.jpg
   major: Information Science & Philosophy
   year: Class of 2026
