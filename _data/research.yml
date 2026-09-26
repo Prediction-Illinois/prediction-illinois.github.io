@@ -48,3 +48,28 @@
     states, EFFR drift, integer hedge quantities and funding are accounted for. The current
     hold-to-settlement model is a baseline for further research. The next questions concern exit timing,
     contract and route selection, state coverage, execution and incremental portfolio capital.
+
+- title: "Zeus: A Settlement-Aware Engine for Daily-Temperature Prediction Markets"
+  authors:
+    - name: Yuxuan Song
+      affiliation: University of Illinois Urbana-Champaign
+      linkedin: https://www.linkedin.com/in/fitz-song/
+  year: 2026
+  status: Research system
+  kind: tool             # green badge
+  badge: Calibration report
+  badge_url: https://github.com/fitz-s/zeus/blob/main/docs/reference/calibration_report.md
+  markets: [weather]
+  summary: Prices Polymarket's daily-temperature markets from ECMWF-anchored multi-model forecasts, integrating over each contract's exact settlement rule — station, observation clock, rounding and bin topology — and grades every decision-time probability against verified settlement in a published calibration report.
+  links:
+    code: https://github.com/fitz-s/zeus      # source-available (all rights reserved), not open source
+  abstract: >
+    Each daily-temperature contract turns a city's weather, a settlement station, an observation
+    convention, and an integer rounding rule into a family of mutually exclusive claims. A forecast can
+    be meteorologically accurate and still lose because it prices the wrong station, the wrong preimage
+    of a rounded bin, or a book that cannot fill at the assumed cost. The engine therefore treats
+    understanding as a chain of proof. It records what evidence existed before the decision, turns the
+    forecast into one probability distribution over the complete settlement space, maps each executable
+    route to its actual payoff, and commits only when the lower tail of that decision remains useful after
+    depth, fees, and existing exposure. Settlement judges the exact belief the system committed to — not a
+    more favorable story reconstructed afterwards.
