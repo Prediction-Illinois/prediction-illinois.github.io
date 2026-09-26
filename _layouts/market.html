@@ -15,7 +15,7 @@ layout: default
     <div><span class="eyebrow">Live</span><h2 class="h2">On the board now</h2></div>
     <p class="sub">The most-traded {{ m.chip | downcase }} events on Polymarket at page load. Research material, not a recommendation.</p>
   </div>
-  <div class="board wide" id="board" data-tags="{{ m.tags | join: ',' }}" data-rows="8" hidden aria-label="Live {{ m.chip }} markets">
+  <div class="board wide" id="board" data-tags="{{ m.tags | join: ',' }}" data-tag-ids="{{ m.pm_tags | join: ',' }}" data-rows="8" hidden aria-label="Live {{ m.chip }} markets">
     <div class="board-head"><span class="eyebrow">Polymarket · {{ m.chip }} · most traded, 24h</span><span class="live"><i></i>Live</span></div>
     <div class="rows" id="board-rows"></div>
     <div class="board-foot">Prices from Polymarket's public API at page load.</div>

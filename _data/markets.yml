@@ -1,6 +1,8 @@
-# One entry per market. Key = URL slug (/markets/<key>/). `tags` are the live-board filters.
+# One entry per market. Key = URL slug (/markets/<key>/).
+# `pm_tags` = Polymarket tag ids fetched server-side for the page's live board; `tags` = our category labels.
 elections:
   name: Elections & Politics
+  pm_tags: [144, 2]   # Polymarket tag ids for the live board
   chip: Elections
   tags: [Elections, Politics]
   blurb: Polls against prices through the 2026 midterms — margins, turnout, and who calls it first. The oldest prediction-market question, and this semester it's live.
@@ -11,6 +13,7 @@ elections:
     - Where do resolution disputes in political contracts come from?
 sports:
   name: Sports
+  pm_tags: [1]   # Polymarket tag ids for the live board
   chip: Sports
   tags: [Sports]
   blurb: The deepest markets and the cleanest ground truth. Win probabilities, spreads, and in-game price moves measured against the box score.
@@ -21,6 +24,7 @@ sports:
     - How does liquidity differ across leagues, and what does it do to spreads?
 crypto:
   name: Crypto
+  pm_tags: [21]   # Polymarket tag ids for the live board
   chip: Crypto
   tags: [Crypto]
   blurb: Price-threshold and protocol-event markets where the order book and the chain are both public. The easiest place to do microstructure research end to end.
@@ -31,6 +35,7 @@ crypto:
     - Do protocol-event markets lead or lag on-chain signals?
 economics:
   name: Economics & Finance
+  pm_tags: [100328, 225, 120, 107]   # Polymarket tag ids for the live board
   chip: Economics
   tags: [Economics]
   blurb: Fed decisions, CPI prints, jobs reports, earnings. Scheduled releases make natural experiments — the price minutes before against the number.
@@ -41,6 +46,7 @@ economics:
     - Which macro releases move prices most relative to consensus?
 tech:
   name: Tech & Science
+  pm_tags: [1401, 74, 439]   # Polymarket tag ids for the live board
   chip: Tech
   tags: [Tech]
   blurb: Model releases, product launches, approvals, launches that slip. Fast-resolving questions with strong priors and thin liquidity — good for finding where markets are wrong.
@@ -51,6 +57,7 @@ tech:
     - Do model-release markets move ahead of public announcements?
 weather:
   name: Climate & Weather
+  pm_tags: [84, 87, 104615]   # Polymarket tag ids for the live board
   chip: Weather
   tags: [Weather]
   blurb: Daily temperature and precipitation markets that resolve every day — the most calibration reps you can get in a semester, with a published probabilistic baseline to beat.

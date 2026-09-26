@@ -47,17 +47,27 @@
     const board = $("#board"); if (!board) return;
     const hero = $("#hero"), rowsEl = $("#board-rows"), ticker = $("#ticker"), tk = $("#tk");
     const want = (board.dataset.tags || "").split(",").map(s => s.trim()).filter(Boolean);
-    const limit = +board.dataset.rows || 6, perTag = want.length ? 99 : 2;
+    const ids = (board.dataset.tagIds || "").split(",").map(s => s.trim()).filter(Boolean);
+    const limit = +board.dataset.rows || 6, perTag = (want.length || ids.length) ? 99 : 2;
+    const base = "https://gamma-api.polymarket.com/events?closed=false&active=true&order=volume24hr&ascending=false";
     try {
-      const r = await fetch("https://gamma-api.polymarket.com/events?closed=false&active=true&limit=" + (want.length ? 120 : 40) + "&order=volume24hr&ascending=false");
-      if (!r.ok) throw 0;
+      let events;
+      if (ids.length) {
+        // market page: one request per Polymarket tag id, merged and de-duplicated by event id
+        const lists = await Promise.all(ids.map(id => fetch(base + "&limit=25&tag_id=" + id).then(r => r.ok ? r.json() : [])));
+        const seen = new Set(); events = [];
+        for (const e of lists.flat()) if (e && !seen.has(e.id)) { seen.add(e.id); events.push(e); }
+        events.sort((a, b) => (+b.volume24hr || 0) - (+a.volume24hr || 0));
+      } else {
+        const r = await fetch(base + "&limit=40"); if (!r.ok) throw 0; events = await r.json();
+      }
       const all = [];
-      for (const e of await r.json()) {
+      for (const e of events) {
         const b = lead(e); if (!b || b.prob < 0.03 || b.prob > 0.97) continue;
-        const tag = mapTag(e.tags); if (want.length && !want.includes(tag)) continue;
+        const tag = mapTag(e.tags); if (want.length && !ids.length && !want.includes(tag)) continue;
         all.push({ title: e.title, tag, prob: b.prob, label: b.label, vol: +e.volume24hr || 0 });
       }
-      if (all.length < 3) throw 0;
+      if (all.length < (ids.length ? 1 : 4)) throw 0;
       const per = {}, top = [], rest = [];
       for (const x of all) { if (top.length < limit && (per[x.tag] || 0) < perTag) { per[x.tag] = (per[x.tag] || 0) + 1; top.push(x); } else rest.push(x); }
       rowsEl.innerHTML = top.map(row).join(""); board.hidden = false;
