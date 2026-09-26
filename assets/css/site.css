@@ -228,8 +228,10 @@ nav.site a.on{color:var(--ink)}
 .page-head.rh .rule{display:block;width:40px;height:2px;background:var(--brand);margin:18px 0 20px}
 .page-head.rh .lede{margin-top:0;max-width:40rem}
 .works{display:flex;flex-direction:column;gap:16px}
-.work{position:relative;display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 32px 24px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease}
-.work:hover{border-color:var(--line-2);transform:translateY(-1px)}
+.work{position:relative;display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 32px 24px;transition:border-color .2s ease}
+.work:hover{border-color:var(--line-2)}
+.work h2 a{text-decoration:none;color:inherit}
+.work h2 a:hover{color:var(--brand)}
 .work .yr{position:absolute;top:22px;right:28px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
 .work h2{font-family:var(--sans);font-weight:600;font-size:clamp(17px,1.6vw,21px);letter-spacing:-.012em;line-height:1.3;max-width:60ch;padding-right:56px}
 .work .sum{margin-top:8px;font-size:15px;line-height:1.55;color:var(--ink-2);max-width:78ch}
@@ -238,3 +240,10 @@ nav.site a.on{color:var(--ink)}
 .work .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);padding:5px 10px;border-radius:4px;white-space:nowrap}
 .work.tool .badge{color:var(--yes);background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
 @media (max-width:560px){.work{padding:22px 18px 18px}.work .yr{top:16px;right:16px}.work h2{padding-right:44px}}
+
+.work .abs-t{font:inherit;font-size:13px;color:var(--ink-2);background:none;border:0;padding:0;cursor:pointer;border-bottom:1px solid var(--line-2)}
+.work .abs-t:hover,.work .abs-t[aria-expanded="true"]{color:var(--brand);border-color:var(--brand)}
+.work .abs{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.work .abs p{font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:80ch}
+a.badge{text-decoration:none}
+a.badge:hover{filter:brightness(1.1)}

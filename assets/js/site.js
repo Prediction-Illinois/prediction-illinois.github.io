@@ -85,6 +85,12 @@
   }
   loadMarkets();
 
+  // ---- research: abstract toggles ----
+  document.querySelectorAll("[data-abs]").forEach(b => b.addEventListener("click", () => {
+    const box = b.closest(".work").querySelector(".abs"), open = box.hidden;
+    box.hidden = !open; b.setAttribute("aria-expanded", String(open));
+  }));
+
   // ---- apply form ----
   const form = $("#signup"); if (!form) return;
   const FORM_ENDPOINT = null;                 // set to a Formspree / Getform endpoint to receive submissions by email
