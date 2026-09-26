@@ -1,0 +1,11 @@
+# Leadership and members. One entry per person. Delete the '#' to activate an entry.
+# role: President | Vice President | Research Lead | Treasurer | Membership & Comms | Lead | Member
+# track: elections | sports | crypto | economics | tech | weather   (optional for leadership)
+#
+# - name: Full Name
+#   role: President
+#   track: sports
+#   major: Statistics
+#   year: Junior
+#   linkedin: https://www.linkedin.com/in/username/
+#   photo: /assets/team/username.jpg   # optional, square

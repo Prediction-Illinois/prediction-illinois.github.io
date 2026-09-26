@@ -1,0 +1,45 @@
+---
+layout: default
+title: Apply
+description: Apply to Prediction@Illinois for Fall 2026. Rolling admissions, all majors, no experience required.
+---
+<section class="wrap page-head">
+  <span class="eyebrow brand">Fall 2026</span>
+  <h1>Apply.</h1>
+  <p class="lede">A name, an email, a market, and one question you'd actually want answered. That's the whole application. Rolling — we review weekly.</p>
+</section>
+<section class="band"><div class="wrap">
+  <div class="join">
+    <div class="card">
+      <form id="signup" novalidate>
+        <div class="two">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="netid@illinois.edu"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="f-year">Year</label>
+            <select id="f-year" name="year"><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Graduate</option><option>Other</option></select>
+          </div>
+          <div class="field"><label for="f-major">Major</label><input id="f-major" name="major" type="text" placeholder="Stat, CS, Econ, …"></div>
+        </div>
+        <div class="field"><label for="f-role">Market</label>
+          <select id="f-role" name="role">{% for m in site.data.markets %}<option value="{{ m[0] }}">{{ m[1].name }}</option>{% endfor %}<option value="undecided">Not sure yet</option></select>
+        </div>
+        <div class="field"><label for="f-note">One thing you'd want to find out</label><textarea id="f-note" name="note" placeholder="A question you'd actually want answered."></textarea></div>
+        <button class="btn btn-1 btn-lg" type="submit" style="align-self:flex-start">Submit application</button>
+      </form>
+      <div class="out" id="out" hidden><p id="out-msg"></p><pre id="out-pre"></pre><button class="copy" type="button" id="out-copy" style="margin-top:10px">Copy message</button></div>
+      <div class="mailrow"><span class="eyebrow">Or email</span><code id="mail">{{ site.contact }}</code><button class="copy" type="button" id="mail-copy">Copy</button></div>
+    </div>
+    <div>
+      <span class="eyebrow">Questions we get</span>
+      <div class="faq" style="margin-top:14px">
+        <details open><summary>Do I need to know anything about prediction markets?</summary><p>No. If you can read a probability and argue about it, that's the bar.</p></details>
+        <details><summary>What do members actually work with?</summary><p>Public data — order books, price histories, and resolution records that prediction-market venues publish over open APIs.</p></details>
+        <details><summary>What's the time commitment?</summary><p>About three hours a week: one meeting, plus whatever your project needs that week.</p></details>
+        <details><summary>Is there a deadline?</summary><p>Rolling. Applications are reviewed weekly, and you can join mid-semester.</p></details>
+        <details><summary>Can graduate students join?</summary><p>Yes. Every market is open to graduate students.</p></details>
+      </div>
+    </div>
+  </div>
+</div></section>

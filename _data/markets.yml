@@ -1,0 +1,61 @@
+# One entry per market. Key = URL slug (/markets/<key>/). `tags` are the live-board filters.
+elections:
+  name: Elections & Politics
+  chip: Elections
+  tags: [Elections, Politics]
+  blurb: Polls against prices through the 2026 midterms — margins, turnout, and who calls it first. The oldest prediction-market question, and this semester it's live.
+  resolves: Certified results, AP calls
+  questions:
+    - Do market prices beat the polling average 30 days out from a House race?
+    - How fast do prices move on a poll release versus on a news event?
+    - Where do resolution disputes in political contracts come from?
+sports:
+  name: Sports
+  chip: Sports
+  tags: [Sports]
+  blurb: The deepest markets and the cleanest ground truth. Win probabilities, spreads, and in-game price moves measured against the box score.
+  resolves: Final scores
+  questions:
+    - Does the pre-game favorite win as often as its price implies?
+    - How do in-game prices react to scoring runs, and do they overshoot?
+    - How does liquidity differ across leagues, and what does it do to spreads?
+crypto:
+  name: Crypto
+  chip: Crypto
+  tags: [Crypto]
+  blurb: Price-threshold and protocol-event markets where the order book and the chain are both public. The easiest place to do microstructure research end to end.
+  resolves: Exchange prices, on-chain state
+  questions:
+    - Does longshot bias in sub-5¢ contracts survive fee-adjusted returns?
+    - How does price-ladder market depth track spot volatility?
+    - Do protocol-event markets lead or lag on-chain signals?
+economics:
+  name: Economics & Finance
+  chip: Economics
+  tags: [Economics]
+  blurb: Fed decisions, CPI prints, jobs reports, earnings. Scheduled releases make natural experiments — the price minutes before against the number.
+  resolves: BLS, Fed, filings
+  questions:
+    - What does the price say minutes before a release, and how fast does it adjust after?
+    - How do Fed-decision markets compare with fed funds futures?
+    - Which macro releases move prices most relative to consensus?
+tech:
+  name: Tech & Science
+  chip: Tech
+  tags: [Tech]
+  blurb: Model releases, product launches, approvals, launches that slip. Fast-resolving questions with strong priors and thin liquidity — good for finding where markets are wrong.
+  resolves: Official announcements
+  questions:
+    - How well do launch-date markets anticipate slips?
+    - Where does thin liquidity leave persistent mispricing?
+    - Do model-release markets move ahead of public announcements?
+weather:
+  name: Climate & Weather
+  chip: Weather
+  tags: [Weather]
+  blurb: Daily temperature and precipitation markets that resolve every day — the most calibration reps you can get in a semester, with a published probabilistic baseline to beat.
+  resolves: NWS station observations
+  questions:
+    - Does the daily-high market beat the NWS forecast at 24 hours?
+    - How calibrated are daily temperature contracts across seasons and cities?
+    - Where do market prices and ECMWF ensembles disagree, and who is right?

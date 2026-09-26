@@ -1,0 +1,5 @@
+<div class="roles">
+{% for m in site.data.markets %}{% assign key = m[0] %}{% assign x = m[1] %}
+  <a class="role" href="/markets/{{ key }}/"><span class="st">{{ x.chip }}</span><h3>{{ x.name }}</h3><p>{{ x.blurb }}</p><div class="src">Resolves from <b>{{ x.resolves }}</b></div><span class="go">Open market →</span></a>
+{% endfor %}
+</div>

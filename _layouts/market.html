@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{% assign m = site.data.markets[page.market] %}
+{% assign people = site.data.team | where: "track", page.market %}
+<section class="wrap page-head">
+  <span class="eyebrow brand">Market · {{ m.chip }}</span>
+  <h1>{{ m.name }}</h1>
+  <p class="lede">{{ m.blurb }}</p>
+  <div class="kv"><span>Resolves from <b>{{ m.resolves }}</b></span>{% for p in people %}{% if p.role != "Member" %}<span>Lead <b>{{ p.name }}</b></span>{% endif %}{% endfor %}</div>
+</section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Live</span><h2 class="h2">On the board now</h2></div>
+    <p class="sub">The most-traded {{ m.chip | downcase }} events on Polymarket at page load. Research material, not a recommendation.</p>
+  </div>
+  <div class="board wide" id="board" data-tags="{{ m.tags | join: ',' }}" data-rows="8" hidden aria-label="Live {{ m.chip }} markets">
+    <div class="board-head"><span class="eyebrow">Polymarket · {{ m.chip }} · most traded, 24h</span><span class="live"><i></i>Live</span></div>
+    <div class="rows" id="board-rows"></div>
+    <div class="board-foot">Prices from Polymarket's public API at page load.</div>
+  </div>
+  <div class="empty" id="board-empty">No {{ m.chip | downcase }} events among the most-traded markets right now.</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Research</span><h2 class="h2">Questions we work on</h2></div>
+    <p class="sub">Each becomes a semester project for a small team, with a written result at the end.</p>
+  </div>
+  <div class="qs">{% for q in m.questions %}<div><b>Q{{ forloop.index }}</b>{{ q }}</div>{% endfor %}</div>
+</div></section>
+
+{% if people and people.size > 0 %}
+<section class="band"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">People</span><h2 class="h2">{{ m.chip }} team</h2></div></div>
+  <div class="team">{% for p in people %}
+    <div class="person">
+      <div class="ava">{% if p.photo %}<img src="{{ p.photo }}" alt="">{% else %}<svg><use href="#mark"/></svg>{% endif %}</div>
+      <span class="r">{{ p.role }}</span><h3>{{ p.name }}</h3><p>{{ p.major }}{% if p.year %} · {{ p.year }}{% endif %}</p>
+      {% if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
+    </div>{% endfor %}
+  </div>
+</div></section>
+{% endif %}
+
+<section class="wrap cta-band"><div class="in">
+  <div><h3>Join the {{ m.chip | downcase }} track</h3><p>Rolling admissions for Fall 2026. All majors, no experience required.</p></div>
+  <a class="btn btn-1 btn-lg" href="/apply/?track={{ page.market }}">Apply for Fall 2026</a>
+</div></section>
