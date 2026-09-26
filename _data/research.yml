@@ -1,0 +1,20 @@
+# Publications and working papers by members. One entry per paper, newest first.
+# status: Working paper | Conference paper | Journal article | In preparation
+# presented: free text (conference, venue, date). links: ssrn / pdf / code / doi — any subset.
+- title: "Pricing Prediction Markets: Incomplete Markets, Selection Rules, and Calibration Wedges"
+  authors:
+    - name: Yicheng Yang
+      affiliation: University of Illinois Urbana-Champaign
+      linkedin: https://www.linkedin.com/in/ethan85/
+  year: 2026
+  status: Working paper
+  venue: SSRN
+  presented: Research in Behavioral Finance Conference (RBFC) 2026, VU Amsterdam, September 2026
+  pages: 61
+  written: March 2026
+  revised: September 2026
+  tags: [Pricing, Calibration, Polymarket, Kalshi, Manifold]
+  links:
+    ssrn: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6468338
+  abstract: >
+    Prediction market prices are widely read as event probabilities—pure expectations with no risk premium. Whether a wedge between price and probability reflects compensation for risk or a distortion of beliefs cannot be settled in ordinary markets, where the physical probability is unobserved and every test joins a pricing model to a belief model. Event contracts loosen that constraint: each resolved contract records a 0/1 outcome, so repeated resolutions estimate the price–outcome calibration relationship among listed, resolved contracts even though no single contract's latent probability is observed. Summarizing that relationship by a scalar λ requires a maintained parameterization; I use the Wang transform, which arises exactly when the market-selected pricing measure is a one-parameter exponential tilt of a latent Gaussian threshold factor, p(mkt) = Φ(Φ⁻¹(p*) + λ), with favorite-longshot bias as a corollary. The data are 291,309 resolved contracts from eight source samples on six platforms. In the three exchange samples (N = 287,118), the fitted λ is positive on Polymarket (0.166) and Kalshi (0.187) and negative on Manifold (−0.218), the one play-money exchange; the three no-money forecasting tournaments are positive (0.287, 0.570, 0.635). The Manifold-versus-real-money contrast is descriptive: capital status varies with venue design, contract mix, aggregation, and participant composition, and the contrast does not identify a stakes channel. In the baseline Polymarket sample the wedge falls with volume (−0.072 per log unit, SE 0.005), rises with duration (+0.143 per log unit, SE 0.012), and declines over contract life. Contract returns are essentially uncorrelated with the S&P 500; under the maintained mapping, attributing the wedge to aggregate-risk compensation would require a portfolio beta near 139, more than forty times the upper confidence bound of the estimated beta. The data do not distinguish the remaining mechanisms—local risk-bearing, beliefs, market design, or omitted factors—but they do show that the tested linear S&P covariance channel is quantitatively too small to reproduce the fitted wedge.

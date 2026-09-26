@@ -1,23 +1,39 @@
 ---
 layout: default
 title: Research
-description: The research questions Prediction@Illinois works on across six prediction markets.
+description: Publications and working papers from Prediction@Illinois members on prediction markets.
 ---
 <section class="wrap page-head">
   <span class="eyebrow brand">Research</span>
-  <h1>Questions we work on.</h1>
-  <p class="lede">Eighteen questions across six markets. Each becomes a semester project for a small team, with a written result at the end.</p>
+  <h1>Papers.</h1>
+  <p class="lede">Working papers and publications by members of Prediction@Illinois.</p>
 </section>
-{% for m in site.data.markets %}{% assign key = m[0] %}{% assign x = m[1] %}
 <section class="band"><div class="wrap">
-  <div class="sec-head">
-    <div><span class="eyebrow">{{ x.chip }}</span><h2 class="h2"><a href="/markets/{{ key }}/" style="text-decoration:none">{{ x.name }}</a></h2></div>
-    <p class="sub">{{ x.blurb }} <a href="/markets/{{ key }}/" style="color:var(--brand);text-decoration:none;white-space:nowrap">Open market →</a></p>
+  <div class="papers">
+  {% for r in site.data.research %}
+    <article class="paper">
+      <div class="paper-top">
+        <span class="eyebrow">{{ r.status }}{% if r.venue %} · {{ r.venue }}{% endif %} · {{ r.year }}</span>
+        {% if r.tags %}<div class="tags">{% for t in r.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+      </div>
+      <h2 class="ptitle">{% if r.links.ssrn %}<a href="{{ r.links.ssrn }}" target="_blank" rel="noopener">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</h2>
+      <p class="authors">{% for a in r.authors %}{% if a.linkedin %}<a href="{{ a.linkedin }}" target="_blank" rel="noopener">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% if a.affiliation %} <span class="aff">({{ a.affiliation }})</span>{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      {% if r.presented %}<p class="presented"><b>Presented at</b> {{ r.presented }}</p>{% endif %}
+      <details class="abs"><summary>Abstract</summary><p>{{ r.abstract }}</p></details>
+      <div class="paper-foot">
+        <span class="meta">{% if r.pages %}{{ r.pages }} pages{% endif %}{% if r.written %} · Written {{ r.written }}{% endif %}{% if r.revised %} · Revised {{ r.revised }}{% endif %}</span>
+        <div class="links">
+          {% if r.links.ssrn %}<a class="btn btn-2" href="{{ r.links.ssrn }}" target="_blank" rel="noopener">SSRN ↗</a>{% endif %}
+          {% if r.links.pdf %}<a class="btn btn-2" href="{{ r.links.pdf }}" target="_blank" rel="noopener">PDF ↗</a>{% endif %}
+          {% if r.links.code %}<a class="btn btn-2" href="{{ r.links.code }}" target="_blank" rel="noopener">Code ↗</a>{% endif %}
+          {% if r.links.doi %}<a class="btn btn-2" href="{{ r.links.doi }}" target="_blank" rel="noopener">DOI ↗</a>{% endif %}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
   </div>
-  <div class="qs">{% for q in x.questions %}<div><b>Q{{ forloop.index }}</b>{{ q }}</div>{% endfor %}</div>
 </div></section>
-{% endfor %}
 <section class="wrap cta-band"><div class="in">
-  <div><h3>Pick a question and apply</h3><p>Rolling admissions for Fall 2026. All majors, no experience required.</p></div>
+  <div><h3>Work on the next one</h3><p>Members join a research project in one market and finish with a written result.</p></div>
   <a class="btn btn-1 btn-lg" href="/apply/">Apply for Fall 2026</a>
 </div></section>
