@@ -11,18 +11,7 @@ description: Original research on prediction markets from Prediction@Illinois �
 </section>
 <section class="band"><div class="wrap">
   <div class="works">
-  {% for r in site.data.research %}{% assign href = r.links.ssrn | default: r.links.pdf | default: r.links.doi | default: r.links.code %}
-    <article class="work{% if r.kind == 'tool' %} tool{% endif %}">
-      <span class="yr">{{ r.year }}</span>
-      <h2>{% if href %}<a href="{{ href }}" target="_blank" rel="noopener">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</h2>
-      {% if r.summary %}<p class="sum">{{ r.summary }}</p>{% endif %}
-      <div class="wf">
-        <span class="au">{% for a in r.authors %}{{ a.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% if r.abstract %} · <button class="abs-t" type="button" aria-expanded="false" data-abs>Abstract</button>{% endif %}</span>
-        {% assign bhref = r.badge_url | default: href %}{% if r.badge %}{% if bhref %}<a class="badge" href="{{ bhref }}" target="_blank" rel="noopener">{{ r.badge }} ↗</a>{% else %}<span class="badge">{{ r.badge }}</span>{% endif %}{% endif %}
-      </div>
-      {% if r.abstract %}<div class="abs" hidden><p>{{ r.abstract }}</p></div>{% endif %}
-    </article>
-  {% endfor %}
+  {% for r in site.data.research %}{% include work.html r=r %}{% endfor %}
   </div>
 </div></section>
 <section class="wrap cta-band"><div class="in">

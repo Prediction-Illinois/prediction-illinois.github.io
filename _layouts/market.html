@@ -23,9 +23,20 @@ layout: default
   <div class="empty" id="board-empty">No {{ m.chip | downcase }} events among the most-traded markets right now.</div>
 </div></section>
 
+{% assign works = site.data.research | where_exp: "r", "r.markets contains page.market" %}
+{% if works and works.size > 0 %}
 <section class="band"><div class="wrap">
   <div class="sec-head">
-    <div><span class="eyebrow">Research</span><h2 class="h2">Questions we work on</h2></div>
+    <div><span class="eyebrow">Research</span><h2 class="h2">Our work in {{ m.chip | downcase }}</h2></div>
+    <p class="sub">Published by members working in this market.</p>
+  </div>
+  <div class="works">{% for r in works %}{% include work.html r=r %}{% endfor %}</div>
+</div></section>
+{% endif %}
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Open questions</span><h2 class="h2">Questions we work on</h2></div>
     <p class="sub">Each becomes a semester project for a small team, with a written result at the end.</p>
   </div>
   <div class="qs">{% for q in m.questions %}<div><b>Q{{ forloop.index }}</b>{{ q }}</div>{% endfor %}</div>
