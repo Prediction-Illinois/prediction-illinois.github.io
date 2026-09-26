@@ -10,6 +10,7 @@
   status: Working paper
   kind: paper            # paper | tool  (tool → green badge)
   badge: RBFC 2026 · Working paper
+  badge_url: https://www.rbfc.eu/      # badge links here; title and abstract link to the paper
   summary: Estimates the price–probability calibration wedge on 291,309 resolved contracts across six platforms with a one-parameter Wang-transform tilt, and shows the wedge cannot be explained as compensation for aggregate risk.
   venue: SSRN
   presented: Research in Behavioral Finance Conference (RBFC) 2026, VU Amsterdam, September 2026

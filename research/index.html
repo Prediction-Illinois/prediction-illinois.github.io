@@ -18,7 +18,7 @@ description: Original research on prediction markets from Prediction@Illinois �
       {% if r.summary %}<p class="sum">{{ r.summary }}</p>{% endif %}
       <div class="wf">
         <span class="au">{% for a in r.authors %}{{ a.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% if r.abstract %} · <button class="abs-t" type="button" aria-expanded="false" data-abs>Abstract</button>{% endif %}</span>
-        {% if r.badge %}{% if href %}<a class="badge" href="{{ href }}" target="_blank" rel="noopener">{{ r.badge }} ↗</a>{% else %}<span class="badge">{{ r.badge }}</span>{% endif %}{% endif %}
+        {% assign bhref = r.badge_url | default: href %}{% if r.badge %}{% if bhref %}<a class="badge" href="{{ bhref }}" target="_blank" rel="noopener">{{ r.badge }} ↗</a>{% else %}<span class="badge">{{ r.badge }}</span>{% endif %}{% endif %}
       </div>
       {% if r.abstract %}<div class="abs" hidden><p>{{ r.abstract }}</p></div>{% endif %}
     </article>
