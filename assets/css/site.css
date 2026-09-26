@@ -222,8 +222,6 @@ nav.site a.on{color:var(--ink)}
 .person .mk{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
 .person .mk a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);padding:3px 8px;border-radius:999px;text-decoration:none}
 .person .mk a:hover{color:var(--brand);border-color:var(--brand-line)}
-.person .li{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px;font-weight:500;color:var(--ink-2);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
-.person .li:hover{color:var(--brand);border-color:var(--brand-line)}
 
 /* ---- research: works (Oracle-style list) ---- */
 .page-head.rh .rule{display:block;width:40px;height:2px;background:var(--brand);margin:18px 0 20px}
