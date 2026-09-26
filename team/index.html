@@ -1,35 +1,17 @@
 ---
 layout: default
 title: Team
-description: The people who run Prediction@Illinois.
+description: The people who run Prediction@Illinois, and the markets each of them researches.
 ---
-{% assign leads = site.data.team | where_exp: "p", "p.role != 'Member'" %}
-{% assign members = site.data.team | where: "role", "Member" %}
 <section class="wrap page-head">
   <span class="eyebrow brand">Team</span>
   <h1>Who runs it.</h1>
-  <p class="lede">Leadership and members, by market.</p>
+  <p class="lede">Each member researches one or two markets. Names link to LinkedIn; market tags open the market page.</p>
 </section>
 <section class="band"><div class="wrap">
-  {% if leads and leads.size > 0 %}
-  <div class="sec-head"><div><span class="eyebrow">Leadership</span><h2 class="h2">Leads</h2></div></div>
-  <div class="team">{% for p in leads %}
-    <div class="person">
-      <div class="ava">{% if p.photo %}<img src="{{ p.photo }}" alt="">{% else %}<svg><use href="#mark"/></svg>{% endif %}</div>
-      <span class="r">{{ p.role }}{% if p.track %} · {{ site.data.markets[p.track].chip }}{% endif %}</span><h3>{{ p.name }}</h3><p>{{ p.major }}{% if p.year %} · {{ p.year }}{% endif %}</p>
-      {% if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
-    </div>{% endfor %}
-  </div>
+  {% if site.data.team and site.data.team.size > 0 %}
+  <div class="people">{% for p in site.data.team %}{% include person.html p=p %}{% endfor %}</div>
+  {% else %}
+  <div class="empty">Team page is being updated for Fall 2026.</div>
   {% endif %}
-  {% if members and members.size > 0 %}
-  <div class="sec-head" style="margin-top:56px"><div><span class="eyebrow">Members</span><h2 class="h2">Fall 2026</h2></div></div>
-  <div class="team">{% for p in members %}
-    <div class="person">
-      <div class="ava">{% if p.photo %}<img src="{{ p.photo }}" alt="">{% else %}<svg><use href="#mark"/></svg>{% endif %}</div>
-      <span class="r">{% if p.track %}{{ site.data.markets[p.track].chip }}{% else %}Member{% endif %}</span><h3>{{ p.name }}</h3><p>{{ p.major }}{% if p.year %} · {{ p.year }}{% endif %}</p>
-      {% if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
-    </div>{% endfor %}
-  </div>
-  {% endif %}
-  {% unless site.data.team and site.data.team.size > 0 %}<div class="empty">Team page is being updated for Fall 2026.</div>{% endunless %}
 </div></section>

@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign m = site.data.markets[page.market] %}
-{% assign people = site.data.team | where: "track", page.market %}
+{% assign people = site.data.team | where_exp: "p", "p.tracks contains page.market" %}
 <section class="wrap page-head">
   <span class="eyebrow brand">Market · {{ m.chip }}</span>
   <h1>{{ m.name }}</h1>
@@ -34,13 +34,7 @@ layout: default
 {% if people and people.size > 0 %}
 <section class="band"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">People</span><h2 class="h2">{{ m.chip }} team</h2></div></div>
-  <div class="team">{% for p in people %}
-    <div class="person">
-      <div class="ava">{% if p.photo %}<img src="{{ p.photo }}" alt="">{% else %}<svg><use href="#mark"/></svg>{% endif %}</div>
-      <span class="r">{{ p.role }}</span><h3>{{ p.name }}</h3><p>{{ p.major }}{% if p.year %} · {{ p.year }}{% endif %}</p>
-      {% if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
-    </div>{% endfor %}
-  </div>
+  <div class="people">{% for p in people %}{% include person.html p=p %}{% endfor %}</div>
 </div></section>
 {% endif %}
 

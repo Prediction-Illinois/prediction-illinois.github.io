@@ -1,0 +1,7 @@
+<div class="person">
+  <div class="ava">{% if include.p.photo %}<img src="{{ include.p.photo }}" alt="{{ include.p.name }}">{% else %}<svg><use href="#mark"/></svg>{% endif %}</div>
+  <h3>{% if include.p.linkedin %}<a href="{{ include.p.linkedin }}" target="_blank" rel="noopener">{{ include.p.name }}</a>{% else %}{{ include.p.name }}{% endif %}</h3>
+  <span class="r">{{ include.p.role }}</span>
+  {% if include.p.tracks %}<div class="mk">{% for t in include.p.tracks %}{% assign m = site.data.markets[t] %}{% if m %}<a href="/markets/{{ t }}/">{{ m.chip }}</a>{% endif %}{% endfor %}</div>{% endif %}
+  {% if include.p.major or include.p.year %}<p>{{ include.p.major }}{% if include.p.major and include.p.year %} · {% endif %}{{ include.p.year }}</p>{% endif %}
+</div>

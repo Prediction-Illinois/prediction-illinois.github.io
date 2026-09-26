@@ -11,7 +11,7 @@ Built with GitHub Pages' native Jekyll — no local tooling. Push to `main` and 
 
 | Want to… | Edit |
 |---|---|
-| Add or change a team member | `_data/team.yml` (one entry per person; the Team page and nav appear automatically once the list is non-empty) |
+| Add or change a team member | `_data/team.yml` — name, role, `tracks: [economics, sports]`, LinkedIn URL, photo path; drop photos in `assets/team/` |
 | Change a market's blurb, resolution source, or research questions | `_data/markets.yml` |
 | Add a market | `_data/markets.yml` + a 6-line file in `markets/` (copy `markets/sports.html`) |
 | Change the header / footer | `_includes/header.html`, `_includes/footer.html` |
