@@ -10,27 +10,32 @@
   });
 
   // ---- live markets (Polymarket Gamma API, CORS-open) ----
+  // Order matters: specific categories first, Politics last as the catch-all (a Fed event can carry a "Trump" tag).
   const TAGMAP = [
-    [/election/i, "Elections"], [/politic|geopolit|congress|senate|white house|trump|iran|israel|ukraine|world/i, "Politics"],
+    [/election/i, "Elections"],
     [/sport|esport|\bgames?\b|nfl|nba|mlb|nhl|soccer|tennis|cfb|ufc|\bf1\b|golf|epl|ucl|football|baseball|basketball|hockey/i, "Sports"],
     [/crypto|bitcoin|ethereum|solana|\bbtc\b|\beth\b/i, "Crypto"],
     [/econom|\bfed\b|fomc|inflation|finance|business|stock|earnings|rates|\boil\b|commodit|treasur/i, "Economics"],
     [/tech|\bai\b|science|space|openai|apple|google|nvidia|tesla/i, "Tech"],
-    [/weather|climate|temperature|hurricane|snow/i, "Weather"]
+    [/weather|climate|temperature|hurricane|snow/i, "Weather"],
+    [/politic|geopolit|congress|senate|white house|trump|iran|israel|ukraine|world/i, "Politics"]
   ];
   const mapTag = tags => { const L = (tags || []).map(t => t.label || ""); for (const [re, n] of TAGMAP) if (L.some(l => re.test(l))) return n; return L[0] || "Markets"; };
   const fmtVol = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? "$" + Math.round(v / 1e3) + "K" : "$" + Math.round(v);
   const esc = x => String(x).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   // Mutually-exclusive events (negRisk: nominee, champion, Fed decision) → leading sub-market.
   // Everything else (a game, a price ladder) → most-traded sub-market, i.e. the main line, not a prop.
+  // A sub-market whose question is the event title is the main line (e.g. "Army vs. Temple") — prefer it outright.
   function lead(e) {
     const ms = (e.markets || []).filter(m => m.active && !m.closed); let best = null; const byProb = !!e.negRisk;
+    const title = String(e.title || "").trim().toLowerCase();
     for (const m of ms) {
       let o, p; try { o = JSON.parse(m.outcomes); p = JSON.parse(m.outcomePrices).map(Number); } catch (_) { continue; }
       if (!o || p.length < 2) continue;
       const binary = o[0] === "Yes" && o[1] === "No", i = binary ? 0 : p.indexOf(Math.max(...p));
       const label = binary ? (ms.length > 1 ? (m.groupItemTitle || "Yes") : "Yes") : o[i];
-      const key = byProb ? p[i] : (+m.volume24hr || 0);
+      const main = !byProb && String(m.question || "").trim().toLowerCase() === title;
+      const key = main ? Infinity : byProb ? p[i] : (+m.volume24hr || 0);
       if (!best || key > best.key) best = { prob: p[i], label, key };
     }
     return best;
