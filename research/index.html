@@ -1,0 +1,23 @@
+---
+layout: default
+title: Research
+description: The research questions Prediction@Illinois works on across six prediction markets.
+---
+<section class="wrap page-head">
+  <span class="eyebrow brand">Research</span>
+  <h1>Questions we work on.</h1>
+  <p class="lede">Eighteen questions across six markets. Each becomes a semester project for a small team, with a written result at the end.</p>
+</section>
+{% for m in site.data.markets %}{% assign key = m[0] %}{% assign x = m[1] %}
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">{{ x.chip }}</span><h2 class="h2"><a href="/markets/{{ key }}/" style="text-decoration:none">{{ x.name }}</a></h2></div>
+    <p class="sub">{{ x.blurb }} <a href="/markets/{{ key }}/" style="color:var(--brand);text-decoration:none;white-space:nowrap">Open market →</a></p>
+  </div>
+  <div class="qs">{% for q in x.questions %}<div><b>Q{{ forloop.index }}</b>{{ q }}</div>{% endfor %}</div>
+</div></section>
+{% endfor %}
+<section class="wrap cta-band"><div class="in">
+  <div><h3>Pick a question and apply</h3><p>Rolling admissions for Fall 2026. All majors, no experience required.</p></div>
+  <a class="btn btn-1 btn-lg" href="/apply/">Apply for Fall 2026</a>
+</div></section>

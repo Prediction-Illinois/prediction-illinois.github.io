@@ -27,8 +27,12 @@
   // Everything else (a game, a price ladder) → most-traded sub-market, i.e. the main line, not a prop.
   // A sub-market whose question is the event title is the main line (e.g. "Army vs. Temple") — prefer it outright.
   function lead(e) {
-    const ms = (e.markets || []).filter(m => m.active && !m.closed); let best = null; const byProb = !!e.negRisk;
     const title = String(e.title || "").trim().toLowerCase();
+    // If the event's main line (question == title) exists but is closed, the game is over — skip the event
+    // rather than surface a leftover prop market.
+    const mainAny = (e.markets || []).find(m => String(m.question || "").trim().toLowerCase() === title);
+    if (mainAny && (mainAny.closed || !mainAny.active)) return null;
+    const ms = (e.markets || []).filter(m => m.active && !m.closed); let best = null; const byProb = !!e.negRisk;
     for (const m of ms) {
       let o, p; try { o = JSON.parse(m.outcomes); p = JSON.parse(m.outcomePrices).map(Number); } catch (_) { continue; }
       if (!o || p.length < 2) continue;

@@ -50,7 +50,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgrou
 nav.site{display:flex;gap:22px;align-items:center}
 nav.site a{font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
 nav.site a:hover{color:var(--ink)}
-@media (max-width:760px){nav.site{display:none}}
+@media (max-width:760px){.bar{flex-wrap:wrap;row-gap:0;padding-bottom:6px}nav.site{order:10;flex-basis:100%;overflow-x:auto;scrollbar-width:none;gap:16px;padding-bottom:4px}nav.site::-webkit-scrollbar{display:none}.dd-m{display:none!important}}
 .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:5px 10px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
 .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--yes);box-shadow:0 0 0 3px var(--yes-soft)}
 @media (max-width:560px){.chip span.t{display:none}}
@@ -205,10 +205,16 @@ a.role:hover{border-color:var(--brand-line)}
 .team-group{margin-top:36px}
 .team-group .eyebrow{display:block;margin-bottom:-26px}
 
-/* ---- market strip under the header (Kalshi-style categories) ---- */
-.cats{display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none;padding-block:2px 10px;margin-top:-6px}
-.cats::-webkit-scrollbar{display:none}
-.cats a{font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap;border:1px solid transparent;transition:color .15s ease,background .15s ease}
-.cats a:hover{color:var(--ink)}
-.cats a.on{color:var(--ink);background:var(--surface-2);border-color:var(--line)}
-.cats a:first-child{color:var(--ink-2);font-weight:600;margin-right:6px}
+/* ---- nav dropdown (Markets) ---- */
+nav.site{position:relative}
+nav.site a.on{color:var(--ink)}
+.dd{position:relative;display:flex;align-items:center;padding-block:14px;margin-block:-14px}
+.dd-t{display:inline-flex;align-items:center;gap:5px}
+.dd-t svg{opacity:.7;transition:transform .15s ease}
+.dd:hover .dd-t svg,.dd:focus-within .dd-t svg{transform:rotate(180deg)}
+.dd-m{position:absolute;top:100%;left:-10px;min-width:272px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;display:none;box-shadow:0 24px 60px -24px rgba(0,0,0,.6);z-index:40}
+.dd:hover .dd-m,.dd:focus-within .dd-m{display:block}
+.dd-m a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.dd-m a:hover,.dd-m a.on{background:var(--surface-2);color:var(--ink)}
+.dd-m .st{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);padding:3px 7px;border-radius:999px;min-width:74px;text-align:center}
+.dd-m .st.all{color:var(--ink-2);background:var(--surface-2)}

@@ -14,15 +14,20 @@
       <svg style="color:var(--brand)"><use href="#mark"/></svg>
       <span class="wordmark">Prediction<span class="at">@</span>Illinois</span>
     </a>
-    <nav class="site">
-      {% if site.data.team and site.data.team.size > 0 %}<a href="/team/"{% if page.url == '/team/' %} class="on"{% endif %}>Team</a>{% endif %}
+    <nav class="site" aria-label="Primary">
+      <a href="/"{% if page.url == '/' %} class="on"{% endif %}>Home</a>
+      <div class="dd">
+        <a href="/markets/" class="dd-t{% if page.url contains '/markets/' %} on{% endif %}" aria-haspopup="true" aria-expanded="false">Markets <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+        <div class="dd-m" role="menu">
+          <a href="/markets/" role="menuitem"><span class="st all">All</span>All markets</a>
+          {% for m in site.data.markets %}<a href="/markets/{{ m[0] }}/" role="menuitem"{% if page.market == m[0] %} class="on"{% endif %}><span class="st">{{ m[1].chip }}</span>{{ m[1].name }}</a>{% endfor %}
+        </div>
+      </div>
+      <a href="/research/"{% if page.url == '/research/' %} class="on"{% endif %}>Research</a>
+      <a href="/team/"{% if page.url == '/team/' %} class="on"{% endif %}>Team</a>
     </nav>
     <span class="chip"><i class="dot"></i><span class="t">Fall 2026 ·</span> Applications open</span>
     <button class="theme" id="theme" type="button" aria-label="Toggle light and dark theme" title="Theme"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 0 0 14.5z" fill="currentColor"/></svg></button>
     <a class="btn btn-1" href="/apply/">Apply</a>
   </div>
-  <nav class="wrap cats" aria-label="Markets">
-    <a href="/markets/"{% if page.url == '/markets/' %} class="on"{% endif %}>All markets</a>
-    {% for m in site.data.markets %}<a href="/markets/{{ m[0] }}/"{% if page.market == m[0] %} class="on"{% endif %}>{{ m[1].chip }}</a>{% endfor %}
-  </nav>
 </header>
