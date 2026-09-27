@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{% if page.title %}{{ page.title }} · {% endif %}Prediction@Illinois</title>
+{% if page.url == '/' %}{% assign full_title = 'Prediction@Illinois · Prediction Market Research at UIUC' %}{% else %}{% assign full_title = page.title | append: ' · Prediction@Illinois' %}{% endif %}
+<title>{{ full_title }}</title>
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
 <meta name="description" content="{{ page.description | default: site.description }}">
-<meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}Prediction@Illinois">
+<meta property="og:title" content="{{ full_title }}">
 <meta property="og:description" content="{{ page.description | default: site.description }}">
 <meta property="og:image" content="{{ site.url }}/brand/og-image-1200x630.png">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+{% if page.url == '/' %}<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Prediction@Illinois","alternateName":["Prediction at Illinois","Prediction Illinois"],"url":"https://prediction-illinois.github.io/","logo":"https://prediction-illinois.github.io/brand/logo-400.png","description":"Quantitative trading research group at the University of Illinois Urbana-Champaign studying prediction markets and event contracts.","email":"{{ site.contact }}","sameAs":["https://github.com/Prediction-Illinois"]}
+</script>{% endif %}
 <link rel="icon" type="image/png" href="/brand/favicon-64.png">
 <script>(function(){var r=document.documentElement;try{if(!r.dataset.theme){r.dataset.theme=localStorage.getItem("pi-theme")==="light"?"light":"dark"}}catch(e){r.dataset.theme="dark"}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -3,3 +3,5 @@ url: "https://prediction-illinois.github.io"
 description: Quantitative trading research on prediction markets at the University of Illinois Urbana-Champaign.
 contact: ethanyang85@outlook.com
 exclude: [README.md, CNAME.disabled, docs, outreach, brand/v1_old]
+plugins: [jekyll-sitemap]
+google_site_verification:        # paste the token from Google Search Console here
