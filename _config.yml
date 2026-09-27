@@ -5,3 +5,8 @@ contact: ethanyang85@outlook.com
 exclude: [README.md, CNAME.disabled, docs, outreach, brand/v1_old]
 plugins: [jekyll-sitemap]
 google_site_verification:        # paste the token from Google Search Console here
+defaults:
+  - scope:
+      path: "googlea35a8e4168b0a307.html"   # Search Console ownership file — keep it; excluded from the sitemap
+    values:
+      sitemap: false
