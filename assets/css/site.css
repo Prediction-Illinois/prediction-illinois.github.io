@@ -247,10 +247,20 @@ nav.site a.on{color:var(--ink)}
 a.badge{text-decoration:none}
 a.badge:hover{filter:brightness(1.1)}
 
-/* ---- apply card (links out to the Google Form) ---- */
-.apply-card{display:flex;flex-direction:column;gap:14px}
-.apply-card h3{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.1}
-.apply-card .asks{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
-.apply-card .asks li{position:relative;padding-left:18px;font-size:15px;color:var(--ink-2);line-height:1.45}
-.apply-card .asks li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--brand)}
-.apply-card .btn{align-self:flex-start;margin-top:6px}
+/* ---- apply form (on-site) ---- */
+fieldset.field{border:0;margin:0;padding:0;min-width:0}
+fieldset.field legend{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0;margin-bottom:8px}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pickbox{position:relative;cursor:pointer}
+.pickbox input{position:absolute;opacity:0;width:1px;height:1px}
+.pickbox span{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13.5px;text-transform:none;letter-spacing:0;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;transition:border-color .15s ease,background .15s ease,color .15s ease}
+.pickbox:hover span{border-color:var(--line-2);color:var(--ink)}
+.pickbox input:checked + span{color:var(--brand);background:var(--brand-soft);border-color:var(--brand-line)}
+.pickbox input:checked + span::before{content:"✓";font-size:12px}
+.pickbox input:focus-visible + span{outline:2px solid var(--brand);outline-offset:2px}
+label .opt{font-family:var(--sans);text-transform:none;letter-spacing:0;color:var(--muted);font-size:12px;margin-left:6px}
+.form-err{font-size:13.5px;color:var(--no)}
+.done{display:flex;flex-direction:column;gap:8px;padding-block:10px}
+.done h3{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em}
+.done p{font-size:15px;color:var(--ink-2)}
+button[disabled]{opacity:.6;cursor:progress}
