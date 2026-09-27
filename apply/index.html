@@ -10,34 +10,17 @@ description: Apply to Prediction@Illinois for Fall 2026. Rolling admissions, all
 </section>
 <section class="band"><div class="wrap">
   <div class="join">
-    <div class="card">
-      <form id="apply" novalidate data-post="{{ site.apply_post }}"
-            data-f-name="{{ site.apply_fields.name }}" data-f-email="{{ site.apply_fields.email }}" data-f-year="{{ site.apply_fields.year }}"
-            data-f-major="{{ site.apply_fields.major }}" data-f-markets="{{ site.apply_fields.markets }}" data-f-question="{{ site.apply_fields.question }}" data-f-link="{{ site.apply_fields.link }}">
-        <div class="two">
-          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="netid@illinois.edu" required></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="f-year">Year</label>
-            <select id="f-year" name="year" required><option value="" selected disabled>Select</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Graduate</option><option>Other</option></select>
-          </div>
-          <div class="field"><label for="f-major">Major</label><input id="f-major" name="major" type="text" placeholder="Stat, CS, Econ, …" required></div>
-        </div>
-        <fieldset class="field">
-          <legend>Markets you're interested in</legend>
-          <div class="pick">{% for m in site.data.markets %}<label class="pickbox"><input type="checkbox" name="markets" value="{{ m[1].name }}" data-key="{{ m[0] }}"><span>{{ m[1].name }}</span></label>{% endfor %}<label class="pickbox"><input type="checkbox" name="markets" value="Not sure yet"><span>Not sure yet</span></label></div>
-        </fieldset>
-        <div class="field"><label for="f-question">One question about prediction markets you'd want to find out</label><textarea id="f-question" name="question" required placeholder="A question you'd actually want answered."></textarea></div>
-        <div class="field"><label for="f-link">LinkedIn or GitHub <span class="opt">Optional</span></label><input id="f-link" name="link" type="text" inputmode="url" placeholder="https://"></div>
-        <p class="form-err" id="form-err" role="alert" hidden></p>
-        <button class="btn btn-1 btn-lg" id="apply-submit" type="submit" style="align-self:flex-start">Submit application</button>
-      </form>
-      <div class="done" id="apply-done" hidden>
-        <span class="eyebrow brand">Received</span>
-        <h3>Thanks — your application is in.</h3>
-        <p>We'll be in touch at the email you gave.</p>
-      </div>
+    <div class="card apply-card">
+      <span class="eyebrow brand">Application form</span>
+      <h3>Seven questions.</h3>
+      <ul class="asks">
+        <li>Name and email</li>
+        <li>Year and major</li>
+        <li>The markets you're interested in</li>
+        <li>One question about prediction markets you'd want to find out</li>
+        <li>LinkedIn or GitHub (optional)</li>
+      </ul>
+      <a class="btn btn-1 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Open the application ↗</a>
       <div class="mailrow"><span class="eyebrow">Or email</span><code id="mail">{{ site.contact }}</code><button class="copy" type="button" id="mail-copy">Copy</button></div>
     </div>
     <div>

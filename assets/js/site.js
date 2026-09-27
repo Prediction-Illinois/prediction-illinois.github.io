@@ -91,45 +91,11 @@
     box.hidden = !open; b.setAttribute("aria-expanded", String(open));
   }));
 
-  // ---- apply page ----
+  // ---- apply page: copy the contact email ----
   function flash(btn, word){ const old = btn.textContent; btn.textContent = word; setTimeout(() => { btn.textContent = old; }, 1600); }
   const mc = $("#mail-copy");
   if (mc) mc.addEventListener("click", async e => {
     const btn = e.currentTarget, text = ($("#mail") || {}).textContent || "";
     try { await navigator.clipboard.writeText(text); flash(btn, "Copied"); } catch (_) { flash(btn, "Select it"); }
-  });
-
-  const form = $("#apply"); if (!form) return;
-  // ?market=<key> from a market page pre-checks that market
-  try {
-    const k = new URLSearchParams(location.search).get("market");
-    if (k) form.querySelectorAll('input[name="markets"]').forEach(cb => { if (cb.dataset.key === k) cb.checked = true; });
-  } catch (_) {}
-  const err = $("#form-err"), btn = $("#apply-submit"), done = $("#apply-done"), ds = form.dataset;
-  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const v = n => (form.elements[n].value || "").trim();
-    const markets = [...form.querySelectorAll('input[name="markets"]:checked')].map(cb => cb.value);
-    const missing = [];
-    if (!v("name")) missing.push("your name");
-    if (!EMAIL.test(v("email"))) missing.push("a valid email");
-    if (!v("year")) missing.push("your year");
-    if (!v("major")) missing.push("your major");
-    if (!markets.length) missing.push("at least one market");
-    if (!v("question")) missing.push("your question");
-    if (missing.length) { err.textContent = "Add " + missing.join(", ") + "."; err.hidden = false; return; }
-    err.hidden = true; btn.disabled = true; btn.textContent = "Submitting…";
-    const body = new URLSearchParams();
-    body.append(ds.fName, v("name")); body.append(ds.fEmail, v("email")); body.append(ds.fYear, v("year"));
-    body.append(ds.fMajor, v("major")); markets.forEach(m => body.append(ds.fMarkets, m));
-    body.append(ds.fQuestion, v("question")); if (v("link")) body.append(ds.fLink, v("link"));
-    try {
-      await fetch(ds.post, { method: "POST", mode: "no-cors", body });   // Google Forms accepts cross-origin posts; the response is opaque
-      form.hidden = true; done.hidden = false; done.scrollIntoView({ behavior: "smooth", block: "center" });
-    } catch (_) {
-      btn.disabled = false; btn.textContent = "Submit application";
-      err.textContent = "Couldn't reach the form. Check your connection and try again, or email us."; err.hidden = false;
-    }
   });
 })();
