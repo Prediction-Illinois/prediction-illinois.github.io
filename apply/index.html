@@ -10,25 +10,17 @@ description: Apply to Prediction@Illinois for Fall 2026. Rolling admissions, all
 </section>
 <section class="band"><div class="wrap">
   <div class="join">
-    <div class="card">
-      <form id="signup" novalidate>
-        <div class="two">
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="netid@illinois.edu"></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="f-year">Year</label>
-            <select id="f-year" name="year"><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Graduate</option><option>Other</option></select>
-          </div>
-          <div class="field"><label for="f-major">Major</label><input id="f-major" name="major" type="text" placeholder="Stat, CS, Econ, …"></div>
-        </div>
-        <div class="field"><label for="f-role">Market</label>
-          <select id="f-role" name="role">{% for m in site.data.markets %}<option value="{{ m[0] }}">{{ m[1].name }}</option>{% endfor %}<option value="undecided">Not sure yet</option></select>
-        </div>
-        <div class="field"><label for="f-note">One thing you'd want to find out</label><textarea id="f-note" name="note" placeholder="A question you'd actually want answered."></textarea></div>
-        <button class="btn btn-1 btn-lg" type="submit" style="align-self:flex-start">Submit application</button>
-      </form>
-      <div class="out" id="out" hidden><p id="out-msg"></p><pre id="out-pre"></pre><button class="copy" type="button" id="out-copy" style="margin-top:10px">Copy message</button></div>
+    <div class="card apply-card">
+      <span class="eyebrow brand">Application form</span>
+      <h3>Seven questions.</h3>
+      <ul class="asks">
+        <li>Name and email</li>
+        <li>Year and major</li>
+        <li>The markets you're interested in</li>
+        <li>One question about prediction markets you'd want to find out</li>
+        <li>LinkedIn or GitHub (optional)</li>
+      </ul>
+      <a class="btn btn-1 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Open the application ↗</a>
       <div class="mailrow"><span class="eyebrow">Or email</span><code id="mail">{{ site.contact }}</code><button class="copy" type="button" id="mail-copy">Copy</button></div>
     </div>
     <div>

@@ -246,3 +246,11 @@ nav.site a.on{color:var(--ink)}
 .work .abs p{font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:80ch}
 a.badge{text-decoration:none}
 a.badge:hover{filter:brightness(1.1)}
+
+/* ---- apply card (links out to the Google Form) ---- */
+.apply-card{display:flex;flex-direction:column;gap:14px}
+.apply-card h3{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.apply-card .asks{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.apply-card .asks li{position:relative;padding-left:18px;font-size:15px;color:var(--ink-2);line-height:1.45}
+.apply-card .asks li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.apply-card .btn{align-self:flex-start;margin-top:6px}

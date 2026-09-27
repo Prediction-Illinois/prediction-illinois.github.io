@@ -91,28 +91,11 @@
     box.hidden = !open; b.setAttribute("aria-expanded", String(open));
   }));
 
-  // ---- apply form ----
-  const form = $("#signup"); if (!form) return;
-  const FORM_ENDPOINT = null;                 // set to a Formspree / Getform endpoint to receive submissions by email
-  const CONTACT = ($("#mail") || {}).textContent || "";
-  const out = $("#out"), outMsg = $("#out-msg"), outPre = $("#out-pre");
-  try { const t = new URLSearchParams(location.search).get("track"); const sel = $("#f-role"); if (t && sel) for (const o of sel.options) if (o.value.toLowerCase() === t.toLowerCase()) sel.value = o.value; } catch (_) {}
+  // ---- apply page: copy the contact email ----
   function flash(btn, word){ const old = btn.textContent; btn.textContent = word; setTimeout(() => { btn.textContent = old; }, 1600); }
-  async function copyText(text, btn){ try { await navigator.clipboard.writeText(text); flash(btn, "Copied"); } catch (_) { flash(btn, "Select it"); } }
-  const mc = $("#mail-copy"); if (mc) mc.addEventListener("click", e => copyText(CONTACT, e.currentTarget));
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(form).entries());
-    if (!d.name || !d.email) { outMsg.textContent = "Add a name and an email first."; outPre.hidden = true; out.hidden = false; return; }
-    const body = "Prediction@Illinois — Fall 2026 application\n" +
-      "Name:      " + d.name + "\nEmail:     " + d.email + "\nYear:      " + d.year +
-      "\nMajor:     " + (d.major || "—") + "\nTrack:     " + d.role + "\nQuestion:  " + (d.note || "—");
-    if (FORM_ENDPOINT) {
-      try { const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(d) });
-        if (r.ok) { outPre.hidden = true; outMsg.textContent = "Got it — we'll be in touch from " + CONTACT + "."; out.hidden = false; form.reset(); return; } } catch (_) {}
-    }
-    outMsg.textContent = "Copy this and send it to " + CONTACT + " — applications are reviewed weekly.";
-    outPre.textContent = body; outPre.hidden = false; out.hidden = false;
+  const mc = $("#mail-copy");
+  if (mc) mc.addEventListener("click", async e => {
+    const btn = e.currentTarget, text = ($("#mail") || {}).textContent || "";
+    try { await navigator.clipboard.writeText(text); flash(btn, "Copied"); } catch (_) { flash(btn, "Select it"); }
   });
-  const oc = $("#out-copy"); if (oc) oc.addEventListener("click", e => copyText(outPre.textContent, e.currentTarget));
 })();
