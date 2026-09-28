@@ -204,7 +204,6 @@ nav.site a.on{color:var(--ink)}
 .dd-m a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
 .dd-m a:hover,.dd-m a.on{background:var(--surface-2);color:var(--ink)}
 .dd-m .st{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);padding:3px 7px;border-radius:999px;min-width:74px;text-align:center}
-.dd-m .st.all{color:var(--ink-2);background:var(--surface-2)}
 
 /* ---- people (team) ---- */
 .people{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:36px 20px;margin-top:4px}

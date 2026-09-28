@@ -19,7 +19,6 @@
       <div class="dd">
         <a href="/markets/" class="dd-t{% if page.url contains '/markets/' %} on{% endif %}" aria-haspopup="true" aria-expanded="false">Markets <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
         <div class="dd-m" role="menu">
-          <a href="/markets/" role="menuitem"><span class="st all">All</span>All markets</a>
           {% for m in site.data.markets %}<a href="/markets/{{ m[0] }}/" role="menuitem"{% if page.market == m[0] %} class="on"{% endif %}><span class="st">{{ m[1].chip }}</span>{{ m[1].name }}</a>{% endfor %}
         </div>
       </div>
