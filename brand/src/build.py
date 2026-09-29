@@ -1,6 +1,6 @@
 """Build every Prediction@Illinois brand asset from one ring geometry.
 
-The mark is a probability ring: a 62% brand-orange arc and a 38% muted arc,
+The mark is a probability ring: a 62% brand-orange arc and a 38% blue arc,
 split by two flat-cut gaps, rotated so the orange arc rises from the lower
 left, with a solid dot in the centre. The logo lockup sets the ring in place
 of the "@" in Prediction@Illinois; running text keeps the "@".
@@ -22,7 +22,7 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 INK, WHITE = "#0B0D10", "#F2F4F7"
 ORANGE, ORANGE_LIGHT = "#FF6B2C", "#E85D1F"   # site --brand, dark and light themes
-REST_DARK, REST_LIGHT = "#4A515C", "#D0D5DD"  # the 38% arc on dark / light grounds
+REST_DARK = REST_LIGHT = "#3262FF"               # the 38% arc: blue, so the ring carries Illinois orange + blue
 
 C = 2 * math.pi * 34
 SPLIT = 0.62
