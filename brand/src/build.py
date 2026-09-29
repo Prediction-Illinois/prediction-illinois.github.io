@@ -72,6 +72,62 @@ def chrome(html, png_name, w, h, transparent=False):
         Image.open(shot).resize((w, h), Image.LANCZOS).save(OUT / png_name, optimize=True)
 
 
+def cover_art(png_name, w, h, paths=240, heroes=6, steps=170, seed=11, t_end=0.975):
+    """LinkedIn banner without text: price paths of binary contracts.
+
+    Each contract lists at its own price and follows p_t = Phi(W_t / sqrt(T - t)), the price
+    of a claim paying 1 if Brownian motion ends above zero, so approaching expiry every path is
+    pushed toward 1 or 0. Most paths form a faint silver texture; a dozen carry the colour —
+    orange for those resolving Yes, blue for No — with a soft glow, over a dark ground lit warm
+    at the top right and cool at the bottom right. The picture stops just short of expiry.
+    """
+    import numpy as np
+    from statistics import NormalDist
+    from PIL import ImageChops, ImageFilter
+    W, H = w * 2, h * 2
+    rng = np.random.default_rng(seed)
+    t = np.linspace(0, t_end, steps + 1)
+    listed = np.array([NormalDist().inv_cdf(q) for q in rng.uniform(.12, .88, paths)])
+    walk = listed[:, None] + np.concatenate([np.zeros((paths, 1)), np.cumsum(rng.normal(0, math.sqrt(t_end / steps), (paths, steps)), axis=1)], axis=1)
+    price = 0.5 * (1 + np.frompyfunc(math.erf, 1, 1)(walk / np.sqrt(2 * (1 - t))).astype(float))
+    xs, ys, end = t / t_end * W, 0.1 * H + (1 - price) * 0.8 * H, walk[:, -1]
+
+    def pick(idx):  # heroes spread from near-coin-flips to decisive resolutions
+        return idx[np.argsort(np.abs(end[idx]))][np.linspace(len(idx) * .15, len(idx) - 1, heroes).astype(int)]
+    hero = set(pick(np.where(end > 0)[0])) | set(pick(np.where(end <= 0)[0]))
+
+    def smooth(y):  # quadratic curves through midpoints, so each path reads as one strand
+        d = f"M{xs[0]:.1f},{y[0]:.1f}"
+        for i in range(1, len(xs) - 1):
+            d += f" Q{xs[i]:.1f},{y[i]:.1f} {(xs[i] + xs[i + 1]) / 2:.1f},{(y[i] + y[i + 1]) / 2:.1f}"
+        return d + f" L{xs[-1]:.1f},{y[-1]:.1f}"
+
+    def layer(items):
+        body = "".join(f'<path d="{d}" fill="none" stroke="rgb{c}" stroke-opacity="{o}" stroke-width="{sw}"/>' for d, c, o, sw in items)
+        with tempfile.TemporaryDirectory() as tmp:
+            src, dst = pathlib.Path(tmp, "l.svg"), pathlib.Path(tmp, "l.png")
+            src.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"><g style="mix-blend-mode:screen">{body}</g></svg>')
+            subprocess.run(["rsvg-convert", "-o", str(dst), str(src)], check=True)
+            return Image.open(dst).convert("RGBA")
+
+    def glow(under, lines, radius, gain):
+        blurred = lines.filter(ImageFilter.GaussianBlur(radius))
+        lit = Image.alpha_composite(Image.new("RGBA", under.size, (0, 0, 0, 255)), blurred).convert("RGB")
+        return ImageChops.screen(under, lit.point(lambda v: min(255, int(v * gain))))
+
+    y, x = np.mgrid[0:H, 0:W].astype(float)
+    ground = np.ones((H, W, 3)) * np.array((7, 9, 13), float)
+    for cx, cy, sx, sy, colour in ((.82, .15, .35, .9, (60, 26, 10)), (.82, .88, .35, .9, (14, 26, 70)), (.55, .5, .5, 1.2, (12, 16, 26))):
+        ground += np.exp(-(((x - cx * W) / (sx * W)) ** 2 + ((y - cy * H) / (sy * H)) ** 2))[..., None] * np.array(colour, float)
+    ground = Image.fromarray(np.clip(ground, 0, 255).astype(np.uint8), "RGB")
+
+    faint = layer([(smooth(ys[i]), (200, 208, 220), .06, 1.3) for i in range(paths) if i not in hero])
+    bright = layer([(smooth(ys[i]), (255, 107, 44) if end[i] > 0 else (79, 123, 255), .9, 2.8) for i in range(paths) if i in hero])
+    out = glow(glow(ground, faint, 5.4, 1.08), bright, 9, 1.8)
+    out = Image.alpha_composite(Image.alpha_composite(out.convert("RGBA"), faint), bright)
+    out.convert("RGB").resize((w, h), Image.LANCZOS).save(OUT / png_name, optimize=True)
+
+
 def inline_ring(orange, rest):
     return f'<svg class="at" viewBox="0 0 100 100">{ring(INLINE, orange, rest)}</svg>'
 
@@ -140,6 +196,12 @@ def main():
 <div class="wm" style="font-size:52px">Prediction{inline_ring(ORANGE, REST_DARK)}Illinois</div>
 <div class="mono" style="font-size:12.5px;letter-spacing:.3em;color:#8A919C">Prediction market research · UIUC</div></div></div>""",
            "linkedin-cover-1128x191.png", 1128, 191)
+    # text-free cover and a light logo tile: the page name already sits under the banner,
+    # and a white tile reads cleanly where LinkedIn overlaps it on the dark cover
+    cover_art("linkedin-cover-art-1128x191.png", 1128, 191)
+    write("avatar-light.svg", svg(ring(LARGE, ORANGE_LIGHT, REST_LIGHT), bg="#FFFFFF", scale=.62))
+    png("avatar-light.svg", "logo-light-400.png", 400)
+    png("avatar-light.svg", "logo-linkedin-light-300.png", 300)
     print("built", sorted(p.name for p in OUT.iterdir() if p.is_file()))
 
 
