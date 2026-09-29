@@ -222,9 +222,8 @@ nav.site a.on{color:var(--ink)}
 .person h3 a:hover{color:var(--brand)}
 .person .r{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
 .person p{font-size:13px;color:var(--muted)}
-.person .mk{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:auto;padding-top:6px}
-.person .mk a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);padding:3px 8px;border-radius:999px;text-decoration:none}
-.person .mk a:hover{color:var(--brand);border-color:var(--brand-line)}
+.person .r a{color:inherit;text-decoration:none}
+.person .r a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* ---- research: works (Oracle-style list) ---- */
 .page-head.rh .rule{display:block;width:40px;height:2px;background:var(--brand);margin:14px 0 16px}

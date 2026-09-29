@@ -1,6 +1,6 @@
 # One entry per person, in display order (President first). Fields:
 #   name      required
-#   role      e.g. President · Vice President · Lead · Member
+#   role      only for a title such as President; without one, the card shows the person's markets
 #   tracks    list of market keys: elections | sports | crypto | economics | tech | weather
 #   linkedin  full URL (the name becomes a link)
 #   photo     e.g. /assets/team/yicheng.jpg  — square, ≥400px; put files in assets/team/
@@ -14,7 +14,6 @@
   year: Class of 2027
 
 - name: Jiaqi Tang
-  role: Lead
   tracks: [crypto, sports]
   linkedin: https://www.linkedin.com/in/jiaqitang2005/
   photo: /assets/team/jiaqi-tang.jpg
@@ -22,7 +21,6 @@
   year: Class of 2027
 
 - name: Yuxuan Song
-  role: Lead
   tracks: [weather]
   linkedin: https://www.linkedin.com/in/fitz-song/
   photo: /assets/team/yuxuan-song.jpg
@@ -30,14 +28,12 @@
   year: Class of 2026
 
 - name: Joshua Chen
-  role: Lead
   tracks: [sports]
   linkedin: https://www.linkedin.com/in/joshch/
   major: Applied Mathematics & Economics
   year: Class of 2027
 
 - name: Zhangze Liu
-  role: Lead
   tracks: [tech]
   linkedin: https://www.linkedin.com/in/zhangze-liu-635b25298/
   photo: /assets/team/zhangze-liu.jpg
