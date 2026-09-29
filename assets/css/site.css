@@ -169,12 +169,12 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
 
 /* ---- multi-page additions ---- */
 nav.site a.on{color:var(--ink)}
-.page-head{padding-block:clamp(44px,7vw,80px) clamp(28px,4vw,44px);border-bottom:1px solid var(--line)}
+.page-head{padding-block:clamp(36px,5vw,60px) clamp(22px,2.6vw,30px);border-bottom:1px solid var(--line)}
 .page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,60px);letter-spacing:-.03em;line-height:1.04;margin-top:12px}
 /* the first section under a page header mirrors the header's bottom padding, so the rule sits centred */
-.page-head + section.band{padding-top:clamp(28px,4vw,44px)}
+.page-head + section.band{padding-top:clamp(22px,2.6vw,30px)}
 .page-head + section.band > .wrap > :first-child{margin-top:0}
-.page-head .lede{margin-top:16px}
+.page-head .lede{margin-top:16px;max-width:none;text-wrap:balance}
 .kv{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
 .kv b{color:var(--ink-2);font-weight:500}
 a.role{text-decoration:none;color:inherit}
@@ -227,8 +227,8 @@ nav.site a.on{color:var(--ink)}
 .person .mk a:hover{color:var(--brand);border-color:var(--brand-line)}
 
 /* ---- research: works (Oracle-style list) ---- */
-.page-head.rh .rule{display:block;width:40px;height:2px;background:var(--brand);margin:18px 0 20px}
-.page-head.rh .lede{margin-top:0;max-width:40rem}
+.page-head.rh .rule{display:block;width:40px;height:2px;background:var(--brand);margin:14px 0 16px}
+.page-head.rh .lede{margin-top:0}
 .works{display:flex;flex-direction:column;gap:16px}
 .work{position:relative;display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 32px 24px;transition:border-color .2s ease}
 .work:hover{border-color:var(--line-2)}
