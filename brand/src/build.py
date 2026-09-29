@@ -124,10 +124,8 @@ def main():
 
     chips = "".join(f'<span style="border:1px solid #2A2F37;border-radius:999px;padding:12px 18px;background:#11141A">{m}</span>'
                     for m in ("Elections", "Sports", "Crypto", "Economics", "Tech", "Weather"))
-    line = "0,520 150,528 300,500 450,505 600,470 750,461 900,420 1050,400 1200,370"
     chrome(HEAD + f"""<div style="position:relative;width:1200px;height:630px;background:{INK};color:{WHITE};overflow:hidden">
 <div class="grid" style="background-size:150px 126px"></div>
-<svg style="position:absolute;inset:0" width="1200" height="630"><polyline points="{line}" fill="none" stroke="#1F5C4A" stroke-width="2.5"/></svg>
 <div style="position:absolute;left:80px;top:76px;display:flex;align-items:baseline;gap:14px">
 <div class="wm" style="font-size:34px">Prediction{inline_ring(ORANGE, REST_DARK)}Illinois</div><div class="mono" style="font-size:15px;letter-spacing:.2em;color:#8A919C">· UIUC</div></div>
 <div class="wm" style="position:absolute;left:80px;top:250px;font-size:82px;letter-spacing:-.035em;line-height:1.02">Prediction markets,<br><span style="color:#8A919C">traded on research.</span></div>
@@ -136,10 +134,8 @@ def main():
 <div class="mono" style="position:absolute;right:80px;bottom:72px;font-size:14px;letter-spacing:.04em;color:#8A919C;text-transform:none">prediction-illinois.github.io</div></div>""",
            "og-image-1200x630.png", 1200, 630)
 
-    cover_line = "0,150 140,156 280,138 420,141 560,118 700,112 840,96 980,88 1128,70"
     chrome(HEAD + f"""<div style="position:relative;width:1128px;height:191px;background:{INK};color:{WHITE};overflow:hidden">
 <div class="grid" style="background-size:141px 64px"></div>
-<svg style="position:absolute;inset:0" width="1128" height="191"><polyline points="{cover_line}" fill="none" stroke="#1F5C4A" stroke-width="2"/></svg>
 <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
 <div class="wm" style="font-size:52px">Prediction{inline_ring(ORANGE, REST_DARK)}Illinois</div>
 <div class="mono" style="font-size:12.5px;letter-spacing:.3em;color:#8A919C">Prediction market research · UIUC</div></div></div>""",
