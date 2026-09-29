@@ -3,7 +3,7 @@
   --bg:#0B0D10; --surface:#12151A; --surface-2:#191D24; --surface-3:#20252E;
   --ink:#F2F4F7; --ink-2:#C5CBD5; --muted:#8B93A1; --line:#232830; --line-2:#2C333D;
   --brand:#FF6B2C; --brand-ink:#0B0D10; --brand-soft:rgba(255,107,44,.12); --brand-line:rgba(255,107,44,.35);
-  --yes:#34D399; --yes-soft:rgba(52,211,153,.13); --no:#F87171; --no-soft:rgba(248,113,113,.13); --gold:#E3B341;
+  --yes:#34D399; --yes-soft:rgba(52,211,153,.13); --no:#F87171; --no-soft:rgba(248,113,113,.13); --gold:#E3B341; --mark-rest:#4A515C;
   --glass:rgba(11,13,16,.78);
   --display:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -16,7 +16,7 @@
     --bg:#F5F6F8; --surface:#FFFFFF; --surface-2:#EEF0F3; --surface-3:#E4E7EC;
     --ink:#0B0D10; --ink-2:#363B44; --muted:#6B7280; --line:#DDE1E7; --line-2:#CDD2DA;
     --brand:#E85D1F; --brand-ink:#FFFFFF; --brand-soft:rgba(232,93,31,.10); --brand-line:rgba(232,93,31,.35);
-    --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207;
+    --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207; --mark-rest:#D0D5DD;
     --glass:rgba(245,246,248,.82);
   }
 }
@@ -25,7 +25,7 @@
   --bg:#F5F6F8; --surface:#FFFFFF; --surface-2:#EEF0F3; --surface-3:#E4E7EC;
   --ink:#0B0D10; --ink-2:#363B44; --muted:#6B7280; --line:#DDE1E7; --line-2:#CDD2DA;
   --brand:#E85D1F; --brand-ink:#FFFFFF; --brand-soft:rgba(232,93,31,.10); --brand-line:rgba(232,93,31,.35);
-  --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207;
+  --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207; --mark-rest:#D0D5DD;
   --glass:rgba(245,246,248,.82);
 }
 *{box-sizing:border-box}
@@ -46,8 +46,10 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgrou
 .bar{display:flex;align-items:center;gap:20px;min-height:62px}
 .brandlink{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
 .brandlink svg{width:26px;height:26px}
-.wordmark{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em}
-.wordmark .at{color:var(--brand)}
+.wordmark{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em;white-space:nowrap}
+/* the logo lockup sets the ring in place of the "@"; running text keeps the character */
+.wordmark .wm-at{display:inline-block;width:.9em;height:.9em;vertical-align:-.1em;margin:0 .025em;color:var(--brand)}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 nav.site{display:flex;gap:22px;align-items:center}
 nav.site a{font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
 nav.site a:hover{color:var(--ink)}

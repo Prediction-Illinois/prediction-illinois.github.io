@@ -1,18 +1,25 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="mark" viewBox="0 0 100 100">
-      <g fill="none" stroke="currentColor" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="49" cy="50" r="13"/>
-        <path d="M62 37 L62 66 Q62 82.5 55.73 82.5 A33 33 0 1 1 82.5 55.73 L91.5 63.5"/>
+      <g fill="none" stroke-width="15" transform="rotate(135 50 50)">
+        <circle cx="50" cy="50" r="34" stroke="currentColor" stroke-dasharray="122.45 213.63" stroke-dashoffset="-5"/>
+        <circle cx="50" cy="50" r="34" style="stroke:var(--mark-rest)" stroke-dasharray="71.18 213.63" stroke-dashoffset="-137.45"/>
       </g>
+      <circle cx="50" cy="50" r="13" fill="currentColor"/>
+    </symbol>
+    <symbol id="mark-inline" viewBox="0 0 100 100">
+      <g fill="none" stroke-width="17" transform="rotate(135 50 50)">
+        <circle cx="50" cy="50" r="34" stroke="currentColor" stroke-dasharray="122.45 213.63" stroke-dashoffset="-5"/>
+        <circle cx="50" cy="50" r="34" style="stroke:var(--mark-rest)" stroke-dasharray="71.18 213.63" stroke-dashoffset="-137.45"/>
+      </g>
+      <circle cx="50" cy="50" r="14" fill="currentColor"/>
     </symbol>
   </defs>
 </svg>
 <header class="site">
   <div class="wrap bar">
     <a class="brandlink" href="/" aria-label="Prediction at Illinois, home">
-      <svg style="color:var(--brand)"><use href="#mark"/></svg>
-      <span class="wordmark">Prediction<span class="at">@</span>Illinois</span>
+      <span class="wordmark">Prediction<svg class="wm-at" aria-hidden="true"><use href="#mark-inline"/></svg><span class="vh">@</span>Illinois</span>
     </a>
     <nav class="site" aria-label="Primary">
       <a href="/"{% if page.url == '/' %} class="on"{% endif %}>Home</a>

@@ -4,7 +4,7 @@ description: Quantitative trading research on prediction markets at the Universi
 contact: ethanyang85@outlook.com
 apply_url: https://docs.google.com/forms/d/e/1FAIpQLScOw2CSc0HgU0zKwo9bV3qQvcRSHpT6nZxHLWvsBfikycIMcg/viewform   # Google Form (owner: 2165187809@qq.com Google account)
 apply_market_entry: "1919375988"   # checkbox question 'Which markets interest you?' — used to prefill from market pages
-exclude: [README.md, CNAME.disabled, docs, outreach, brand/v1_old]
+exclude: [README.md, CNAME.disabled, docs, outreach, brand/v1_old, brand/v2_old, brand/src]
 plugins: [jekyll-sitemap]
 google_site_verification:        # paste the token from Google Search Console here
 defaults:
