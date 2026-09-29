@@ -112,7 +112,7 @@ nav.site a:hover{color:var(--ink)}
 .tk .cat{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
 /* sections */
-section.band{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--line)}
+section.band{padding-block:clamp(40px,5.5vw,72px);border-bottom:1px solid var(--line)}
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end}
 @media (max-width:760px){.sec-head{grid-template-columns:1fr}}
 .h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em;line-height:1.05;margin-top:12px}
@@ -170,7 +170,10 @@ footer{padding-block:40px 52px;color:var(--muted);font-size:12.5px}
 /* ---- multi-page additions ---- */
 nav.site a.on{color:var(--ink)}
 .page-head{padding-block:clamp(44px,7vw,80px) clamp(28px,4vw,44px);border-bottom:1px solid var(--line)}
-.page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,60px);letter-spacing:-.03em;line-height:1.04;margin-top:12px;max-width:16ch}
+.page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,60px);letter-spacing:-.03em;line-height:1.04;margin-top:12px}
+/* the first section under a page header mirrors the header's bottom padding, so the rule sits centred */
+.page-head + section.band{padding-top:clamp(28px,4vw,44px)}
+.page-head + section.band > .wrap > :first-child{margin-top:0}
 .page-head .lede{margin-top:16px}
 .kv{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
 .kv b{color:var(--ink-2);font-weight:500}
