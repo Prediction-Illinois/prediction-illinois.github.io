@@ -3,7 +3,7 @@
   --bg:#0B0D10; --surface:#12151A; --surface-2:#191D24; --surface-3:#20252E;
   --ink:#F2F4F7; --ink-2:#C5CBD5; --muted:#8B93A1; --line:#232830; --line-2:#2C333D;
   --brand:#FF6B2C; --brand-ink:#0B0D10; --brand-soft:rgba(255,107,44,.12); --brand-line:rgba(255,107,44,.35);
-  --yes:#34D399; --yes-soft:rgba(52,211,153,.13); --no:#F87171; --no-soft:rgba(248,113,113,.13);
+  --yes:#34D399; --yes-soft:rgba(52,211,153,.13); --no:#F87171; --no-soft:rgba(248,113,113,.13); --gold:#E3B341;
   --glass:rgba(11,13,16,.78);
   --display:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -16,7 +16,7 @@
     --bg:#F5F6F8; --surface:#FFFFFF; --surface-2:#EEF0F3; --surface-3:#E4E7EC;
     --ink:#0B0D10; --ink-2:#363B44; --muted:#6B7280; --line:#DDE1E7; --line-2:#CDD2DA;
     --brand:#E85D1F; --brand-ink:#FFFFFF; --brand-soft:rgba(232,93,31,.10); --brand-line:rgba(232,93,31,.35);
-    --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10);
+    --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207;
     --glass:rgba(245,246,248,.82);
   }
 }
@@ -25,7 +25,7 @@
   --bg:#F5F6F8; --surface:#FFFFFF; --surface-2:#EEF0F3; --surface-3:#E4E7EC;
   --ink:#0B0D10; --ink-2:#363B44; --muted:#6B7280; --line:#DDE1E7; --line-2:#CDD2DA;
   --brand:#E85D1F; --brand-ink:#FFFFFF; --brand-soft:rgba(232,93,31,.10); --brand-line:rgba(232,93,31,.35);
-  --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10);
+  --yes:#059669; --yes-soft:rgba(5,150,105,.10); --no:#DC2626; --no-soft:rgba(220,38,38,.10); --gold:#A16207;
   --glass:rgba(245,246,248,.82);
 }
 *{box-sizing:border-box}
@@ -239,8 +239,9 @@ nav.site a.on{color:var(--ink)}
 .work .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);padding:5px 10px;border-radius:4px;white-space:nowrap}
 .work.tool .badge{color:var(--yes);background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
 .work .wf-r{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.work .badge.gh,.work.tool .badge.gh{color:var(--ink);background:color-mix(in srgb,#E3B341 12%,transparent);border-color:color-mix(in srgb,#E3B341 50%,transparent)}
-.work .badge.gh i{font-style:normal;color:#E3B341;letter-spacing:0;margin-right:2px}
+.work .badge.gh,.work.tool .badge.gh{color:var(--ink);background:color-mix(in srgb,var(--gold) 12%,transparent);border-color:color-mix(in srgb,var(--gold) 55%,transparent)}
+.work .badge.gh i{font-style:normal;font-size:13px;line-height:0;vertical-align:-1px;color:var(--gold);letter-spacing:0;margin-right:3px}
+.work .badge.gh b{color:var(--gold);font-weight:700}
 @media (max-width:560px){.work{padding:22px 18px 18px}.work .yr{top:16px;right:16px}.work h2{padding-right:44px}}
 
 .work .abs-t{font:inherit;font-size:13px;color:var(--ink-2);background:none;border:0;padding:0;cursor:pointer;border-bottom:1px solid var(--line-2)}
