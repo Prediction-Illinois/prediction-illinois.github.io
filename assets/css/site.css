@@ -238,6 +238,9 @@ nav.site a.on{color:var(--ink)}
 .work .au{font-size:13px;color:var(--muted)}
 .work .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);padding:5px 10px;border-radius:4px;white-space:nowrap}
 .work.tool .badge{color:var(--yes);background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
+.work .wf-r{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.work .badge.gh,.work.tool .badge.gh{color:var(--ink);background:color-mix(in srgb,#E3B341 12%,transparent);border-color:color-mix(in srgb,#E3B341 50%,transparent)}
+.work .badge.gh i{font-style:normal;color:#E3B341;letter-spacing:0;margin-right:2px}
 @media (max-width:560px){.work{padding:22px 18px 18px}.work .yr{top:16px;right:16px}.work h2{padding-right:44px}}
 
 .work .abs-t{font:inherit;font-size:13px;color:var(--ink-2);background:none;border:0;padding:0;cursor:pointer;border-bottom:1px solid var(--line-2)}

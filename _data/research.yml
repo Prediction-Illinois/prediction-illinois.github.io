@@ -2,6 +2,7 @@
 # markets: optional list of market keys — the entry also appears on those market pages.
 # status: Working paper | Conference paper | Journal article | In preparation
 # presented: free text (conference, venue, date). links: ssrn / pdf / code / doi — any subset.
+# stars: optional GitHub star count, e.g. "200+" — rendered as a gold-star pill linking to links.code.
 - title: "Pricing Prediction Markets: Incomplete Markets, Selection Rules, and Calibration Wedges"
   authors:
     - name: Yicheng Yang
@@ -58,6 +59,7 @@
   kind: tool             # green badge
   badge: Open source · v1.2.1
   badge_url: https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent/releases/tag/v1.2.1
+  stars: "200+"          # GitHub stars, shown as a highlighted pill (258 on 2026-09-29)
   summary: Maps the logical relations between event contracts on Kalshi and Polymarket, finds the cheapest basket at executable prices whenever quotes break the axioms of probability, prices every leg under that venue's own fee schedule, and paper-trades the baskets that survive under pre-trade risk limits.
   links:
     code: https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent   # Apache-2.0; original U Lab portions MIT (NOTICE)

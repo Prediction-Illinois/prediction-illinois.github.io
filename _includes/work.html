@@ -5,7 +5,7 @@
   {% if r.summary %}<p class="sum">{{ r.summary }}</p>{% endif %}
   <div class="wf">
     <span class="au">{% for a in r.authors %}{{ a.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% if r.abstract %} · <button class="abs-t" type="button" aria-expanded="false" data-abs>Abstract</button>{% endif %}</span>
-    {% if r.badge %}{% if bhref %}<a class="badge" href="{{ bhref }}" target="_blank" rel="noopener">{{ r.badge }} ↗</a>{% else %}<span class="badge">{{ r.badge }}</span>{% endif %}{% endif %}
+    <span class="wf-r">{% if r.stars %}<a class="badge gh" href="{{ r.links.code }}" target="_blank" rel="noopener"><i aria-hidden="true">★</i> {{ r.stars }} stars on GitHub</a>{% endif %}{% if r.badge %}{% if bhref %}<a class="badge" href="{{ bhref }}" target="_blank" rel="noopener">{{ r.badge }} ↗</a>{% else %}<span class="badge">{{ r.badge }}</span>{% endif %}{% endif %}</span>
   </div>
   {% if r.abstract %}<div class="abs" hidden><p>{{ r.abstract }}</p></div>{% endif %}
 </article>
