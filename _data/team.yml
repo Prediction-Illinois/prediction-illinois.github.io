@@ -53,3 +53,14 @@
   photo: /assets/team/xing-sun.jpg
   major: Statistics
   year: Class of 2030
+
+- name: Scott Oftedahl
+  tracks: [sports, crypto]
+  linkedin: https://www.linkedin.com/in/scottoftedahl/
+  major: Computer Engineering
+  year: Class of 2029
+
+- name: Chandhra Gundam
+  tracks: [sports]
+  linkedin: https://www.linkedin.com/in/cgundam/
+  major: Computer Science & GIS
