@@ -33,26 +33,12 @@
   major: Applied Mathematics & Economics
   year: Class of 2027
 
-- name: Zhangze Liu
-  tracks: [tech]
-  linkedin: https://www.linkedin.com/in/zhangze-liu-635b25298/
-  photo: /assets/team/zhangze-liu.jpg
-  major: Physics
-  year: Class of 2029
-
 - name: Tianyu Zhang
   tracks: [economics]
   linkedin: https://www.linkedin.com/in/tianyu-zhang-b712103bb/
   photo: /assets/team/tianyu-zhang.jpg
   major: Economics & Environmental Science
   year: Class of 2028
-
-- name: Xing Sun
-  tracks: [sports]
-  linkedin: https://www.linkedin.com/in/xing-sun-b92608361/
-  photo: /assets/team/xing-sun.jpg
-  major: Statistics
-  year: Class of 2030
 
 - name: Scott Oftedahl
   tracks: [sports, crypto]
@@ -61,9 +47,23 @@
   major: Computer Engineering
   year: Class of 2028
 
+- name: Zhangze Liu
+  tracks: [tech]
+  linkedin: https://www.linkedin.com/in/zhangze-liu-635b25298/
+  photo: /assets/team/zhangze-liu.jpg
+  major: Physics
+  year: Class of 2029
+
 - name: Chandhra Gundam
   tracks: [sports]
   linkedin: https://www.linkedin.com/in/cgundam/
   photo: /assets/team/chandhra-gundam.jpg
   major: Computer Science & GIS
   year: Class of 2029
+
+- name: Xing Sun
+  tracks: [sports]
+  linkedin: https://www.linkedin.com/in/xing-sun-b92608361/
+  photo: /assets/team/xing-sun.jpg
+  major: Statistics
+  year: Class of 2030
