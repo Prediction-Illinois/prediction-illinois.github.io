@@ -47,6 +47,13 @@
   major: Computer Engineering
   year: Class of 2028
 
+- name: Sai Patel
+  tracks: [sports]
+  linkedin: https://www.linkedin.com/in/saipatel19/
+  photo: /assets/team/sai-patel.jpg
+  major: Mathematics
+  year: Class of 2028
+
 - name: Zhangze Liu
   tracks: [tech]
   linkedin: https://www.linkedin.com/in/zhangze-liu-635b25298/
