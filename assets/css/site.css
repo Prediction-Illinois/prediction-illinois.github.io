@@ -262,3 +262,21 @@ a.badge:hover{filter:brightness(1.1)}
 .apply-card .asks li{position:relative;padding-left:18px;font-size:15px;color:var(--ink-2);line-height:1.45}
 .apply-card .asks li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--brand)}
 .apply-card .btn{align-self:flex-start;margin-top:6px}
+
+/* ---- competitions ---- */
+.work.comp h2{padding-right:0}
+.work.comp .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.work .badge.live{color:var(--yes);background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
+.work .badge.done{color:var(--ink-2);background:var(--surface-2);border-color:var(--line-2)}
+.work.comp .au a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.work.comp .au a:hover{color:var(--brand);border-color:var(--brand)}
+
+/* ---- industry ---- */
+.qs.steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.qs.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.qs.steps{grid-template-columns:1fr}}
+.join .card.apply-card{height:100%}
+
+/* six nav items: shorten, then drop, the applications chip before the bar runs out of room */
+@media (max-width:1180px){.chip span.t{display:none}}
+@media (min-width:761px) and (max-width:1020px){header.site .chip{display:none}}

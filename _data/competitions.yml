@@ -1,0 +1,26 @@
+# Prediction-market and forecasting competitions members have entered or hosted, newest first.
+#   name, organizer, url      required
+#   role                      competed | hosted   (hosted entries get their own section at the top)
+#   start, end                YYYY-MM-DD; the status badge (Upcoming / In progress / Completed) is computed from them
+#   members                   names exactly as on the Team page (they link to LinkedIn)
+#   entry                     optional team or submission name
+#   format                    one or two sentences on what entrants do
+#   result                    optional, only once the organizer publishes it (e.g. "Top 10 of 870") — no P&L
+- name: Explaining Markets — Q4 2026
+  organizer: University of Chicago Booth · Optiver
+  url: https://explainingmarkets.ai
+  role: competed
+  start: 2026-10-12
+  end: 2026-12-15
+  members: [Yicheng Yang]
+  entry: Prediction@Illinois
+  format: AI systems that explain how stocks react to earnings announcements. As each company reports, the agent receives the earnings-call summary, submits a prediction automatically, and is scored against the actual market reaction on a public leaderboard.
+
+- name: Susquehanna Predictions Cup — Midterm Elections Tournament
+  organizer: Susquehanna International Group
+  url: https://sig.thesuper.market/
+  role: competed
+  start: 2026-10-01
+  end: 2026-11-04
+  members: [Yicheng Yang]
+  format: A student trading competition on the 2026 U.S. midterm elections. Entrants trade Senate, House and governor contracts on SIG's prediction-market platform with simulated currency, and standings are final once every market settles on the real results.

@@ -1,0 +1,11 @@
+{% assign c = include.c %}{% assign s = c.start | date: "%Y-%m-%d" %}{% assign e = c.end | date: "%Y-%m-%d" %}{% assign today = site.time | date: "%Y-%m-%d" %}
+{% if today < s %}{% assign st = "Upcoming" %}{% assign cls = "" %}{% elsif today > e %}{% assign st = "Completed" %}{% assign cls = "done" %}{% else %}{% assign st = "In progress" %}{% assign cls = "live" %}{% endif %}
+<article class="work comp" data-start="{{ s }}" data-end="{{ e }}">
+  <div class="meta"><span>{{ c.organizer }}</span><span>{{ c.start | date: "%b %-d" }} – {{ c.end | date: "%b %-d, %Y" }}</span></div>
+  <h2><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a></h2>
+  {% if c.format %}<p class="sum">{{ c.format }}</p>{% endif %}
+  <div class="wf">
+    <span class="au">{% if c.role == "hosted" %}Hosted by Prediction@Illinois{% else %}{% for m in c.members %}{% assign tm = site.data.team | where: "name", m | first %}{% if tm.linkedin %}<a href="{{ tm.linkedin }}" target="_blank" rel="noopener">{{ m }}</a>{% else %}{{ m }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}{% if c.entry %} · entry “{{ c.entry }}”{% endif %}{% endif %}</span>
+    <span class="wf-r">{% if c.result %}<span class="badge gh">{{ c.result }}</span>{% endif %}<span class="badge {{ cls }}" data-status>{{ st }}</span></span>
+  </div>
+</article>

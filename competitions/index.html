@@ -1,0 +1,36 @@
+---
+layout: default
+title: Competitions
+description: Prediction-market trading and forecasting competitions that Prediction@Illinois members have entered or hosted.
+---
+{% assign hosted = site.data.competitions | where: "role", "hosted" %}
+{% assign competed = site.data.competitions | where: "role", "competed" %}
+<section class="wrap page-head rh">
+  <span class="eyebrow brand">Competitions</span>
+  <h1>Competitions</h1>
+  <i class="rule"></i>
+  <p class="lede">Prediction-market trading and forecasting competitions our members have entered or hosted. Every one is scored against real outcomes.</p>
+</section>
+
+{% if hosted.size > 0 %}
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Hosted</span><h2 class="h2">Competitions we run</h2></div>
+    <p class="sub">Open to students at Illinois and beyond.</p>
+  </div>
+  <div class="works">{% for c in hosted %}{% include competition.html c=c %}{% endfor %}</div>
+</div></section>
+{% endif %}
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Entered</span><h2 class="h2">Where members compete</h2></div>
+    <p class="sub">Entries by our members. Results are added once the organizer publishes final standings.</p>
+  </div>
+  <div class="works">{% for c in competed %}{% include competition.html c=c %}{% endfor %}</div>
+</div></section>
+
+<section class="wrap cta-band"><div class="in">
+  <div><h3>Run a competition with us</h3><p>Firms and venues that want to host a prediction-market competition at Illinois: we bring the participants.</p></div>
+  <a class="btn btn-1 btn-lg" href="mailto:{{ site.contact }}?subject=Competition%20with%20Prediction%40Illinois">Email us</a>
+</div></section>

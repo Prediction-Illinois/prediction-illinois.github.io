@@ -1,0 +1,81 @@
+---
+layout: default
+title: Industry Projects
+description: Each semester a partner trading firm brings a real prediction-market problem to Prediction@Illinois. Members work on it with the firm's researchers, and standout members interview directly for internships and full-time roles.
+---
+{% comment %}
+  To list partner firms, create _data/partners.yml with entries like:
+    - name: Firm name
+      url: https://example.com
+      semester: Spring 2027
+      project: One sentence on the problem the team is working on.
+  The "Current partners" section below appears only when that file has entries.
+{% endcomment %}
+<section class="wrap page-head">
+  <span class="eyebrow brand">Industry</span>
+  <h1>Industry projects</h1>
+  <p class="lede">A partner firm brings one real problem from its prediction-market work. A team of members spends the semester on it with the firm's researchers, and members whose work stands out interview directly for the firm's internship and full-time roles.</p>
+  <div class="kv"><span>Length <b>One semester</b></span><span>Team <b>Members, with a mentor from the firm</b></span><span>Outcome <b>Code, a written result, interviews</b></span></div>
+</section>
+
+{% if site.data.partners and site.data.partners.size > 0 %}
+<section class="band"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Partners</span><h2 class="h2">Current partners</h2></div></div>
+  <div class="roles">{% for p in site.data.partners %}<a class="role" href="{{ p.url }}" target="_blank" rel="noopener"><span class="st">{{ p.semester }}</span><h3>{{ p.name }}</h3><p>{{ p.project }}</p></a>{% endfor %}</div>
+</div></section>
+{% endif %}
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">How it works</span><h2 class="h2">One problem, one semester</h2></div>
+    <p class="sub">The firm picks the problem. The team does the research. The firm sees the result, and the people who produced it.</p>
+  </div>
+  <div class="qs steps">
+    <div><b>01 · Scope</b>The firm brings one problem from its prediction-market work and agrees with us on the data, the deliverable, and what a good result looks like.</div>
+    <div><b>02 · Build</b>A small team of members works on it through the semester, checking in regularly with researchers at the firm.</div>
+    <div><b>03 · Present</b>At the end of the semester the team hands over its code and a written result, and presents it to the firm.</div>
+    <div><b>04 · Interview</b>Members whose work stands out go straight to the firm's internship or full-time interviews.</div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Problems</span><h2 class="h2">What a project can be</h2></div>
+    <p class="sub">Anything a trading firm wants answered about event contracts. Some examples, drawn from questions our members already work on:</p>
+  </div>
+  <div class="roles">
+    <div class="role"><span class="st">Pricing</span><h3>Cross-venue pricing</h3><p>The same event trades on Kalshi, Polymarket and other venues. When do their prices disagree, and does the gap survive fees and execution?</p></div>
+    <div class="role"><span class="st">Calibration</span><h3>Are prices probabilities?</h3><p>How far a market's prices sit from realized outcome frequencies, and whether that wedge can be traded or corrected.</p></div>
+    <div class="role"><span class="st">Liquidity</span><h3>Market making in event contracts</h3><p>Quoting binary contracts: spreads, inventory, and adverse selection as an event approaches resolution.</p></div>
+    <div class="role"><span class="st">Macro</span><h3>Scheduled releases</h3><p>Contracts on FOMC decisions, CPI prints and earnings, against the futures and options that hedge the same outcome.</p></div>
+    <div class="role"><span class="st">Sports</span><h3>In-game pricing</h3><p>Live win-probability models against the market, tick by tick, and where the market lags the game.</p></div>
+    <div class="role"><span class="st">Forecasting</span><h3>Forecasting systems</h3><p>Statistical and LLM agents that forecast resolutions using only the information available at the time.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="join">
+    <div class="card apply-card">
+      <span class="eyebrow brand">For firms</span>
+      <h3>Bring us a problem.</h3>
+      <ul class="asks">
+        <li>A team working on a problem you choose, for a full semester</li>
+        <li>Code and a written result you can use</li>
+        <li>A close look at members before recruiting season</li>
+        <li>Projects can run under your confidentiality terms</li>
+      </ul>
+      <a class="btn btn-1 btn-lg" href="mailto:{{ site.contact }}?subject=Industry%20project%20with%20Prediction%40Illinois">Email us about a project</a>
+    </div>
+    <div class="card apply-card">
+      <span class="eyebrow brand">For members</span>
+      <h3>Work on a real desk problem.</h3>
+      <ul class="asks">
+        <li>A problem a trading firm actually wants answered</li>
+        <li>Regular feedback from the firm's researchers</li>
+        <li>A finished result you can show</li>
+        <li>A direct path to the firm's interviews if your work stands out</li>
+      </ul>
+      <a class="btn btn-2 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply to join</a>
+    </div>
+  </div>
+</div></section>

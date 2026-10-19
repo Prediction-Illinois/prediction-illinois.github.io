@@ -98,4 +98,13 @@
     const btn = e.currentTarget, text = ($("#mail") || {}).textContent || "";
     try { await navigator.clipboard.writeText(text); flash(btn, "Copied"); } catch (_) { flash(btn, "Select it"); }
   });
+
+  // competitions: recompute the status badge from today's date, since pages only rebuild on push
+  const today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll(".comp[data-start]").forEach(el => {
+    const b = el.querySelector("[data-status]"); if (!b) return;
+    const s = el.dataset.start, e = el.dataset.end;
+    const st = today < s ? "Upcoming" : today > e ? "Completed" : "In progress";
+    b.textContent = st; b.className = "badge" + (st === "In progress" ? " live" : st === "Completed" ? " done" : "");
+  });
 })();
