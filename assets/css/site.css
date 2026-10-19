@@ -264,6 +264,7 @@ a.badge:hover{filter:brightness(1.1)}
 .apply-card .btn{align-self:flex-start;margin-top:6px}
 
 /* ---- competitions ---- */
+.sec-head + .works{margin-top:28px}
 .work.comp h2{padding-right:0}
 .work.comp .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .work .badge.live{color:var(--yes);background:var(--yes-soft);border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
