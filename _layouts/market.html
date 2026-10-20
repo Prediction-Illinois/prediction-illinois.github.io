@@ -34,6 +34,20 @@ layout: default
 </div></section>
 {% endif %}
 
+{% assign comps = site.data.competitions | where_exp: "c", "c.markets contains page.market" %}
+{% if comps and comps.size > 0 %}
+{% assign comps_in = comps | where_exp: "c", "c.role != 'open'" %}
+{% assign comps_open = comps | where: "role", "open" | sort: "end", "last" %}
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Competitions</span><h2 class="h2">Where to compete</h2></div>
+    <p class="sub">{% if comps_in.size > 0 %}Competitions our members have entered, and public ones open now.{% else %}Public competitions open now, all free to enter.{% endif %} <a href="/competitions/">All competitions →</a></p>
+  </div>
+  {% if comps_in.size > 0 %}<div class="works">{% for c in comps_in %}{% include competition.html c=c %}{% endfor %}</div>{% endif %}
+  {% if comps_open.size > 0 %}<div class="roles comps">{% for c in comps_open %}{% include comp-open.html c=c here=page.market %}{% endfor %}</div>{% endif %}
+</div></section>
+{% endif %}
+
 <section class="band"><div class="wrap">
   <div class="sec-head">
     <div><span class="eyebrow">Open questions</span><h2 class="h2">Questions we work on</h2></div>

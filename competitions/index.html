@@ -1,15 +1,16 @@
 ---
 layout: default
 title: Competitions
-description: Prediction-market trading and forecasting competitions that Prediction@Illinois members have entered or hosted.
+description: Prediction-market trading and forecasting competitions that Prediction@Illinois members have entered or hosted, and public ones open now.
 ---
 {% assign hosted = site.data.competitions | where: "role", "hosted" %}
 {% assign competed = site.data.competitions | where: "role", "competed" %}
+{% assign open = site.data.competitions | where: "role", "open" | sort: "end", "last" %}
 <section class="wrap page-head rh">
   <span class="eyebrow brand">Competitions</span>
   <h1>Competitions</h1>
   <i class="rule"></i>
-  <p class="lede">Prediction-market trading and forecasting competitions our members have entered or hosted. Every one is scored against real outcomes.</p>
+  <p class="lede">Prediction-market trading and forecasting competitions our members have entered or hosted, and public ones you can enter now. Every one is scored against real outcomes.</p>
 </section>
 
 {% if hosted.size > 0 %}
@@ -29,6 +30,16 @@ description: Prediction-market trading and forecasting competitions that Predict
   </div>
   <div class="works">{% for c in competed %}{% include competition.html c=c %}{% endfor %}</div>
 </div></section>
+
+{% if open.size > 0 %}
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Open now</span><h2 class="h2">Competitions you can enter</h2></div>
+    <p class="sub">Public prediction-market and forecasting competitions running now, all free to enter. We list them for members; we don't run them.</p>
+  </div>
+  <div class="roles comps">{% for c in open %}{% include comp-open.html c=c %}{% endfor %}</div>
+</div></section>
+{% endif %}
 
 <section class="wrap cta-band"><div class="in">
   <div><h3>Run a competition with us</h3><p>Firms and venues that want to host a prediction-market competition at Illinois: we bring the participants.</p></div>

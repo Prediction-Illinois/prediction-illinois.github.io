@@ -1,15 +1,23 @@
-# Prediction-market and forecasting competitions members have entered or hosted, newest first.
+# Prediction-market and forecasting competitions: ones members have entered or hosted, and public ones open now.
 #   name, organizer, url      required
-#   role                      competed | hosted   (hosted entries get their own section at the top)
-#   start, end                YYYY-MM-DD; the status badge (Upcoming / In progress / Completed) is computed from them
+#   role                      competed | hosted | open
+#                               competed/hosted: club entries (hosted get their own section at the top)
+#                               open: public competitions anyone can enter, shown under "Open now";
+#                                     each one drops off the site after its end date
+#   markets                   market keys (elections | sports | crypto | economics | tech | weather);
+#                             the entry also appears on those market pages
+#   start, end                YYYY-MM-DD; club entries need both (the status badge is computed from them);
+#                             open entries may leave out start, and leave out end if they run on a rolling basis
 #   members                   optional; names exactly as on the Team page (they link to LinkedIn)
 #   entry                     optional team or submission name
-#   format                    one or two sentences on what entrants do
+#   format                    one or two sentences on what entrants do (open entries: keep it to one)
+#   prize                     open entries only, optional: the organizer's published prize, shown as written, e.g. "$10,000 prize pool"
 #   result                    optional, only once the organizer publishes it (e.g. "Top 10 of 870") — no P&L
 - name: Explaining Markets — Q4 2026
   organizer: University of Chicago Booth · Optiver
   url: https://explainingmarkets.ai
   role: competed
+  markets: [economics]
   start: 2026-10-12
   end: 2026-12-15
   entry: Prediction@Illinois
@@ -19,6 +27,128 @@
   organizer: Susquehanna International Group
   url: https://sig.thesuper.market/
   role: competed
+  markets: [elections]
   start: 2026-10-01
   end: 2026-11-04
   format: A student trading competition on the 2026 U.S. midterm elections. Entrants trade Senate, House and governor contracts on SIG's prediction-market platform with simulated currency, and standings are final once every market settles on the real results.
+
+# ---- Open now: public competitions anyone can enter (verified on the organizers' pages, 2026-10-19) ----
+- name: 2026 US Midterms Challenge
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/134-2026-us-midterms-challenge
+  role: open
+  markets: [elections]
+  end: 2026-11-03
+  format: Forecast Senate and governor races, state ballot measures and gas prices up to Election Day, ranked by accuracy against the crowd.
+
+- name: US Midterms 2026
+  organizer: Metaculus
+  url: https://www.metaculus.com/tournament/midterms-2026/
+  role: open
+  markets: [elections]
+  start: 2026-05-27
+  end: 2026-11-04
+  prize: $10,000 in prizes
+  format: Forecast about 65 questions on the House, Senate and governor races and what follows from them, scored on accuracy over time.
+
+- name: 2028 US Election (Preseason) Challenge
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/139-2028-us-election-preseason-challenge
+  role: open
+  markets: [elections]
+  end: 2027-11-07
+  format: Forecast the early 2028 presidential race, starting with who announces a run and when.
+
+- name: POTUS Predictions
+  organizer: Metaculus
+  url: https://www.metaculus.com/tournament/POTUS-predictions/
+  role: open
+  markets: [elections]
+  start: 2025-03-28
+  end: 2029-01-03
+  prize: $15,000 in prizes
+  format: Forecast policy, the courts, the economy and the 2028 field under the second Trump administration, with one prize phase closing in January 2027 and one in 2029.
+
+- name: NFL Big Data Bowl 2027
+  organizer: NFL · Kaggle
+  url: https://www.kaggle.com/competitions/nfl-big-data-bowl-2027
+  role: open
+  markets: [sports]
+  start: 2026-10-06
+  end: 2027-01-06
+  prize: $100,000 in prizes
+  format: Link NFL Combine player-tracking data to regular-season performance in a written analysis, with a separate track for all-undergraduate teams.
+
+- name: NFL Weekly Challenge 2026
+  organizer: SportsPredict
+  url: https://sportspredict.com/probability/nfl-weekly-challenge
+  role: open
+  markets: [sports]
+  start: 2026-09-24
+  end: 2027-01-10
+  format: Put a probability on dozens of NFL game questions before kickoff each week and get ranked on weekly accuracy. No betting involved.
+
+- name: 2026-27 “Sportsball” Challenge
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/126-2026-27-sportsball-challenge
+  role: open
+  markets: [sports]
+  end: 2027-02-14
+  format: Forecast season-long questions, from NFL season leaders to the first pick of the 2027 draft and college conference champions.
+
+- name: “Right!” said FRED — Q4 2026 Finance and Economics Challenge
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/144-right-said-fred-q4-2026-finance-and-economics-challenge
+  role: open
+  markets: [economics]
+  end: 2027-01-01
+  format: Forecast 14 year-end values from FRED data, including the 10-year Treasury yield, WTI oil, the high-yield spread and the bitcoin price.
+
+- name: A Challenge of Interest!
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/129-a-challenge-of-interest-rates
+  role: open
+  markets: [economics]
+  end: 2027-01-01
+  format: Forecast central-bank decisions and rates, from the Fed's projections to the Bank of England, the Bank of Japan and mortgage rates.
+
+- name: Fall 2026 FutureEval Bot Tournament
+  organizer: Metaculus
+  url: https://www.metaculus.com/tournament/fall-futureeval-2026/
+  role: open
+  markets: [tech]
+  start: 2026-09-28
+  end: 2027-01-06
+  prize: $50,000 in prizes
+  format: Build an AI bot that forecasts hundreds of real-world questions through the Metaculus API on its own, with no human in the loop.
+
+- name: Artificial Intelligence in 2026 and Beyond
+  organizer: Good Judgment Open
+  url: https://www.gjopen.com/challenges/133-artificial-intelligence-in-2026-and-beyond
+  role: open
+  markets: [tech]
+  end: 2027-02-01
+  format: Forecast how fast businesses adopt AI, Big Tech headcount, NVIDIA's revenue and related markets.
+
+- name: The Weekly Set
+  organizer: Prophet Arena
+  url: https://www.prophetarena.co/weekly
+  role: open
+  markets: [tech]
+  format: Submit your AI agent's probabilities on about 100 live Kalshi and Polymarket questions each week, ranked by Brier score with the market price shown for reference.
+
+- name: ForecastBench
+  organizer: Forecasting Research Institute
+  url: https://www.forecastbench.org/
+  role: open
+  markets: [tech]
+  format: Run an LLM forecasting system on 500 questions every two weeks and get ranked on a public benchmark leaderboard.
+
+- name: Metaculus Cup Fall 2026
+  organizer: Metaculus
+  url: https://www.metaculus.com/tournament/metaculus-cup-fall-2026/
+  role: open
+  start: 2026-08-28
+  end: 2027-01-01
+  prize: $5,000 in prizes
+  format: Forecast four or five new topical questions every week, competing against the community and a guest data journalist.

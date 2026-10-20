@@ -107,4 +107,6 @@
     const st = today < s ? "Upcoming" : today > e ? "Completed" : "In progress";
     b.textContent = st; b.className = "badge" + (st === "In progress" ? " live" : st === "Completed" ? " done" : "");
   });
+  // open competitions drop off the list once they end
+  document.querySelectorAll(".ocomp[data-end]").forEach(el => { if (today > el.dataset.end) el.hidden = true; });
 })();

@@ -271,6 +271,10 @@ a.badge:hover{filter:brightness(1.1)}
 .work .badge.done{color:var(--ink-2);background:var(--surface-2);border-color:var(--line-2)}
 .work.comp .au a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
 .work.comp .au a:hover{color:var(--brand);border-color:var(--brand)}
+.sec-head + .roles.comps{margin-top:28px}
+.works + .roles.comps{margin-top:16px}
+.sec-head .sub a{color:var(--brand);text-decoration:none;white-space:nowrap}
+.sec-head .sub a:hover{text-decoration:underline}
 
 /* ---- industry ---- */
 .qs.steps{grid-template-columns:repeat(4,minmax(0,1fr))}
