@@ -112,6 +112,16 @@
   end: 2027-01-01
   format: Forecast central-bank decisions and rates, from the Fed's projections to the Bank of England, the Bank of Japan and mortgage rates.
 
+- name: Market Pulse Challenge 26Q4
+  organizer: Metaculus
+  url: https://www.metaculus.com/tournament/market-pulse-26q4/
+  role: open
+  markets: [economics]
+  start: 2026-10-07
+  end: 2026-12-31
+  prize: $7,500 in prizes
+  format: Forecast company earnings, revenue and guidance and broader market moves this quarter. Join by Dec 21 to be eligible for prizes.
+
 - name: Fall 2026 FutureEval Bot Tournament
   organizer: Metaculus
   url: https://www.metaculus.com/tournament/fall-futureeval-2026/
@@ -152,3 +162,27 @@
   end: 2027-01-01
   prize: $5,000 in prizes
   format: Forecast four or five new topical questions every week, competing against the community and a guest data journalist.
+
+- name: English Soccer — EPL Matchday Challenge 2026
+  organizer: SportsPredict
+  url: https://sportspredict.com/epl-matchday-challenge-terms
+  role: open
+  markets: [sports]
+  start: 2026-10-10
+  end: 2027-05-30
+  format: Put probabilities on Premier League results and match stats every matchweek and get ranked on weekly accuracy. No betting involved.
+
+- name: AI Weather Quest
+  organizer: ECMWF
+  url: https://aiweatherquest.ecmwf.int/competition-structure
+  role: open
+  markets: [weather]
+  format: Submit AI-driven probabilistic forecasts of weekly global temperature, precipitation and sea-level pressure several weeks out, scored on public leaderboards in 13-week periods.
+
+- name: FluSight 2026–27
+  organizer: CDC
+  url: https://github.com/cdcepi/FluSight-forecast-hub
+  role: open
+  start: 2026-10-07
+  end: 2027-05-26
+  format: Submit weekly probabilistic forecasts of flu hospital admissions, nationally and by state, alongside academic, industry and government teams.
