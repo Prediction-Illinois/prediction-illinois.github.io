@@ -3,6 +3,6 @@
   <span class="st">{{ c.organizer }}</span>
   <h3>{{ c.name }}</h3>
   <p>{{ c.format }}</p>
-  <div class="src">{% unless include.here %}{% for k in c.markets %}{{ site.data.markets[k].chip }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% if c.markets %} · {% endif %}{% endunless %}{% if c.start and today < s %}Opens <b>{{ c.start | date: "%b %-d, %Y" }}</b>{% elsif c.end %}Until <b>{{ c.end | date: "%b %-d, %Y" }}</b>{% else %}<b>Rolling</b>{% endif %}{% if c.prize %} · <b>{{ c.prize }}</b>{% endif %}</div>
+  <div class="src">{% unless include.here %}{% if c.markets %}<span>{% for k in c.markets %}{{ site.data.markets[k].chip }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span> · {% endif %}{% endunless %}<span>{% if c.start and today < s %}Opens <b>{{ c.start | date: "%b %-d, %Y" }}</b>{% elsif c.end %}Until <b>{{ c.end | date: "%b %-d, %Y" }}</b>{% else %}<b>Rolling</b>{% endif %}</span>{% if c.prize %} · <span><b>{{ c.prize }}</b></span>{% endif %}</div>
   <span class="go">Enter ↗</span>
 </a>{% endunless %}
