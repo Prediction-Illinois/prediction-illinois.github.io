@@ -20,19 +20,6 @@
   major: Mathematics & Physics
   year: Class of 2027
 
-- name: Yuxuan Song
-  tracks: [weather]
-  linkedin: https://www.linkedin.com/in/fitz-song/
-  photo: /assets/team/yuxuan-song.jpg
-  major: Information Science & Philosophy
-  year: Class of 2026
-
-- name: Joshua Chen
-  tracks: [sports]
-  linkedin: https://www.linkedin.com/in/joshch/
-  major: Applied Mathematics & Economics
-  year: Class of 2027
-
 - name: Tianyu Zhang
   tracks: [economics]
   linkedin: https://www.linkedin.com/in/tianyu-zhang-b712103bb/
@@ -53,13 +40,6 @@
   photo: /assets/team/sai-patel.jpg
   major: Mathematics
   year: Class of 2028
-
-- name: Zhangze Liu
-  tracks: [tech]
-  linkedin: https://www.linkedin.com/in/zhangze-liu-635b25298/
-  photo: /assets/team/zhangze-liu.jpg
-  major: Physics
-  year: Class of 2029
 
 - name: Chandhra Gundam
   tracks: [sports]
