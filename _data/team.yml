@@ -13,6 +13,14 @@
   major: Computer Science & Economics
   year: Class of 2027
 
+- name: Scott Oftedahl
+  role: Vice President
+  tracks: [sports, crypto]
+  linkedin: https://www.linkedin.com/in/scottoftedahl/
+  photo: /assets/team/scott-oftedahl.jpg
+  major: Computer Engineering
+  year: Class of 2028
+
 - name: Jiaqi Tang
   tracks: [crypto, sports]
   linkedin: https://www.linkedin.com/in/jiaqitang2005/
@@ -25,13 +33,6 @@
   linkedin: https://www.linkedin.com/in/tianyu-zhang-b712103bb/
   photo: /assets/team/tianyu-zhang.jpg
   major: Economics & Environmental Science
-  year: Class of 2028
-
-- name: Scott Oftedahl
-  tracks: [sports, crypto]
-  linkedin: https://www.linkedin.com/in/scottoftedahl/
-  photo: /assets/team/scott-oftedahl.jpg
-  major: Computer Engineering
   year: Class of 2028
 
 - name: Sai Patel
