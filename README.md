@@ -1,7 +1,7 @@
 # Prediction@Illinois
 
 Website for Prediction@Illinois — the student research organization for prediction markets at
-the University of Illinois Urbana-Champaign. https://prediction-illinois.github.io
+the University of Illinois Urbana-Champaign. https://predictuiuc.com
 
 **Fall 2026 applications are open.** Rolling, all majors, no finance background required.
 
