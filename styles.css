@@ -1,0 +1,180 @@
+:root {
+  --paper: #efede5;
+  --ink: #272923;
+  --muted: #65665e;
+  --accent: #a3402d;
+  --font: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --page-gutter: 20px;
+  --header-height: 86px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+::selection { color: var(--paper); background: var(--ink); }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; cursor: pointer; }
+img { display: block; max-width: 100%; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+[hidden] { display: none !important; }
+p, h1, h2 { margin: 0; }
+.wrap { width: calc(100% - 2 * var(--page-gutter)); margin-inline: auto; }
+.skip-link { position: fixed; top: -80px; left: 20px; z-index: 100; padding: 14px 22px; background: var(--ink); color: var(--paper); }
+.skip-link:focus { top: 12px; }
+
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; height: var(--header-height); padding-inline: 28px; }
+.site-nav { display: flex; align-items: center; gap: 28px; }
+.site-nav a { font-size: 15px; font-weight: 500; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
+.site-nav .nav-apply { padding: 11px 18px; border: 1px solid var(--ink); }
+.site-nav .nav-apply:hover, .site-nav .nav-apply[aria-current="page"] { color: var(--paper); background: var(--ink); }
+.brand { display: inline-flex; align-items: center; }
+.brand-name { font-family: 'Barlow Condensed', var(--font); font-size: 34px; font-weight: 600; line-height: .9; letter-spacing: .015em; text-transform: uppercase; }
+.brand-name > span { display: block; margin-top: 7px; color: var(--accent); font: 600 11px/1 var(--font); letter-spacing: .22em; }
+:root[data-logo="editorial"] .brand-name { font-family: 'Instrument Serif', Georgia, serif; font-size: 39px; font-weight: 400; letter-spacing: -.035em; text-transform: none; }
+:root[data-logo="editorial"] .brand-name > span { text-transform: uppercase; }
+:root[data-logo="wordmark"] .brand-name { font-family: var(--font); font-size: 24px; font-weight: 600; letter-spacing: -.055em; text-transform: none; }
+:root[data-logo="wordmark"] .brand-name > span { display: inline; margin: 0; font: inherit; letter-spacing: inherit; }
+
+.hero { padding: 0 var(--page-gutter); }
+.hero-frame { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; height: calc(100svh - var(--header-height) - var(--page-gutter)); min-height: 580px; max-height: 980px; overflow: hidden; padding: 44px 36px 120px; color: var(--paper); background: #000; }
+.hero-media { position: absolute; z-index: -2; inset: 0; }
+.market-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; filter: grayscale(1) contrast(1.04); transition: opacity 1s ease; }
+.market-image.is-active { opacity: 1; }
+.market-image[data-market="weather"] { object-position: center 55%; }
+.market-image[data-market="sports"] { object-position: 45% 60%; }
+.market-image[data-market="politics"] { object-position: center 40%; }
+.market-image[data-market="crypto"] { object-position: center; }
+.market-image[data-market="illinois"] { object-position: center 60%; }
+.hero-frame::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, #0000000a 0%, #00000080 25%, #00000080 65%, #000000ad 100%); }
+h1 { max-width: 1200px; font-size: clamp(76px, 10.65vw, 166px); font-weight: 600; line-height: .89; letter-spacing: -.065em; text-transform: uppercase; }
+.hero-controls { position: absolute; inset: auto 36px 32px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.market-picker { display: flex; gap: 12px; flex-wrap: wrap; }
+.market-tab { border: 1px solid #efede566; padding: 10px 18px; background: #00000014; color: #efede5cf; font-size: clamp(18px, 1.6vw, 24px); font-weight: 500; letter-spacing: -.03em; transition: color .2s, border-color .2s, background .2s; }
+.market-tab:hover, .market-tab.is-active { color: var(--paper); }
+.market-tab:hover { border-color: var(--paper); background: #efede514; }
+.market-tab.is-active { border-color: var(--paper); background: var(--paper); color: var(--ink); }
+
+.panel { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(64px, 9vw, 150px); align-items: center; padding: 96px 0; }
+.panel + .panel { border-top: 1px solid #27292314; }
+h2 { font-size: clamp(68px, 7.4vw, 110px); font-weight: 500; line-height: .97; letter-spacing: -.065em; }
+.panel-copy { min-width: 0; text-align: center; }
+.panel-copy p { max-width: 350px; margin: 26px auto 0; color: var(--muted); font-size: 20px; line-height: 1.5; letter-spacing: -.025em; text-wrap: pretty; }
+.panel-flip .panel-copy { grid-column: 2; grid-row: 1; }
+.panel-flip .photo { grid-column: 1; grid-row: 1; }
+.category-panel .photo img { filter: none; }
+#weather .photo img { object-position: 68% center; }
+#sports .photo img { object-position: center; }
+#politics .photo-image { height: auto; aspect-ratio: 4 / 3; }
+#politics .photo img { object-position: center; }
+#crypto .photo img { object-position: 65% center; }
+#join .photo img { filter: none; }
+.photo { margin: 0; min-width: 0; }
+.photo-image { display: block; height: 570px; overflow: hidden; background: #d1d0c5; }
+.photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.62); }
+.photo-wide .photo-image { height: 420px; }
+.photo-wide img { object-position: 30% 50%; }
+
+.site-footer { padding: 64px 0 40px; border: 1px solid #000; color: #d2d0c7; background: #000; text-align: center; }
+.footer-wordmark { display: inline-flex; align-items: center; font-family: 'Barlow Condensed', var(--font); font-size: clamp(48px, 8vw, 110px); line-height: .95; letter-spacing: .015em; font-weight: 600; text-transform: uppercase; }
+.footer-brand-name > span { display: block; margin-top: 18px; color: #c06c56; font: 600 clamp(13px, 1.5vw, 20px)/1 var(--font); letter-spacing: .22em; }
+:root[data-logo="editorial"] .footer-wordmark { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -.035em; text-transform: none; }
+:root[data-logo="editorial"] .footer-brand-name > span { text-transform: uppercase; }
+:root[data-logo="wordmark"] .footer-wordmark { font-family: var(--font); font-size: clamp(25px, 6.8vw, 100px); letter-spacing: -.065em; text-transform: none; }
+:root[data-logo="wordmark"] .footer-brand-name > span { display: inline; margin: 0; font: inherit; letter-spacing: inherit; }
+.site-footer p { margin-top: 38px; color: #a5a89a; font-size: 14px; }
+
+@media (max-width: 1000px) {
+  .market-image[data-market="politics"] { object-position: 12% center; }
+  .panel { gap: 56px; padding-block: 84px; }
+  .photo-image { height: 480px; }
+  .photo-wide .photo-image { height: 350px; }
+}
+@media (max-width: 700px) {
+  :root { --page-gutter: 10px; --header-height: 124px; }
+  html { scroll-padding-top: 88px; }
+  .header-inner { height: var(--header-height); padding: 12px 20px; flex-wrap: wrap; align-content: center; gap: 10px; }
+  .site-nav { flex-basis: 100%; justify-content: space-between; gap: 20px; }
+  .site-nav a { font-size: 14px; }
+  .site-nav .nav-apply { padding: 8px 14px; }
+  .brand-name { font-size: 30px; }
+  .brand-name > span { font-size: 10px; }
+  :root[data-logo="wordmark"] .brand-name { font-size: 20px; }
+  .hero-frame { min-height: 510px; max-height: 850px; height: calc(100svh - var(--header-height) - var(--page-gutter)); padding: 28px 20px 130px; }
+  h1 { font-size: clamp(34px, 10.6vw, 76px); line-height: .96; }
+  .hero-controls { inset: auto 20px 24px; gap: 12px; align-items: flex-end; }
+  .market-picker { gap: 8px; max-width: 330px; }
+  .market-tab { font-size: 18px; padding: 9px 14px; }
+  .panel { grid-template-columns: 1fr; gap: 40px; padding-block: 64px; }
+  h2 { font-size: clamp(64px, 16vw, 90px); }
+  .panel-copy p { margin-top: 20px; font-size: 18px; }
+  .panel-flip .panel-copy, .panel-flip .photo { grid-column: auto; grid-row: auto; }
+  .photo-image { height: auto; aspect-ratio: 4 / 5; }
+  .photo-wide .photo-image { height: auto; aspect-ratio: 4 / 3; }
+  .site-footer { padding-block: 36px 26px; }
+  .footer-wordmark { font-size: clamp(48px, 12vw, 76px); }
+  :root[data-logo="wordmark"] .footer-wordmark { font-size: clamp(25px, 7vw, 46px); }
+  .site-footer p { margin-top: 26px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* Research, team, and membership share the same quiet editorial layout. */
+.content-page { min-height: 100svh; display: flex; flex-direction: column; }
+.content-page > .page-shell { flex: 1; }
+.page-shell { padding-bottom: 92px; }
+.page-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding: 84px 36px 64px; }
+.page-title { font-size: clamp(68px, 8.4vw, 120px); line-height: .96; font-weight: 500; letter-spacing: -.065em; text-transform: none; }
+.page-intro > p { max-width: 390px; margin-bottom: 6px; color: var(--muted); font-size: 20px; line-height: 1.5; letter-spacing: -.025em; text-wrap: pretty; }
+.research-list { border-bottom: 1px solid #27292320; }
+.research-item { border-top: 1px solid #27292320; }
+.minimal-page .page-intro { padding-top: 64px; padding-bottom: 48px; }
+.minimal-page .page-title { font-size: clamp(60px, 6.2vw, 88px); }
+.research-entry { display: grid; grid-template-columns: minmax(0,1fr) 28px; align-items: center; gap: 24px; padding: 26px 36px; }
+.research-heading h2 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.1; letter-spacing: -.04em; }
+.research-arrow { font-size: 26px; text-align: right; }
+.research-entry:hover .research-heading h2, .research-entry:hover .research-arrow { color: var(--accent); }
+.team-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 48px; padding-inline: 36px; }
+.member { min-width: 0; }
+.member-profile { display: inline-flex; align-items: center; gap: 28px; }
+.member-profile img { display: block; flex-shrink: 0; width: 144px; height: 144px; object-fit: cover; background: #d1d0c5; }
+.member h2 { font-size: 34px; line-height: 1.1; letter-spacing: -.045em; }
+.member-profile:hover h2 { color: var(--accent); }
+.member-role { margin-top: 8px; color: var(--accent); font-size: 15px; line-height: 1.5; font-weight: 500; }
+.member-details { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.team-page > .page-shell { flex: none; min-height: calc(100svh - var(--header-height)); padding-bottom: 64px; }
+.join-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(64px, 9vw, 150px); align-items: center; padding: 64px 36px 0; }
+.join-copy { min-width: 0; text-align: center; }
+.join-lead { margin-top: 30px; font-size: 20px; line-height: 1.5; color: var(--muted); }
+.join-season { margin-top: 28px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.apply-button { display: inline-flex; justify-content: space-between; align-items: center; gap: 38px; padding: 18px 24px; margin-top: 32px; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); font-size: 16px; font-weight: 500; }
+.apply-button:hover { background: #000; border-color: #000; }
+.join-photo { margin: 0; min-width: 0; height: 620px; background: #d1d0c5; }
+.join-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 30% center; }
+@media (max-width: 1000px) {
+  .page-intro { align-items: flex-start; flex-direction: column; gap: 26px; padding-top: 64px; }
+  .team-list { grid-template-columns: 1fr; }
+  .join-layout { gap: 48px; }
+  .join-photo { height: 550px; }
+}
+@media (max-width: 700px) {
+  .page-shell { padding-bottom: 64px; }
+  .page-intro { padding: 48px 14px 36px; gap: 22px; }
+  .page-title { font-size: clamp(60px, 15vw, 84px); }
+  .page-intro > p { font-size: 18px; max-width: 340px; }
+  .minimal-page .page-intro { padding-top: 40px; padding-bottom: 32px; }
+  .research-entry { grid-template-columns: 1fr 24px; gap: 18px; padding: 24px 14px; }
+  .research-heading h2 { font-size: 28px; }
+  .research-arrow { font-size: 24px; }
+  .team-list { padding-inline: 14px; }
+  .member-profile { gap: 20px; }
+  .member-profile img { width: 96px; height: 96px; }
+  .member h2 { font-size: 26px; }
+  .join-layout { grid-template-columns: 1fr; gap: 48px; padding: 48px 14px 0; }
+  .join-lead { font-size: 18px; margin-top: 24px; }
+  .join-season { font-size: 17px; margin-top: 24px; }
+  .join-photo { height: auto; aspect-ratio: 4 / 3; }
+}

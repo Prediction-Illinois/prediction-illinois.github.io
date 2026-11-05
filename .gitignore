@@ -1,5 +1,2 @@
 .DS_Store
-CNAME.disabled
-docs/
-outreach/
-brand/v1_old/
+.playwright-mcp/

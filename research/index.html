@@ -1,20 +1,79 @@
----
-layout: default
-title: Research
-description: Original research on prediction markets from Prediction@Illinois — pricing, calibration, market design, and forecasting — built from real market data.
----
-<section class="wrap page-head rh">
-  <span class="eyebrow brand">Research</span>
-  <h1>Our work</h1>
-  <i class="rule"></i>
-  <p class="lede">Original research on prediction markets — pricing, calibration, market design, and forecasting — built from real market data.</p>
-</section>
-<section class="band"><div class="wrap">
-  <div class="works">
-  {% for r in site.data.research %}{% include work.html r=r %}{% endfor %}
-  </div>
-</div></section>
-<section class="wrap cta-band"><div class="in">
-  <div><h3>Work on the next one</h3><p>Members join a research project in one market and finish with a written result.</p></div>
-  <a class="btn btn-1 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply for Fall 2026</a>
-</div></section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#efede5">
+  <meta name="description" content="Research by prediction@illinois on market pricing, forecasting, and trading systems.">
+  <title>Research · prediction@illinois</title>
+  <link id="brand-favicon" rel="icon" href="/assets/branding/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+  <link rel="canonical" href="https://predictuiuc.com/research/">
+  <meta property="og:title" content="Research · prediction@illinois">
+  <meta property="og:description" content="Research by prediction@illinois on market pricing, forecasting, and trading systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://predictuiuc.com/research/">
+  <meta property="og:image" content="https://predictuiuc.com/assets/photos/hero-illinois.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="content-page minimal-page">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="prediction@illinois home">
+        <span class="brand-name">prediction<span>@illinois</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/research/" aria-current="page">Research</a>
+        <a href="/team/">Team</a>
+        <a class="nav-apply" href="/join/">Join us</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="page-shell wrap">
+    <div class="page-intro"><h1 class="page-title">Research.</h1></div>
+    <section class="research-list" aria-label="Research projects">
+      <article class="research-item">
+        <a class="research-entry" href="https://github.com/YichengYang-Ethan/fed-basis-backtest" target="_blank" rel="noopener noreferrer">
+          <div class="research-heading"><h2>FOMC relative value</h2></div>
+          <span class="research-arrow" aria-hidden="true">↗</span>
+        </a>
+      </article>
+      <article class="research-item">
+        <a class="research-entry" href="https://yichengyang-ethan.github.io/final-four" target="_blank" rel="noopener noreferrer">
+          <div class="research-heading"><h2>Final Four</h2></div>
+          <span class="research-arrow" aria-hidden="true">↗</span>
+        </a>
+      </article>
+      <article class="research-item">
+        <a class="research-entry" href="https://github.com/fitz-s/zeus" target="_blank" rel="noopener noreferrer">
+          <div class="research-heading"><h2>Zeus</h2></div>
+          <span class="research-arrow" aria-hidden="true">↗</span>
+        </a>
+      </article>
+      <article class="research-item">
+        <a class="research-entry" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6468338" target="_blank" rel="noopener noreferrer">
+          <div class="research-heading"><h2>Market pricing</h2></div>
+          <span class="research-arrow" aria-hidden="true">↗</span>
+        </a>
+      </article>
+      <article class="research-item">
+        <a class="research-entry" href="https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent" target="_blank" rel="noopener noreferrer">
+          <div class="research-heading"><h2>Oracle3</h2></div>
+          <span class="research-arrow" aria-hidden="true">↗</span>
+        </a>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="footer-wordmark" href="/" aria-label="prediction@illinois, back to top"><span class="footer-brand-name">prediction<span>@illinois</span></span></a>
+      <p>University of Illinois Urbana-Champaign</p>
+    </div>
+  </footer>
+</body>
+</html>
