@@ -1,2 +1,6 @@
 .DS_Store
 .playwright-mcp/
+CNAME.disabled
+docs/
+outreach/
+brand/v1_old/
