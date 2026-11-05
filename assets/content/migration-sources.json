@@ -1,0 +1,116 @@
+{
+  "sources": [
+    "https://predictuiuc.com/research/",
+    "https://predictuiuc.com/team/",
+    "https://predictuiuc.com/",
+    "https://docs.google.com/forms/d/e/1FAIpQLScOw2CSc0HgU0zKwo9bV3qQvcRSHpT6nZxHLWvsBfikycIMcg/viewform"
+  ],
+  "research": [
+    {
+      "title": "FOMC relative value",
+      "author": "Yicheng Yang",
+      "date": "September 2026",
+      "iso": "2026-09",
+      "summary": "Comparing Fed decision contracts with calendar-matched futures, after execution and funding costs.",
+      "url": "https://github.com/YichengYang-Ethan/fed-basis-backtest"
+    },
+    {
+      "title": "The Final Four, priced live",
+      "author": "Yicheng Yang",
+      "date": "April 2026",
+      "iso": "2026-04",
+      "summary": "A tick-by-tick look at Illinois\u2013UConn prices on Kalshi and Polymarket.",
+      "url": "https://yichengyang-ethan.github.io/final-four"
+    },
+    {
+      "title": "Zeus",
+      "author": "Yuxuan Song",
+      "date": "March 2026",
+      "iso": "2026-03",
+      "summary": "Temperature forecasts priced around each contract\u2019s station, rounding, and settlement rules.",
+      "url": "https://github.com/fitz-s/zeus"
+    },
+    {
+      "title": "Pricing prediction markets",
+      "author": "Yicheng Yang",
+      "date": "March 2026",
+      "iso": "2026-03",
+      "summary": "Measuring the gap between market prices and outcomes across six platforms.",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6468338"
+    },
+    {
+      "title": "Oracle3",
+      "author": "Yicheng Yang",
+      "date": "February 2026",
+      "iso": "2026-02",
+      "summary": "Finding cross-market arbitrage after venue fees, executable prices, and risk limits.",
+      "url": "https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent"
+    }
+  ],
+  "team": [
+    {
+      "name": "Yicheng Yang",
+      "role": "President",
+      "major": "Computer Science & Economics",
+      "class_year": "2027",
+      "linkedin": "https://www.linkedin.com/in/ethan85/"
+    },
+    {
+      "name": "Scott Oftedahl",
+      "role": "Vice President",
+      "major": "Computer Engineering",
+      "class_year": "2028",
+      "linkedin": "https://www.linkedin.com/in/scottoftedahl/"
+    },
+    {
+      "name": "Jiaqi Tang",
+      "role": "Crypto \u00b7 Sports",
+      "major": "Mathematics & Physics",
+      "class_year": "2027",
+      "linkedin": "https://www.linkedin.com/in/jiaqitang2005/"
+    },
+    {
+      "name": "Yuxuan Song",
+      "role": "Weather",
+      "major": "Information Science & Philosophy",
+      "class_year": "2026",
+      "linkedin": "https://www.linkedin.com/in/fitz-song/"
+    },
+    {
+      "name": "Tianyu Zhang",
+      "role": "Economics",
+      "major": "Economics & Environmental Science",
+      "class_year": "2028",
+      "linkedin": "https://www.linkedin.com/in/tianyu-zhang-b712103bb/"
+    },
+    {
+      "name": "Sai Patel",
+      "role": "Sports",
+      "major": "Mathematics",
+      "class_year": "2028",
+      "linkedin": "https://www.linkedin.com/in/saipatel19/"
+    },
+    {
+      "name": "Chandhra Gundam",
+      "role": "Sports",
+      "major": "Computer Science & GIS",
+      "class_year": "2029",
+      "linkedin": "https://www.linkedin.com/in/cgundam/"
+    },
+    {
+      "name": "Tamoghna Dutta",
+      "role": "Crypto",
+      "major": "Mathematics & Statistics",
+      "class_year": "2029",
+      "linkedin": "https://www.linkedin.com/in/tamoghna-dutta-000003382/"
+    },
+    {
+      "name": "Xing Sun",
+      "role": "Sports",
+      "major": "Statistics",
+      "class_year": "2030",
+      "linkedin": "https://www.linkedin.com/in/xing-sun-b92608361/"
+    }
+  ],
+  "application_url": "https://docs.google.com/forms/d/e/1FAIpQLScOw2CSc0HgU0zKwo9bV3qQvcRSHpT6nZxHLWvsBfikycIMcg/viewform"
+}

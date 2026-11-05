@@ -1,36 +1,124 @@
----
-layout: default
-description: Prediction@Illinois is a quantitative trading research group at the University of Illinois Urbana-Champaign — pricing event contracts, prediction-market microstructure, and systematic strategies on live Polymarket and Kalshi data. Fall 2026 applications open.
----
-<section class="wrap hero" id="hero">
-  <div>
-    <span class="eyebrow brand">University of Illinois Urbana–Champaign</span>
-    <h1>Prediction markets,<br><span class="dim">traded on research.</span></h1>
-    <p class="lede">Prediction@Illinois is a quantitative trading research group at UIUC. We price event contracts, study prediction-market microstructure, and build systematic strategies on live Polymarket and Kalshi data.</p>
-    <div class="cta-row">
-      <a class="btn btn-1 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply for Fall 2026</a>
-      <a class="btn btn-2 btn-lg" href="/markets/">Explore the markets</a>
-      <span class="cta-note">Rolling · all majors · no experience required</span>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#efede5">
+  <meta name="description" content="predictions@illinois. Prediction markets for weather, sports, politics, crypto, and life at UIUC.">
+  <title>predictions@illinois</title>
+  <link id="brand-favicon" rel="icon" href="assets/branding/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/photos/hero-weather.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <link rel="canonical" href="https://predictuiuc.com/">
+  <meta property="og:title" content="predictions@illinois">
+  <meta property="og:description" content="predictions@illinois. Prediction markets for weather, sports, politics, crypto, and life at UIUC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://predictuiuc.com/">
+  <meta property="og:image" content="https://predictuiuc.com/assets/photos/hero-illinois.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip-link" href="#markets">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="predictions@illinois home">
+        <span class="brand-name">predictions<span>@illinois</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/research/">Research</a>
+        <a href="/team/">Team</a>
+        <a class="nav-apply" href="/join/">Join us</a>
+      </nav>
     </div>
-  </div>
-  <div class="board" id="board" hidden aria-label="Live prediction markets">
-    <div class="board-head"><span class="eyebrow">Polymarket · most traded, 24h</span><span class="live"><i></i>Live</span></div>
-    <div class="rows" id="board-rows"></div>
-    <div class="board-foot">Prices from Polymarket's public API at page load. Shown as research material.</div>
-  </div>
-</section>
-
-<div class="ticker" id="ticker" hidden aria-hidden="true"><div class="tk-track" id="tk"></div></div>
-
-<section class="band" id="markets"><div class="wrap">
-  <div class="sec-head">
-    <div><span class="eyebrow">Markets</span><h2 class="h2">Six markets, one method</h2></div>
-    <p class="sub">Every member works in one market. Each has its own page: what we research there, what's trading now, and who's on it.</p>
-  </div>
-  {% include market-cards.html %}
-</div></section>
-
-<section class="wrap cta-band"><div class="in">
-  <div><h3>Fall 2026 applications are open</h3><p>A name, an email, a market, and one question you'd want answered. Rolling — reviewed weekly.</p></div>
-  <a class="btn btn-1 btn-lg" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply</a>
-</div></section>
+  </header>
+  <main>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-frame" id="markets">
+        <div class="hero-media">
+          <img class="market-image is-active" src="assets/photos/hero-weather.jpg" alt="A storm front stretching across an open field" width="2560" height="1186" data-market="weather" fetchpriority="high">
+          <img class="market-image" data-src="assets/photos/hero-sports.jpg" alt="A packed Madison Square Garden celebrating the Knicks advancing in the playoffs" width="2560" height="1707" data-market="sports" aria-hidden="true">
+          <img class="market-image" data-src="assets/photos/hero-politics.jpg" alt="Donald Trump and Joe Biden on the CNN presidential debate stage in June 2024" width="2560" height="1707" data-market="politics" aria-hidden="true">
+          <img class="market-image" data-src="assets/photos/hero-crypto.jpg" alt="Rows of ASIC cryptocurrency mining machines viewed from the front" width="1440" height="1080" data-market="crypto" aria-hidden="true">
+          <img class="market-image" data-src="assets/photos/hero-illinois.jpg" alt="An aerial view over the Main Quad toward Foellinger Auditorium at Illinois" width="1200" height="899" data-market="illinois" aria-hidden="true">
+        </div>
+        <h1 id="hero-title">What happens<br>next?</h1>
+        <div class="hero-controls">
+          <div class="market-picker" role="group" aria-label="Prediction market categories">
+            <button type="button" class="market-tab is-active" data-market="weather" aria-pressed="true">Weather</button>
+            <button type="button" class="market-tab" data-market="sports" aria-pressed="false">Sports</button>
+            <button type="button" class="market-tab" data-market="politics" aria-pressed="false">Politics</button>
+            <button type="button" class="market-tab" data-market="crypto" aria-pressed="false">Crypto</button>
+            <button type="button" class="market-tab" data-market="illinois" aria-pressed="false">UIUC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="panel wrap" aria-labelledby="about-title">
+      <div class="panel-copy">
+        <h2 id="about-title">Think<br>in odds.</h2>
+        <p>Forecast. Trade. Keep score.</p>
+      </div>
+      <figure class="photo">
+        <a class="photo-image" href="https://commons.wikimedia.org/wiki/File:Chicago_Board_of_Trade_at_night_(50398653816).jpg" target="_blank" rel="noopener noreferrer" title="Photo: seligmanwaite · CC BY 2.0" aria-label="Chicago Board of Trade at night. Photo by seligmanwaite, CC BY 2.0. View source and license.">
+          <img src="assets/photos/cbot-night.jpg" alt="The illuminated Chicago Board of Trade Building at night" width="1050" height="1400" loading="lazy">
+        </a>
+      </figure>
+    </section>
+    <section id="weather" class="panel panel-flip category-panel wrap" aria-labelledby="weather-title">
+      <div class="panel-copy">
+        <h2 id="weather-title">Weather.</h2>
+        <p>Snow days. Heat waves. Rain delays.</p>
+      </div>
+      <figure class="photo">
+        <div class="photo-image"><img src="assets/photos/weather-lightning.jpg" alt="Forked lightning illuminating storm clouds over an open landscape at night" width="2200" height="1441" loading="lazy"></div>
+      </figure>
+    </section>
+    <section id="sports" class="panel category-panel wrap" aria-labelledby="sports-title">
+      <div class="panel-copy">
+        <h2 id="sports-title">Sports.</h2>
+        <p>Upsets, playoffs, and the next big win.</p>
+      </div>
+      <figure class="photo">
+        <div class="photo-image"><img src="assets/photos/sports-celebration.jpg" alt="Milwaukee Brewers players jumping into a celebratory huddle on the mound after winning the 2025 NLDS" width="1600" height="1200" loading="lazy"></div>
+      </figure>
+    </section>
+    <section id="politics" class="panel panel-flip category-panel wrap" aria-labelledby="politics-title">
+      <div class="panel-copy">
+        <h2 id="politics-title">Politics.</h2>
+        <p>Elections, policy, and what comes after.</p>
+      </div>
+      <figure class="photo">
+        <div class="photo-image"><img src="assets/photos/politics-debate.jpg" alt="Hillary Clinton speaking with Donald Trump behind her at the second 2016 presidential debate" width="4247" height="2858" loading="lazy"></div>
+      </figure>
+    </section>
+    <section id="crypto" class="panel category-panel wrap" aria-labelledby="crypto-title">
+      <div class="panel-copy">
+        <h2 id="crypto-title">Crypto.</h2>
+        <p>Prices, protocols, and the next cycle.</p>
+      </div>
+      <figure class="photo">
+        <div class="photo-image"><img src="assets/photos/crypto-mining.jpg" alt="An aisle of working Bitcoin mining rigs with exposed power and network cables" width="2000" height="1335" loading="lazy"></div>
+      </figure>
+    </section>
+    <section id="join" class="panel panel-flip category-panel wrap" aria-labelledby="join-title">
+      <div class="panel-copy">
+        <h2 id="join-title">Make<br>your call.</h2>
+        <p>UIUC markets. Campus news, snow days, and local life.</p>
+      </div>
+      <figure class="photo photo-wide">
+        <div class="photo-image"><img src="assets/photos/alma-mater.jpg" alt="Alma Mater and Altgeld Hall on the University of Illinois campus in winter" width="1400" height="933" loading="lazy"></div>
+      </figure>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="footer-wordmark" href="#home" aria-label="predictions@illinois, back to top"><span class="footer-brand-name">predictions<span>@illinois</span></span></a>
+      <p>University of Illinois Urbana-Champaign</p>
+    </div>
+  </footer>
+</body>
+</html>

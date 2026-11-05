@@ -1,0 +1,77 @@
+{
+  "sports-action.jpg": {
+    "source": "https://www.nba.com/news/the-athletic-wembanyama-edwards-is-the-new-age-rivalry-the-nba-needs",
+    "description": "Anthony Edwards attacking the rim against Victor Wembanyama, January 2026. Getty Images / NBA.com.",
+    "width": 1568,
+    "height": 882
+  },
+  "politics-debate.jpg": {
+    "source": "https://theweek.com/articles/654050/11-surreal-moments-from-second-presidential-debate",
+    "description": "Hillary Clinton and Donald Trump at the second 2016 presidential debate. Scott Olson / Getty Images.",
+    "width": 4247,
+    "height": 2858
+  },
+  "crypto-sculpture.jpg": {
+    "source": null,
+    "description": "Custom conceptual Ethereum sculpture, generated with the built-in imagegen tool.",
+    "width": 1254,
+    "height": 1254,
+    "prompt": "Use case: stylized-concept. Asset type: a high-resolution editorial crypto image for a sophisticated university prediction-markets website; final composition square, 2048 x 2048. Create an art-directed, tactile studio still life: a monumental Ethereum diamond made of polished, scratched chrome floating just above a fractured black circuit-board slab. Exposed copper traces radiate outward across the slab like an intricate city grid. The diamond is the unmistakable primary subject, centered, fully inside the central 60% of the composition so it remains legible in both a square image panel and a wide website banner. Near-black studio background; one hard white spotlight and restrained molten-copper reflections from beneath. Beautifully controlled reflections, real machining marks, deep shadows, fine analog grain, razor-sharp material detail, dramatic architectural scale, premium contemporary magazine photography. Physical, unusual, austere, striking. Full color with silver, black and copper. No words, no interface, no labels, no stock-market chart, no floating gold coins, no neon purple, no watermark, no poster layout."
+  },
+  "politics-debate-hero.jpg": {
+    "source": "https://www.abc.net.au/news/2017-08-24/clinton-in-book-says-trump-debate-stalking-made-her-skin-crawl/8836782",
+    "description": "A tighter photograph of Clinton and Trump at the second 2016 presidential debate, selected for the narrow hero crop.",
+    "width": 2554,
+    "height": 1697
+  },
+  "crypto-mining.jpg": {
+    "source": "https://www.bloomberg.com/news/articles/2023-02-07/bitcoin-miner-stronghold-restructures-debt-to-improve-liquidity",
+    "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBQ4fU0UL5hA/v1/-1x-1.jpg",
+    "description": "A real industrial Bitcoin mining facility. Bloomberg photograph.",
+    "width": 2000,
+    "height": 1335
+  },
+  "sports-celebration.jpg": {
+    "source": "https://onmilwaukee.com/articles/brewers-cubs-nlds2025-moments",
+    "image_url": "https://storage.googleapis.com/onmilwaukee-article-images/variants/w6btlk3mjkx43cv246awynymlmkl/44487ed8fba0f2b82d9d5c8e9a98ed4b9d67f7c75e21d8b1a6cda1869e8697fd",
+    "description": "Milwaukee Brewers players celebrating their 2025 NLDS victory on the mound. Photo sourced from OnMilwaukee.",
+    "width": 1600,
+    "height": 1200
+  },
+  "weather-lightning.jpg": {
+    "source": "https://unsplash.com/photos/lightning-striking-a-field-rkNLrrIAKXQ",
+    "description": "Lightning over an open landscape at night. Anthony Cantin / Unsplash.",
+    "width": 2200,
+    "height": 1441
+  },
+  "hero-weather.jpg": {
+    "source": "https://unsplash.com/photos/a-storm-is-coming-in-over-a-green-field-Hr5UJNa62-M",
+    "description": "A sweeping storm front above open fields. Raychel Sanner / Unsplash.",
+    "width": 2560,
+    "height": 1186
+  },
+  "hero-sports.jpg": {
+    "source": "https://www.ksl.com/article/51315168/nba-playoff-guide-who-plays-when-how-to-watch-what-the-odds-are",
+    "description": "Madison Square Garden during a Knicks playoff celebration. Photo sourced from KSL / AP.",
+    "width": 2560,
+    "height": 1707
+  },
+  "hero-politics.jpg": {
+    "source": "https://www.foxnews.com/politics/biden-aides-scripted-everything-allowed-his-faculties-atrophy-new-book-claims",
+    "description": "Donald Trump and Joe Biden on the CNN debate stage in June 2024. Photo sourced from Fox News.",
+    "width": 2560,
+    "height": 1707
+  },
+  "hero-crypto.jpg": {
+    "source": "https://www.coindesk.com/business/2022/09/21/bitmain-discounts-bitcoin-mining-machines-in-an-already-depressed-market",
+    "description": "A frontal view of rows of ASIC mining rigs. Photo sourced from CoinDesk.",
+    "width": 1440,
+    "height": 1080
+  },
+  "hero-illinois.jpg": {
+    "source": "https://slcl.illinois.edu/news/2025-05-07/hundreds-converge-u-i-campus-classics-conference",
+    "description": "An aerial view of the University of Illinois Main Quad. University of Illinois photograph.",
+    "width": 1200,
+    "height": 899
+  }
+}
